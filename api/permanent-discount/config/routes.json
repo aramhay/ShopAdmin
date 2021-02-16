@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/permanent-discount",
+      "handler": "permanent-discount.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/permanent-discount",
+      "handler": "permanent-discount.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/permanent-discount",
+      "handler": "permanent-discount.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

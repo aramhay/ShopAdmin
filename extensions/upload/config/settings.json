@@ -1,0 +1,10 @@
+{
+    "provider": "imagekit",
+    "providerOptions": {
+        "urlEndpoint": "https://ik.imagekit.io/tchd5wpqu9s",
+        "publicKey": "public_aOGCgrShdPH1Mh4OixNPfTvI9uY=",
+        "privateKey": "private_xU6tXEsnO8v7swCv6X3j9mu6adU="
+    }
+}
+
+

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopping_basket_recommendations",
+  "info": {
+    "name": "shopping_basket_recommendation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "to": {
+      "type": "email"
+    },
+    "from": {
+      "type": "email"
+    },
+    "current_shopping_basket_product_id": {
+      "type": "json"
+    }
+  }
+}

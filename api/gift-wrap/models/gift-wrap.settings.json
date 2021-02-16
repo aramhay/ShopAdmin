@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gift_wraps",
+  "info": {
+    "name": "gift_wrap"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "string"
+    }
+  }
+}

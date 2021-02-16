@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user-newsletters",
+      "handler": "user-newsletter.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-newsletters/count",
+      "handler": "user-newsletter.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-newsletters/:id",
+      "handler": "user-newsletter.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-newsletters",
+      "handler": "user-newsletter.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-newsletters/:id",
+      "handler": "user-newsletter.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/user-newsletters/:id",
+      "handler": "user-newsletter.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

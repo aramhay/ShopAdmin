@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mein_kontos",
+  "info": {
+    "name": "MEIN_KONTO"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

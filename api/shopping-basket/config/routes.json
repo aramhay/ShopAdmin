@@ -1,0 +1,74 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shopping-baskets",
+      "handler": "shopping-basket.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shopping-baskets/:userid",
+      "handler": "shopping-basket.findOne",
+      "config": {
+        "policies": []
+      }
+    },   
+    {
+      "method": "POST",
+      "path": "/shopping-baskets/product_samples",
+      "handler": "shopping-basket.create_product_samples",
+      "config": {
+        "policies": []
+      }
+    },
+
+ 
+    {
+      "method": "POST",
+      "path": "/shopping-baskets",
+      "handler": "shopping-basket.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shopping-baskets/gift-wrap",
+      "handler": "shopping-basket.create_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shopping-basket-gift-wrap/:userid",
+      "handler": "shopping-basket.delete_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    }, 
+    {
+      "method": "DELETE",
+      "path": "/shopping-baskets/product_samples/:userid/:sampleid",
+      "handler": "shopping-basket.delete_product_samples",
+      "config": {
+        "policies": []
+      }
+    },
+   
+    {
+      "method": "DELETE",
+      "path": "/shopping-baskets/:userid/:productid",
+      "handler": "shopping-basket.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
+
+
+

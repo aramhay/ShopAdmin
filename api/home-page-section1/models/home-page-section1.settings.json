@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_section1s",
+  "info": {
+    "name": "HomePageSection1",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

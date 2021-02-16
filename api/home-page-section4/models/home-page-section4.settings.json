@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_section4s",
+  "info": {
+    "name": "HomePageSection4"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "Button_text": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "image_text": {
+      "type": "string"
+    }
+  }
+}

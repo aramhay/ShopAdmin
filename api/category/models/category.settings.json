@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "CategoryName": {
+      "type": "string",
+      "required": true
+    },
+    "sub_categories": {
+      "collection": "sub-category"
+    }
+  }
+}

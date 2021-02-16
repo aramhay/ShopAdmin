@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbars",
+  "info": {
+    "name": "navbar",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "categories": {
+      "type": "json"
+    }
+  }
+}

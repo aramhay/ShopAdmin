@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/discount",
+      "handler": "discount.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/discount",
+      "handler": "discount.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/discount",
+      "handler": "discount.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

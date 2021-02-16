@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discount_codes",
+  "info": {
+    "name": "discount_codes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "maxLength": 50,
+      "default": "test"
+    },
+    "Description": {
+      "type": "richtext",
+      "maxLength": 150
+    },
+    "status_voucher": {
+      "type": "boolean"
+    },
+    "unique_multiple": {
+      "type": "boolean"
+    },
+    "multiple_redemptions": {
+      "type": "boolean"
+    },
+    "one_redemption": {
+      "type": "boolean"
+    },
+    "redeem_until_usedup": {
+      "type": "json"
+    },
+    "single_redemption": {
+      "type": "json"
+    },
+    "Minimum_order_value": {
+      "type": "biginteger"
+    },
+    "valid_from_date_time": {
+      "type": "datetime"
+    },
+    "Valid_to_date_time": {
+      "type": "datetime"
+    },
+    "code_character_length": {
+      "type": "biginteger"
+    },
+    "amount_discount": {
+      "type": "biginteger"
+    },
+    "type_of_discount": {
+      "type": "enumeration",
+      "enum": [
+        "prozentual",
+        "absolut",
+        "Stuck",
+        "Versand"
+      ]
+    },
+    "products": {
+      "collection": "products"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopping_baskets",
+  "info": {
+    "name": "shopping_basket",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "columnName": "id",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "product": {
+      "columnName": "id",
+      "model": "products"
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "gift_wrap": {
+      "columnName": "id",
+      "model": "gift-wrap"
+    },
+    "type_test": {
+      "columnName": "id",
+      "model": "type-test"
+    }
+  }
+}

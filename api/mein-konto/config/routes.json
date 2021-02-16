@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mein-kontos",
+      "handler": "mein-konto.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mein-kontos/count",
+      "handler": "mein-konto.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mein-kontos/:id",
+      "handler": "mein-konto.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/mein-kontos",
+      "handler": "mein-konto.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mein-kontos/:id",
+      "handler": "mein-konto.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mein-kontos/:id",
+      "handler": "mein-konto.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_advertisings",
+  "info": {
+    "name": "HomePageAdvertising"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Advertising": {
+      "type": "richtext"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "onImageAdvertising": {
+      "type": "string"
+    },
+    "onImageText": {
+      "type": "richtext"
+    }
+  }
+}

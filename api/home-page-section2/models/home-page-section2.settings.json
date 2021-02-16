@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_section2s",
+  "info": {
+    "name": "HomePageSection2",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "Button_text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

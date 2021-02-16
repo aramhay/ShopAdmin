@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_newsletters",
+  "info": {
+    "name": "User_Newsletter"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "First_name": {
+      "type": "string"
+    },
+    "Surname": {
+      "type": "string"
+    },
+    "Gender": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    }
+  }
+}

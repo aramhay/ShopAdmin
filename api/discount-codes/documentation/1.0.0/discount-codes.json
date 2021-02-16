@@ -1,0 +1,737 @@
+{
+  "paths": {
+    "/discount-codes": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the discount-codes's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve discount-codes document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new discount-codes record",
+        "responses": {
+          "200": {
+            "description": "Retrieve discount-codes document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDiscount-codes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/discount-codes/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the numver of discount-codes documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve discount-codes document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "parameters": []
+      }
+    },
+    "/discount-codes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one discount-codes record",
+        "responses": {
+          "200": {
+            "description": "Retrieve discount-codes document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single discount-codes record",
+        "responses": {
+          "200": {
+            "description": "Retrieve discount-codes document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDiscount-codes"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single discount-codes record",
+        "responses": {
+          "200": {
+            "description": "deletes a single discount-codes based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Discount-codes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Discount-codes": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string",
+            "default": "test",
+            "maxLength": 50
+          },
+          "Description": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "status_voucher": {
+            "type": "boolean"
+          },
+          "unique_multiple": {
+            "type": "boolean"
+          },
+          "multiple_redemptions": {
+            "type": "boolean"
+          },
+          "one_redemption": {
+            "type": "boolean"
+          },
+          "redeem_until_usedup": {
+            "type": "object"
+          },
+          "single_redemption": {
+            "type": "object"
+          },
+          "Minimum_order_value": {
+            "type": "integer"
+          },
+          "valid_from_date_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Valid_to_date_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "code_character_length": {
+            "type": "integer"
+          },
+          "amount_discount": {
+            "type": "integer"
+          },
+          "type_of_discount": {
+            "type": "string",
+            "enum": [
+              "prozentual",
+              "absolut",
+              "Stuck",
+              "Versand"
+            ]
+          },
+          "products": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "brand": {
+                "type": "string"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "discount": {
+                "type": "integer"
+              },
+              "type_test": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "sub_category": {
+                "type": "string"
+              },
+              "menu_item": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "magazin_presentation": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "New": {
+                "type": "boolean"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewDiscount-codes": {
+        "properties": {
+          "Name": {
+            "type": "string",
+            "default": "test",
+            "maxLength": 50
+          },
+          "Description": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "status_voucher": {
+            "type": "boolean"
+          },
+          "unique_multiple": {
+            "type": "boolean"
+          },
+          "multiple_redemptions": {
+            "type": "boolean"
+          },
+          "one_redemption": {
+            "type": "boolean"
+          },
+          "redeem_until_usedup": {
+            "type": "object"
+          },
+          "single_redemption": {
+            "type": "object"
+          },
+          "Minimum_order_value": {
+            "type": "integer"
+          },
+          "valid_from_date_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Valid_to_date_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "code_character_length": {
+            "type": "integer"
+          },
+          "amount_discount": {
+            "type": "integer"
+          },
+          "type_of_discount": {
+            "type": "string",
+            "enum": [
+              "prozentual",
+              "absolut",
+              "Stuck",
+              "Versand"
+            ]
+          },
+          "products": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

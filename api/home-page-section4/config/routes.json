@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/home-page-section-4-s",
+      "handler": "home-page-section4.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shopping-basket-recommendations",
+      "handler": "shopping-basket-recommendation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shopping-basket-recommendations/count",
+      "handler": "shopping-basket-recommendation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shopping-basket-recommendations/:id",
+      "handler": "shopping-basket-recommendation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shopping-basket-recommendations",
+      "handler": "shopping-basket-recommendation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shopping-basket-recommendations/:id",
+      "handler": "shopping-basket-recommendation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shopping-basket-recommendations/:id",
+      "handler": "shopping-basket-recommendation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

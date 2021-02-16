@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "magazin_presentations",
+  "info": {
+    "name": "magazin_presentation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images_1": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "text_1": {
+      "type": "string"
+    },
+    "text_2": {
+      "type": "string"
+    },
+    "images_2": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "right",
+        "left",
+        "center",
+        "full"
+      ],
+      "default": "center"
+    },
+    "products": {
+      "via": "magazin_presentation",
+      "collection": "products"
+    }
+  }
+}

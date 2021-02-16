@@ -1,0 +1,23 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/email",
+        "handler": "Email.sendemail",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/sendemailrecommendation",
+        "handler": "Email.Recommendationsendemail",
+        "config": {
+          "policies": []
+        }
+      }
+      
+      
+    ]
+  }
+  

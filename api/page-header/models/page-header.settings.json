@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_headers",
+  "info": {
+    "name": "page_header",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "describe_HTML_CSS": {
+      "type": "richtext",
+      "default": "<span> </span>"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "grey",
+        "black"
+      ]
+    }
+  }
+}

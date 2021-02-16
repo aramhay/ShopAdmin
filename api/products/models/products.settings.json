@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "price": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "clean_product": {
+      "type": "boolean"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "for_sale_count": {
+      "type": "biginteger"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "biginteger"
+    },
+    "type_test": {
+      "model": "type-test",
+      "via": "product"
+    },
+    "category": {
+      "columnName": "id",
+      "model": "category"
+    },
+    "sub_category": {
+      "columnName": "id",
+      "model": "sub-category"
+    },
+    "menu_item": {
+      "columnName": "id",
+      "model": "menu-item"
+    },
+    "name": {
+      "type": "string"
+    },
+    "magazin_presentation": {
+      "model": "magazin-presentation",
+      "via": "products"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "New": {
+      "type": "boolean"
+    }
+  }
+}

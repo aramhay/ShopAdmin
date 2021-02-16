@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/gift-wraps",
+      "handler": "gift-wrap.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/gift-wraps/count",
+      "handler": "gift-wrap.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/gift-wraps/:id",
+      "handler": "gift-wrap.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/gift-wraps",
+      "handler": "gift-wrap.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/gift-wraps/:id",
+      "handler": "gift-wrap.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/gift-wraps/:id",
+      "handler": "gift-wrap.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

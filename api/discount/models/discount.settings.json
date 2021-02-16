@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "discounts",
+  "info": {
+    "name": "discount",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "discount": {
+      "type": "float"
+    },
+    "minprice": {
+      "type": "float"
+    }
+  }
+}

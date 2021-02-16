@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dpab-stores",
+      "handler": "dpab-store.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dpab-stores/count",
+      "handler": "dpab-store.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dpab-stores/:id",
+      "handler": "dpab-store.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dpab-stores",
+      "handler": "dpab-store.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dpab-stores/:id",
+      "handler": "dpab-store.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dpab-stores/:id",
+      "handler": "dpab-store.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

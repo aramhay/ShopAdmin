@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/home-page-section-5-s",
+      "handler": "home-page-section5.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

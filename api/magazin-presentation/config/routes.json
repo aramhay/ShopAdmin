@@ -1,0 +1,58 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/magazin-presentations",
+      "handler": "magazin-presentation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/magazin-presentations/count",
+      "handler": "magazin-presentation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/magazin-presentations/:id",
+      "handler": "magazin-presentation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/magazin-presentations",
+      "handler": "magazin-presentation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/magazin-presentations/:id",
+      "handler": "magazin-presentation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/magazin-presentations/:id",
+      "handler": "magazin-presentation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
+
+
+
+
+
+

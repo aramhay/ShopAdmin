@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "name": "videos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Review_Bioeffect": {
+      "type": "string"
+    },
+    "video_name": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

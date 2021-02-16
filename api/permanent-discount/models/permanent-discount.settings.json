@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "permanent_discounts",
+  "info": {
+    "name": "permanent_discount"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "value": {
+      "type": "biginteger"
+    },
+    "discount": {
+      "type": "biginteger",
+      "max": "100",
+      "min": "0",
+      "default": "0"
+    }
+  }
+}

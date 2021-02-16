@@ -1,0 +1,87 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/products",
+      "handler": "products.find",
+      "config": {
+        "policies": []
+      }
+    },
+
+    
+    {
+      "method": "GET",
+      "path": "/productssubcategory/:id",
+      "handler": "products.findSubCategoryProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/findTypetests/:id",
+      "handler": "products.findTypetests",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/productscategory/:id",
+      "handler": "products.findCategoryProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/productsmenu/:id",
+      "handler": "products.findMenuItemProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    
+    {
+      "method": "GET",
+      "path": "/products/count",
+      "handler": "products.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/products/:id",
+      "handler": "products.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/products",
+      "handler": "products.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/products/:id",
+      "handler": "products.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/products/:id",
+      "handler": "products.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
