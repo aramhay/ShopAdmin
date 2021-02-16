@@ -42,13 +42,13 @@ module.exports = {
 
             result.push({
                 id: el.id, text_1: el.text_1, text_2: el.text_2, position: el.position,
-                image_url_1: el.images_1?.url ? el.images_1.url : null,
-                image_url_2: el.images_2?.url ? el.images_2.url : null,
+                image_url_1: el.images_1 !== null ? el.images_1.url : null,
+                image_url_2: el.images_2!== null ? el.images_2.url : null,
 
 
 
                 products: el.products.map((elem) =>
-                    ({ id: elem.id, name: elem.name, brand: elem.brand, url: elem.images[0]?.url ? elem.images[0].url : null  })
+                    ({ id: elem.id, name: elem.name, brand: elem.brand, url: elem.images[0] !== null ? elem.images[0].url : null  })
                 )
 
 
