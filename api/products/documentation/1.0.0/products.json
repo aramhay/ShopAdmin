@@ -254,6 +254,63 @@
         }
       }
     },
+    "/getAllNewProducts": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": []
+      }
+    },
     "/productssubcategory/{id}": {
       "get": {
         "deprecated": false,
@@ -1039,8 +1096,9 @@
           "kind": {
             "type": "string"
           },
-          "New": {
-            "type": "boolean"
+          "New_Date_Limit": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",
@@ -1089,8 +1147,9 @@
           "kind": {
             "type": "string"
           },
-          "New": {
-            "type": "boolean"
+          "New_Date_Limit": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",

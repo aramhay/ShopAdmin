@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "home_page_section2s",
+  "collectionName": "product_with_left_texts",
   "info": {
-    "name": "HomePageSection2",
+    "name": "product_with_left_text",
     "description": ""
   },
   "options": {
@@ -15,16 +15,24 @@
       "type": "string"
     },
     "Title": {
-      "type": "string"
+      "type": "richtext"
     },
-    "text": {
-      "type": "text"
+    "Text": {
+      "type": "richtext"
     },
     "Button_text": {
       "type": "string"
     },
     "url": {
       "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "HomePageOne",
+        "HomePageTwo"
+      ],
+      "required": true
     }
   }
 }

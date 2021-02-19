@@ -38,8 +38,8 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id', 'products.price', 'products.clean_product',
-                    'products.brand', 'products.name', 'products.kapseln',
-                    'products.unit', 'products.discount', 'upload_file.url as image_url');
+                'products.brand', 'products.name', 'products.kind',
+                'products.unit', 'products.discount', 'upload_file.url as image_url');
         return getUniqueListBy(products)
     },
 
@@ -51,10 +51,10 @@ module.exports = {
             .join('type_tests', 'type_tests.id', 'products.type_test')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('type_tests.id','type_tests.brand','type_tests.price','type_tests.size','upload_file.url as image_url')
-            function getUniqueListBy(arr) {
-                return [...new Map(arr.map(item => [item['id'], item])).values()]
-            }
+            .select('type_tests.id', 'type_tests.brand', 'type_tests.price', 'type_tests.size', 'upload_file.url as image_url')
+        function getUniqueListBy(arr) {
+            return [...new Map(arr.map(item => [item['id'], item])).values()]
+        }
         return getUniqueListBy(products)
     },
 
@@ -70,9 +70,23 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id', 'products.price', 'products.clean_product',
-                    'products.brand', 'products.name', 'products.kapseln',
-                    'products.unit', 'products.discount', 'upload_file.url as image_url');
+                'products.brand', 'products.name', 'products.kind',
+                'products.unit', 'products.discount', 'upload_file.url as image_url');
         return getUniqueListBy(products)
     },
+
+    async getAllNewProducts() {
+        let newProduct = []
+        let now = new Date();
+        let entity = await strapi.services.products.find({});
+        const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+        entity.map((el) => {
+            if (now.toLocaleDateString("en-US", options) <= el.New_Date_Limit)
+                newProduct.push(el)
+
+        })
+        return newProduct
+
+    }
 
 };

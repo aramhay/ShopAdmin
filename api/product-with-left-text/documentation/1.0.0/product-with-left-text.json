@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/magazin-presentations": {
+    "/product-with-left-texts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMagazin-presentation"
+                "$ref": "#/components/schemas/NewProduct-with-left-text"
               }
             }
           }
         }
       }
     },
-    "/magazin-presentations/count": {
+    "/product-with-left-texts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "parameters": []
       }
     },
-    "/magazin-presentations/{id}": {
+    "/product-with-left-texts/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "parameters": [
           {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMagazin-presentation"
+                "$ref": "#/components/schemas/NewProduct-with-left-text"
               }
             }
           }
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Magazin-presentation"
+          "Product-with-left-text"
         ],
         "parameters": [
           {
@@ -527,233 +527,36 @@
   },
   "components": {
     "schemas": {
-      "Magazin-presentation": {
+      "Product-with-left-text": {
         "required": [
-          "id"
+          "id",
+          "position"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "images_1": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "text_1": {
+          "Header": {
             "type": "string"
           },
-          "text_2": {
+          "Title": {
             "type": "string"
           },
-          "images_2": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "Text": {
+            "type": "string"
+          },
+          "Button_text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           },
           "position": {
             "type": "string",
-            "default": "center",
             "enum": [
-              "right",
-              "left",
-              "center",
-              "full"
+              "HomePageOne",
+              "HomePageTwo"
             ]
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
-                },
-                "type_test": {
-                  "type": "string"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -761,29 +564,32 @@
           }
         }
       },
-      "NewMagazin-presentation": {
+      "NewProduct-with-left-text": {
+        "required": [
+          "position"
+        ],
         "properties": {
-          "text_1": {
+          "Header": {
             "type": "string"
           },
-          "text_2": {
+          "Title": {
+            "type": "string"
+          },
+          "Text": {
+            "type": "string"
+          },
+          "Button_text": {
+            "type": "string"
+          },
+          "url": {
             "type": "string"
           },
           "position": {
             "type": "string",
-            "default": "center",
             "enum": [
-              "right",
-              "left",
-              "center",
-              "full"
+              "HomePageOne",
+              "HomePageTwo"
             ]
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "user_newsletters",
   "info": {
-    "name": "User_Newsletter"
+    "name": "User_Newsletter",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -20,7 +21,9 @@
       "type": "string"
     },
     "Email": {
-      "type": "email"
+      "type": "email",
+      "unique": false,
+      "required": false
     }
   }
 }

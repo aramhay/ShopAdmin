@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/home-page-section-2-s": {
+    "/new-product-limit": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the new-product-limit's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve new-product-limit document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Home-page-section2"
+          "New-product-limit"
         ],
         "parameters": [
           {
@@ -192,12 +192,130 @@
             "deprecated": false
           }
         ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single new-product-limit record",
+        "responses": {
+          "200": {
+            "description": "Retrieve new-product-limit document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "New-product-limit"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewNew-product-limit"
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single new-product-limit record",
+        "responses": {
+          "200": {
+            "description": "deletes a single new-product-limit based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "New-product-limit"
+        ],
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Home-page-section2": {
+      "New-product-limit": {
         "required": [
           "id"
         ],
@@ -205,20 +323,8 @@
           "id": {
             "type": "string"
           },
-          "Header": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          },
-          "Button_text": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
+          "new_product_limit": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -226,22 +332,10 @@
           }
         }
       },
-      "NewHome-page-section2": {
+      "NewNew-product-limit": {
         "properties": {
-          "Header": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          },
-          "Button_text": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
+          "new_product_limit": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

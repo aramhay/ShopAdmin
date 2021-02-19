@@ -66,8 +66,8 @@
     "kind": {
       "type": "string"
     },
-    "New": {
-      "type": "boolean"
+    "New_Date_Limit": {
+      "type": "date"
     }
   }
 }

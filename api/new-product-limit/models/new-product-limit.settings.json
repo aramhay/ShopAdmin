@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "new_product_limits",
+  "info": {
+    "name": "new_product_limit"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "new_product_limit": {
+      "type": "biginteger",
+      "min": "1"
+    }
+  }
+}

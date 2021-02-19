@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-product-limit",
+      "handler": "new-product-limit.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-product-limit",
+      "handler": "new-product-limit.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-product-limit",
+      "handler": "new-product-limit.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

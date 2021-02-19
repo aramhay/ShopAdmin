@@ -600,8 +600,8 @@
               "kind": {
                 "type": "string"
               },
-              "New": {
-                "type": "boolean"
+              "New_Date_Limit": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
