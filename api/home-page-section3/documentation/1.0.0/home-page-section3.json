@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/home-page-section-3-s": {
+    "/home-page-section-3-s/len": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -284,6 +284,12 @@
           "link_text": {
             "type": "string"
           },
+          "Header_fr": {
+            "type": "string"
+          },
+          "testtt": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -303,6 +309,12 @@
           },
           "link_text": {
             "type": "string"
+          },
+          "Header_fr": {
+            "type": "string"
+          },
+          "testtt": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",

@@ -5,4 +5,14 @@
  * to customize this controller
  */
 
-module.exports = {};
+
+module.exports = {
+  /**
+   * Retrieve a record.
+   *
+   * @return {Object}
+   */
+
+ 
+  
+};

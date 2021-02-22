@@ -33,6 +33,12 @@
     },
     "link_text": {
       "type": "string"
+    },
+    "Header_fr": {
+      "type": "string"
+    },
+    "testtt": {
+      "type": "json"
     }
   }
 }

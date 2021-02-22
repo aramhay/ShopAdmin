@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/home-page-section-1-s": {
+    "/section-under-navbars": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Home-page-section1"
+          "Section-under-navbar"
         ],
         "parameters": [
           {
@@ -197,7 +197,7 @@
   },
   "components": {
     "schemas": {
-      "Home-page-section1": {
+      "Section-under-navbar": {
         "required": [
           "id"
         ],
@@ -284,13 +284,20 @@
               }
             }
           },
+          "position": {
+            "type": "string",
+            "enum": [
+              "HomePage",
+              "HerrenPage"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewHome-page-section1": {
+      "NewSection-under-navbar": {
         "properties": {
           "header": {
             "type": "string"
@@ -303,6 +310,13 @@
           },
           "url": {
             "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "enum": [
+              "HomePage",
+              "HerrenPage"
+            ]
           },
           "published_at": {
             "type": "string",

@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "home_page_section1s",
+  "collectionName": "section_under_navbars",
   "info": {
-    "name": "HomePageSection1",
-    "description": ""
+    "name": "section_under_navbar"
   },
   "options": {
     "increments": true,
@@ -33,6 +32,14 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "HomePage",
+        "HerrenPage"
+      ],
+      "unique": true
     }
   }
 }

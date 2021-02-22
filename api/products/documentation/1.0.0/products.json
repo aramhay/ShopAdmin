@@ -1039,6 +1039,12 @@
               "categories": {
                 "type": "string"
               },
+              "title": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
