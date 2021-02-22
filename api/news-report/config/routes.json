@@ -2,12 +2,11 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/product-with-left-texts",
-      "handler": "product-with-left-text.find",
+      "path": "/news-reports",
+      "handler": "news-report.find",
       "config": {
         "policies": []
       }
     }
-    
   ]
 }

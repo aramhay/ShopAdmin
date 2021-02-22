@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "menu_items",
+  "collectionName": "collection_shops",
   "info": {
-    "name": "menu_item",
+    "name": "collection_shop",
     "description": ""
   },
   "options": {
@@ -11,13 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "item_name": {
+    "header": {
       "type": "string"
     },
-    "categories": {
-      "collection": "category"
-    },
     "title": {
+      "type": "string"
+    },
+    "url": {
       "type": "string"
     },
     "images": {
@@ -31,8 +31,19 @@
       "plugin": "upload",
       "required": false
     },
-    "url": {
+    "Link_text": {
       "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "HomePageLeft",
+        "HomePageRight",
+        "HerrenPageLeft",
+        "HerrenPageRight"
+      ],
+      "unique": true,
+      "required": true
     }
   }
 }

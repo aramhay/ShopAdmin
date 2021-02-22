@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "section_under_navbars",
+  "collectionName": "inspirations",
   "info": {
-    "name": "section_under_navbar",
+    "name": "inspiration",
     "description": ""
   },
   "options": {
@@ -16,6 +16,9 @@
     },
     "title": {
       "type": "string"
+    },
+    "text": {
+      "type": "richtext"
     },
     "button_text": {
       "type": "string"
@@ -34,11 +37,21 @@
       "plugin": "upload",
       "required": false
     },
+    "image_header": {
+      "type": "string"
+    },
+    "image_title": {
+      "type": "string"
+    },
     "position": {
       "type": "enumeration",
       "enum": [
-        "HomePage",
-        "HerrenPage"
+        "HomePageOne",
+        "HomePageTwo",
+        "HomePageThre",
+        "HerrenPageOne",
+        "HerrenPageTwo",
+        "HerrenPageThre"
       ],
       "unique": true,
       "required": true

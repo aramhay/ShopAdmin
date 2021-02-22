@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "four_icons",
+  "info": {
+    "name": "four_icons"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "svg": {
+      "type": "text"
+    }
+  }
+}

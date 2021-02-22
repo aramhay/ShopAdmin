@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "section_under_navbars",
+  "collectionName": "news_reports",
   "info": {
-    "name": "section_under_navbar",
+    "name": "News_report",
     "description": ""
   },
   "options": {
@@ -17,10 +17,13 @@
     "title": {
       "type": "string"
     },
-    "button_text": {
-      "type": "string"
+    "text": {
+      "type": "richtext"
     },
     "url": {
+      "type": "string"
+    },
+    "link_text": {
       "type": "string"
     },
     "images": {
@@ -37,11 +40,16 @@
     "position": {
       "type": "enumeration",
       "enum": [
-        "HomePage",
-        "HerrenPage"
+        "HomePageOne",
+        "HomePageTwo",
+        "HomePageThree",
+        "HomePageFive",
+        "HomePageSix",
+        "HerrenPageOne",
+        "HerrenPageTwo"
       ],
-      "unique": true,
-      "required": true
+      "required": true,
+      "unique": true
     }
   }
 }

@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/section-under-navbars": {
+    "/four-icons": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the four-icons's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve four-icons document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Section-under-navbar"
+          "Four-icons"
         ],
         "parameters": [
           {
@@ -197,10 +197,9 @@
   },
   "components": {
     "schemas": {
-      "Section-under-navbar": {
+      "Four-icons": {
         "required": [
-          "id",
-          "position"
+          "id"
         ],
         "properties": {
           "id": {
@@ -209,88 +208,11 @@
           "header": {
             "type": "string"
           },
-          "title": {
+          "text": {
             "type": "string"
           },
-          "button_text": {
+          "svg": {
             "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePage",
-              "HerrenPage"
-            ]
           },
           "published_at": {
             "type": "string",
@@ -298,29 +220,16 @@
           }
         }
       },
-      "NewSection-under-navbar": {
-        "required": [
-          "position"
-        ],
+      "NewFour-icons": {
         "properties": {
           "header": {
             "type": "string"
           },
-          "title": {
+          "text": {
             "type": "string"
           },
-          "button_text": {
+          "svg": {
             "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePage",
-              "HerrenPage"
-            ]
           },
           "published_at": {
             "type": "string",

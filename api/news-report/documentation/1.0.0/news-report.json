@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/section-under-navbars": {
+    "/news-reports": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Section-under-navbar"
+          "News-report"
         ],
         "parameters": [
           {
@@ -197,7 +197,7 @@
   },
   "components": {
     "schemas": {
-      "Section-under-navbar": {
+      "News-report": {
         "required": [
           "id",
           "position"
@@ -212,10 +212,13 @@
           "title": {
             "type": "string"
           },
-          "button_text": {
+          "text": {
             "type": "string"
           },
           "url": {
+            "type": "string"
+          },
+          "link_text": {
             "type": "string"
           },
           "images": {
@@ -288,8 +291,13 @@
           "position": {
             "type": "string",
             "enum": [
-              "HomePage",
-              "HerrenPage"
+              "HomePageOne",
+              "HomePageTwo",
+              "HomePageThree",
+              "HomePageFive",
+              "HomePageSix",
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "published_at": {
@@ -298,7 +306,7 @@
           }
         }
       },
-      "NewSection-under-navbar": {
+      "NewNews-report": {
         "required": [
           "position"
         ],
@@ -309,17 +317,25 @@
           "title": {
             "type": "string"
           },
-          "button_text": {
+          "text": {
             "type": "string"
           },
           "url": {
             "type": "string"
           },
+          "link_text": {
+            "type": "string"
+          },
           "position": {
             "type": "string",
             "enum": [
-              "HomePage",
-              "HerrenPage"
+              "HomePageOne",
+              "HomePageTwo",
+              "HomePageThree",
+              "HomePageFive",
+              "HomePageSix",
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "published_at": {

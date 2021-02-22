@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/product-with-left-texts",
-      "handler": "product-with-left-text.find",
+      "path": "/four-icons",
+      "handler": "four-icons.find",
       "config": {
         "policies": []
       }

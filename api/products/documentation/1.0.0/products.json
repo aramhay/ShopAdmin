@@ -1045,6 +1045,9 @@
               "images": {
                 "type": "string"
               },
+              "url": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

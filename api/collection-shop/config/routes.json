@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/product-with-left-texts",
-      "handler": "product-with-left-text.find",
+      "path": "/collection-shops",
+      "handler": "collection-shop.find",
       "config": {
         "policies": []
       }

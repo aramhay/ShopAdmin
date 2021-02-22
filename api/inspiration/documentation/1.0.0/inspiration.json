@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/section-under-navbars": {
+    "/inspirations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Inspiration"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Section-under-navbar"
+          "Inspiration"
         ],
         "parameters": [
           {
@@ -197,7 +196,7 @@
   },
   "components": {
     "schemas": {
-      "Section-under-navbar": {
+      "Inspiration": {
         "required": [
           "id",
           "position"
@@ -210,6 +209,9 @@
             "type": "string"
           },
           "title": {
+            "type": "string"
+          },
+          "text": {
             "type": "string"
           },
           "button_text": {
@@ -285,11 +287,21 @@
               }
             }
           },
+          "image_header": {
+            "type": "string"
+          },
+          "image_title": {
+            "type": "string"
+          },
           "position": {
             "type": "string",
             "enum": [
-              "HomePage",
-              "HerrenPage"
+              "HomePageOne",
+              "HomePageTwo",
+              "HomePageThre",
+              "HerrenPageOne",
+              "HerrenPageTwo",
+              "HerrenPageThre"
             ]
           },
           "published_at": {
@@ -298,7 +310,7 @@
           }
         }
       },
-      "NewSection-under-navbar": {
+      "NewInspiration": {
         "required": [
           "position"
         ],
@@ -309,17 +321,30 @@
           "title": {
             "type": "string"
           },
+          "text": {
+            "type": "string"
+          },
           "button_text": {
             "type": "string"
           },
           "url": {
             "type": "string"
           },
+          "image_header": {
+            "type": "string"
+          },
+          "image_title": {
+            "type": "string"
+          },
           "position": {
             "type": "string",
             "enum": [
-              "HomePage",
-              "HerrenPage"
+              "HomePageOne",
+              "HomePageTwo",
+              "HomePageThre",
+              "HerrenPageOne",
+              "HerrenPageTwo",
+              "HerrenPageThre"
             ]
           },
           "published_at": {
@@ -336,5 +361,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Inspiration"
+    }
+  ]
 }
