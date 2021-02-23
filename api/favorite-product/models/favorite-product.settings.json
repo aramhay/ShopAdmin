@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "favorite_products",
   "info": {
-    "name": "favorite_product"
+    "name": "favorite_product",
+    "description": ""
   },
   "options": {
     "increments": true,

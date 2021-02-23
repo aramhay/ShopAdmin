@@ -1,5 +1,6 @@
 'use strict';
-
+const { jwtSecret } = require('../../../extensions/users-permissions/config/jwt');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
     /**
@@ -12,9 +13,12 @@ module.exports = {
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
         }
+        let [bearer, token] = ctx.request.headers.authorization.split(' ')
+        let decoded = jwt.verify(token, jwtSecret)
+
         const knex = strapi.connections.default;
         const { id } = ctx.params;
-        const products = await knex('products')
+        let products = await knex('products')
             .where('sub_category', `${id}`)
             .join('sub_categories', 'sub_categories.id', 'products.sub_category')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
@@ -22,8 +26,35 @@ module.exports = {
             .select('products.id', 'products.price', 'products.clean_product',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
-        return getUniqueListBy(products)
+                products =  getUniqueListBy(products)
+
+                if (!decoded.id) return products
+
+        let entity = await strapi.services['favorite-product'].find({users_permissions_user:decoded.id})
+        console.log(entity);
+
+        products.map((el) => {
+            entity.map((elem) => {
+                if (el.id === elem.product.id) {
+                    Object.assign(el, { favorit: "true" });
+          
+                } 
+          
+            })
+          })
+
+
+        return products
     },
+
+
+
+
+
+
+
+
+
 
 
     async findCategoryProducts(ctx) {

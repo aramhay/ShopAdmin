@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/favorite-products/{userid}": {
+    "/theUsersAllFavoriteProducts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -54,21 +54,10 @@
         "tags": [
           "Favorite-product"
         ],
-        "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
-    "/favorite-products": {
+    "/AddFavoriteProductsTheUser": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -254,6 +243,9 @@
                 "type": "string"
               },
               "New_Date_Limit": {
+                "type": "string"
+              },
+              "video": {
                 "type": "string"
               },
               "published_at": {

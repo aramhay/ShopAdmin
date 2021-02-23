@@ -46,7 +46,10 @@
         "HomePageFive",
         "HomePageSix",
         "HerrenPageOne",
-        "HerrenPageTwo"
+        "HerrenPageTwo",
+        "ShopPageOne",
+        "ShopPageTwo",
+        "ShopPageThree"
       ],
       "required": true,
       "unique": true

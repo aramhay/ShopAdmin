@@ -743,6 +743,9 @@
                 "New_Date_Limit": {
                   "type": "string"
                 },
+                "video": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

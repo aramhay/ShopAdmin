@@ -2,7 +2,7 @@
   "routes": [ 
     {
       "method": "GET",
-      "path": "/favorite-products/:userid",
+      "path": "/theUsersAllFavoriteProducts",
       "handler": "favorite-product.findOne",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "POST",
-      "path": "/favorite-products",
+      "path": "/AddFavoriteProductsTheUser",
       "handler": "favorite-product.create",
       "config": {
         "policies": []

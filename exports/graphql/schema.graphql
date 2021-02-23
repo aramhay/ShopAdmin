@@ -135,6 +135,149 @@ type deleteCategoryPayload {
   category: Category
 }
 
+enum ENUM_COLLECTIONSHOP_POSITION {
+  HomePageLeft
+  HomePageRight
+  HerrenPageLeft
+  HerrenPageRight
+}
+
+type CollectionShop {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  header: String
+  title: String
+  url: String
+  images: UploadFile
+  Link_text: String
+  position: ENUM_COLLECTIONSHOP_POSITION!
+  published_at: DateTime
+}
+
+type CollectionShopConnection {
+  values: [CollectionShop]
+  groupBy: CollectionShopGroupBy
+  aggregate: CollectionShopAggregator
+}
+
+type CollectionShopAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CollectionShopGroupBy {
+  id: [CollectionShopConnectionId]
+  created_at: [CollectionShopConnectionCreated_at]
+  updated_at: [CollectionShopConnectionUpdated_at]
+  header: [CollectionShopConnectionHeader]
+  title: [CollectionShopConnectionTitle]
+  url: [CollectionShopConnectionUrl]
+  images: [CollectionShopConnectionImages]
+  Link_text: [CollectionShopConnectionLink_text]
+  position: [CollectionShopConnectionPosition]
+  published_at: [CollectionShopConnectionPublished_at]
+}
+
+type CollectionShopConnectionId {
+  key: ID
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionCreated_at {
+  key: DateTime
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionUpdated_at {
+  key: DateTime
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionHeader {
+  key: String
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionTitle {
+  key: String
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionUrl {
+  key: String
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionImages {
+  key: ID
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionLink_text {
+  key: String
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionPosition {
+  key: String
+  connection: CollectionShopConnection
+}
+
+type CollectionShopConnectionPublished_at {
+  key: DateTime
+  connection: CollectionShopConnection
+}
+
+input CollectionShopInput {
+  header: String
+  title: String
+  url: String
+  images: ID
+  Link_text: String
+  position: ENUM_COLLECTIONSHOP_POSITION!
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCollectionShopInput {
+  header: String
+  title: String
+  url: String
+  images: ID
+  Link_text: String
+  position: ENUM_COLLECTIONSHOP_POSITION
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createCollectionShopInput {
+  data: CollectionShopInput
+}
+
+type createCollectionShopPayload {
+  collectionShop: CollectionShop
+}
+
+input updateCollectionShopInput {
+  where: InputID
+  data: editCollectionShopInput
+}
+
+type updateCollectionShopPayload {
+  collectionShop: CollectionShop
+}
+
+input deleteCollectionShopInput {
+  where: InputID
+}
+
+type deleteCollectionShopPayload {
+  collectionShop: CollectionShop
+}
+
 type ContactDetails {
   id: ID!
   created_at: DateTime!
@@ -799,6 +942,115 @@ type deleteFavoriteProductPayload {
   favoriteProduct: FavoriteProduct
 }
 
+type FourIcons {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  header: String
+  text: String
+  svg: String
+  published_at: DateTime
+}
+
+type FourIconsConnection {
+  values: [FourIcons]
+  groupBy: FourIconsGroupBy
+  aggregate: FourIconsAggregator
+}
+
+type FourIconsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type FourIconsGroupBy {
+  id: [FourIconsConnectionId]
+  created_at: [FourIconsConnectionCreated_at]
+  updated_at: [FourIconsConnectionUpdated_at]
+  header: [FourIconsConnectionHeader]
+  text: [FourIconsConnectionText]
+  svg: [FourIconsConnectionSvg]
+  published_at: [FourIconsConnectionPublished_at]
+}
+
+type FourIconsConnectionId {
+  key: ID
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionCreated_at {
+  key: DateTime
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionUpdated_at {
+  key: DateTime
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionHeader {
+  key: String
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionText {
+  key: String
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionSvg {
+  key: String
+  connection: FourIconsConnection
+}
+
+type FourIconsConnectionPublished_at {
+  key: DateTime
+  connection: FourIconsConnection
+}
+
+input FourIconInput {
+  header: String
+  text: String
+  svg: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editFourIconInput {
+  header: String
+  text: String
+  svg: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createFourIconInput {
+  data: FourIconInput
+}
+
+type createFourIconPayload {
+  fourIcon: FourIcons
+}
+
+input updateFourIconInput {
+  where: InputID
+  data: editFourIconInput
+}
+
+type updateFourIconPayload {
+  fourIcon: FourIcons
+}
+
+input deleteFourIconInput {
+  where: InputID
+}
+
+type deleteFourIconPayload {
+  fourIcon: FourIcons
+}
+
 type GiftWrap {
   id: ID!
   created_at: DateTime!
@@ -1041,448 +1293,176 @@ type deleteHomePageAdvertisingPayload {
   homePageAdvertising: HomePageAdvertising
 }
 
-type HomePageSection3 {
+enum ENUM_INSPIRATION_POSITION {
+  HomePageOne
+  HomePageTwo
+  HomePageThre
+  HerrenPageOne
+  HerrenPageTwo
+  HerrenPageThre
+}
+
+type Inspiration {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  Header: String
-  Title: String
-  link: String
+  header: String
+  title: String
+  text: String
+  button_text: String
+  url: String
   images: UploadFile
-  link_text: String
-  Header_fr: String
-  testtt: JSON
+  image_header: String
+  image_title: String
+  position: ENUM_INSPIRATION_POSITION!
   published_at: DateTime
 }
 
-type HomePageSection3Connection {
-  values: [HomePageSection3]
-  groupBy: HomePageSection3GroupBy
-  aggregate: HomePageSection3Aggregator
+type InspirationConnection {
+  values: [Inspiration]
+  groupBy: InspirationGroupBy
+  aggregate: InspirationAggregator
 }
 
-type HomePageSection3Aggregator {
+type InspirationAggregator {
   count: Int
   totalCount: Int
 }
 
-type HomePageSection3GroupBy {
-  id: [HomePageSection3ConnectionId]
-  created_at: [HomePageSection3ConnectionCreated_at]
-  updated_at: [HomePageSection3ConnectionUpdated_at]
-  Header: [HomePageSection3ConnectionHeader]
-  Title: [HomePageSection3ConnectionTitle]
-  link: [HomePageSection3ConnectionLink]
-  images: [HomePageSection3ConnectionImages]
-  link_text: [HomePageSection3ConnectionLink_text]
-  Header_fr: [HomePageSection3ConnectionHeader_fr]
-  testtt: [HomePageSection3ConnectionTesttt]
-  published_at: [HomePageSection3ConnectionPublished_at]
+type InspirationGroupBy {
+  id: [InspirationConnectionId]
+  created_at: [InspirationConnectionCreated_at]
+  updated_at: [InspirationConnectionUpdated_at]
+  header: [InspirationConnectionHeader]
+  title: [InspirationConnectionTitle]
+  text: [InspirationConnectionText]
+  button_text: [InspirationConnectionButton_text]
+  url: [InspirationConnectionUrl]
+  images: [InspirationConnectionImages]
+  image_header: [InspirationConnectionImage_header]
+  image_title: [InspirationConnectionImage_title]
+  position: [InspirationConnectionPosition]
+  published_at: [InspirationConnectionPublished_at]
 }
 
-type HomePageSection3ConnectionId {
+type InspirationConnectionId {
   key: ID
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionCreated_at {
+type InspirationConnectionCreated_at {
   key: DateTime
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionUpdated_at {
+type InspirationConnectionUpdated_at {
   key: DateTime
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionHeader {
+type InspirationConnectionHeader {
   key: String
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionTitle {
+type InspirationConnectionTitle {
   key: String
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionLink {
+type InspirationConnectionText {
   key: String
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionImages {
+type InspirationConnectionButton_text {
+  key: String
+  connection: InspirationConnection
+}
+
+type InspirationConnectionUrl {
+  key: String
+  connection: InspirationConnection
+}
+
+type InspirationConnectionImages {
   key: ID
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionLink_text {
+type InspirationConnectionImage_header {
   key: String
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionHeader_fr {
+type InspirationConnectionImage_title {
   key: String
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionTesttt {
-  key: JSON
-  connection: HomePageSection3Connection
+type InspirationConnectionPosition {
+  key: String
+  connection: InspirationConnection
 }
 
-type HomePageSection3ConnectionPublished_at {
+type InspirationConnectionPublished_at {
   key: DateTime
-  connection: HomePageSection3Connection
+  connection: InspirationConnection
 }
 
-input HomePageSection3Input {
-  Header: String
-  Title: String
-  link: String
-  images: ID
-  link_text: String
-  Header_fr: String
-  testtt: JSON
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editHomePageSection3Input {
-  Header: String
-  Title: String
-  link: String
-  images: ID
-  link_text: String
-  Header_fr: String
-  testtt: JSON
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input createHomePageSection3Input {
-  data: HomePageSection3Input
-}
-
-type createHomePageSection3Payload {
-  homePageSection3: HomePageSection3
-}
-
-input updateHomePageSection3Input {
-  where: InputID
-  data: editHomePageSection3Input
-}
-
-type updateHomePageSection3Payload {
-  homePageSection3: HomePageSection3
-}
-
-input deleteHomePageSection3Input {
-  where: InputID
-}
-
-type deleteHomePageSection3Payload {
-  homePageSection3: HomePageSection3
-}
-
-type HomePageSection4 {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
-  images: UploadFile
-  image_text: String
-  published_at: DateTime
-}
-
-type HomePageSection4Connection {
-  values: [HomePageSection4]
-  groupBy: HomePageSection4GroupBy
-  aggregate: HomePageSection4Aggregator
-}
-
-type HomePageSection4Aggregator {
-  count: Int
-  totalCount: Int
-}
-
-type HomePageSection4GroupBy {
-  id: [HomePageSection4ConnectionId]
-  created_at: [HomePageSection4ConnectionCreated_at]
-  updated_at: [HomePageSection4ConnectionUpdated_at]
-  Header: [HomePageSection4ConnectionHeader]
-  Title: [HomePageSection4ConnectionTitle]
-  Text: [HomePageSection4ConnectionText]
-  Button_text: [HomePageSection4ConnectionButton_text]
-  Url: [HomePageSection4ConnectionUrl]
-  images: [HomePageSection4ConnectionImages]
-  image_text: [HomePageSection4ConnectionImage_text]
-  published_at: [HomePageSection4ConnectionPublished_at]
-}
-
-type HomePageSection4ConnectionId {
-  key: ID
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionCreated_at {
-  key: DateTime
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionUpdated_at {
-  key: DateTime
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionHeader {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionTitle {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionText {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionButton_text {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionUrl {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionImages {
-  key: ID
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionImage_text {
-  key: String
-  connection: HomePageSection4Connection
-}
-
-type HomePageSection4ConnectionPublished_at {
-  key: DateTime
-  connection: HomePageSection4Connection
-}
-
-input HomePageSection4Input {
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
-  images: ID
-  image_text: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editHomePageSection4Input {
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
-  images: ID
-  image_text: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input createHomePageSection4Input {
-  data: HomePageSection4Input
-}
-
-type createHomePageSection4Payload {
-  homePageSection4: HomePageSection4
-}
-
-input updateHomePageSection4Input {
-  where: InputID
-  data: editHomePageSection4Input
-}
-
-type updateHomePageSection4Payload {
-  homePageSection4: HomePageSection4
-}
-
-input deleteHomePageSection4Input {
-  where: InputID
-}
-
-type deleteHomePageSection4Payload {
-  homePageSection4: HomePageSection4
-}
-
-type HomePageSection5 {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
-  images: UploadFile
-  image_header: String
-  image_title: String
-  published_at: DateTime
-}
-
-type HomePageSection5Connection {
-  values: [HomePageSection5]
-  groupBy: HomePageSection5GroupBy
-  aggregate: HomePageSection5Aggregator
-}
-
-type HomePageSection5Aggregator {
-  count: Int
-  totalCount: Int
-}
-
-type HomePageSection5GroupBy {
-  id: [HomePageSection5ConnectionId]
-  created_at: [HomePageSection5ConnectionCreated_at]
-  updated_at: [HomePageSection5ConnectionUpdated_at]
-  Header: [HomePageSection5ConnectionHeader]
-  Title: [HomePageSection5ConnectionTitle]
-  Text: [HomePageSection5ConnectionText]
-  Button_text: [HomePageSection5ConnectionButton_text]
-  Url: [HomePageSection5ConnectionUrl]
-  images: [HomePageSection5ConnectionImages]
-  image_header: [HomePageSection5ConnectionImage_header]
-  image_title: [HomePageSection5ConnectionImage_title]
-  published_at: [HomePageSection5ConnectionPublished_at]
-}
-
-type HomePageSection5ConnectionId {
-  key: ID
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionCreated_at {
-  key: DateTime
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionUpdated_at {
-  key: DateTime
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionHeader {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionTitle {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionText {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionButton_text {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionUrl {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionImages {
-  key: ID
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionImage_header {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionImage_title {
-  key: String
-  connection: HomePageSection5Connection
-}
-
-type HomePageSection5ConnectionPublished_at {
-  key: DateTime
-  connection: HomePageSection5Connection
-}
-
-input HomePageSection5Input {
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
+input InspirationInput {
+  header: String
+  title: String
+  text: String
+  button_text: String
+  url: String
   images: ID
   image_header: String
   image_title: String
+  position: ENUM_INSPIRATION_POSITION!
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input editHomePageSection5Input {
-  Header: String
-  Title: String
-  Text: String
-  Button_text: String
-  Url: String
+input editInspirationInput {
+  header: String
+  title: String
+  text: String
+  button_text: String
+  url: String
   images: ID
   image_header: String
   image_title: String
+  position: ENUM_INSPIRATION_POSITION
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input createHomePageSection5Input {
-  data: HomePageSection5Input
+input createInspirationInput {
+  data: InspirationInput
 }
 
-type createHomePageSection5Payload {
-  homePageSection5: HomePageSection5
+type createInspirationPayload {
+  inspiration: Inspiration
 }
 
-input updateHomePageSection5Input {
+input updateInspirationInput {
   where: InputID
-  data: editHomePageSection5Input
+  data: editInspirationInput
 }
 
-type updateHomePageSection5Payload {
-  homePageSection5: HomePageSection5
+type updateInspirationPayload {
+  inspiration: Inspiration
 }
 
-input deleteHomePageSection5Input {
+input deleteInspirationInput {
   where: InputID
 }
 
-type deleteHomePageSection5Payload {
-  homePageSection5: HomePageSection5
+type deleteInspirationPayload {
+  inspiration: Inspiration
 }
 
 enum ENUM_MAGAZINPRESENTATION_POSITION {
@@ -1713,6 +1693,26 @@ type deleteMeinKontoPayload {
   meinKonto: MeinKonto
 }
 
+enum ENUM_MENUITEM_POSITION {
+  A
+  B
+  C
+  D
+  E
+  F
+  G
+  H
+  I
+  J
+  K
+  L
+  M
+  N
+  O
+  P
+  Q
+}
+
 type MenuItem {
   id: ID!
   created_at: DateTime!
@@ -1720,6 +1720,8 @@ type MenuItem {
   item_name: String
   title: String
   images: UploadFile
+  url: String
+  position: ENUM_MENUITEM_POSITION!
   published_at: DateTime
   categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
 }
@@ -1742,6 +1744,8 @@ type MenuItemGroupBy {
   item_name: [MenuItemConnectionItem_name]
   title: [MenuItemConnectionTitle]
   images: [MenuItemConnectionImages]
+  url: [MenuItemConnectionUrl]
+  position: [MenuItemConnectionPosition]
   published_at: [MenuItemConnectionPublished_at]
 }
 
@@ -1775,6 +1779,16 @@ type MenuItemConnectionImages {
   connection: MenuItemConnection
 }
 
+type MenuItemConnectionUrl {
+  key: String
+  connection: MenuItemConnection
+}
+
+type MenuItemConnectionPosition {
+  key: String
+  connection: MenuItemConnection
+}
+
 type MenuItemConnectionPublished_at {
   key: DateTime
   connection: MenuItemConnection
@@ -1785,6 +1799,8 @@ input MenuItemInput {
   categories: [ID]
   title: String
   images: ID
+  url: String
+  position: ENUM_MENUITEM_POSITION
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1795,6 +1811,8 @@ input editMenuItemInput {
   categories: [ID]
   title: String
   images: ID
+  url: String
+  position: ENUM_MENUITEM_POSITION
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1948,6 +1966,164 @@ type updateNewProductLimitPayload {
 
 type deleteNewProductLimitPayload {
   newProductLimit: NewProductLimit
+}
+
+enum ENUM_NEWSREPORT_POSITION {
+  HomePageOne
+  HomePageTwo
+  HomePageThree
+  HomePageFive
+  HomePageSix
+  HerrenPageOne
+  HerrenPageTwo
+  ShopPageOne
+  ShopPageTwo
+  ShopPageThree
+}
+
+type NewsReport {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  header: String
+  title: String
+  text: String
+  url: String
+  link_text: String
+  images: UploadFile
+  position: ENUM_NEWSREPORT_POSITION!
+  published_at: DateTime
+}
+
+type NewsReportConnection {
+  values: [NewsReport]
+  groupBy: NewsReportGroupBy
+  aggregate: NewsReportAggregator
+}
+
+type NewsReportAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NewsReportGroupBy {
+  id: [NewsReportConnectionId]
+  created_at: [NewsReportConnectionCreated_at]
+  updated_at: [NewsReportConnectionUpdated_at]
+  header: [NewsReportConnectionHeader]
+  title: [NewsReportConnectionTitle]
+  text: [NewsReportConnectionText]
+  url: [NewsReportConnectionUrl]
+  link_text: [NewsReportConnectionLink_text]
+  images: [NewsReportConnectionImages]
+  position: [NewsReportConnectionPosition]
+  published_at: [NewsReportConnectionPublished_at]
+}
+
+type NewsReportConnectionId {
+  key: ID
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionCreated_at {
+  key: DateTime
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionUpdated_at {
+  key: DateTime
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionHeader {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionTitle {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionText {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionUrl {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionLink_text {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionImages {
+  key: ID
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionPosition {
+  key: String
+  connection: NewsReportConnection
+}
+
+type NewsReportConnectionPublished_at {
+  key: DateTime
+  connection: NewsReportConnection
+}
+
+input NewsReportInput {
+  header: String
+  title: String
+  text: String
+  url: String
+  link_text: String
+  images: ID
+  position: ENUM_NEWSREPORT_POSITION!
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editNewsReportInput {
+  header: String
+  title: String
+  text: String
+  url: String
+  link_text: String
+  images: ID
+  position: ENUM_NEWSREPORT_POSITION
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createNewsReportInput {
+  data: NewsReportInput
+}
+
+type createNewsReportPayload {
+  newsReport: NewsReport
+}
+
+input updateNewsReportInput {
+  where: InputID
+  data: editNewsReportInput
+}
+
+type updateNewsReportPayload {
+  newsReport: NewsReport
+}
+
+input deleteNewsReportInput {
+  where: InputID
+}
+
+type deleteNewsReportPayload {
+  newsReport: NewsReport
 }
 
 type Newsletter {
@@ -2351,6 +2527,7 @@ type Products {
   magazin_presentation: MagazinPresentation
   kind: String
   New_Date_Limit: Date
+  video: UploadFile
   published_at: DateTime
   images(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
@@ -2384,6 +2561,7 @@ type ProductsGroupBy {
   magazin_presentation: [ProductsConnectionMagazin_presentation]
   kind: [ProductsConnectionKind]
   New_Date_Limit: [ProductsConnectionNew_Date_Limit]
+  video: [ProductsConnectionVideo]
   published_at: [ProductsConnectionPublished_at]
 }
 
@@ -2472,6 +2650,11 @@ type ProductsConnectionNew_Date_Limit {
   connection: ProductsConnection
 }
 
+type ProductsConnectionVideo {
+  key: ID
+  connection: ProductsConnection
+}
+
 type ProductsConnectionPublished_at {
   key: DateTime
   connection: ProductsConnection
@@ -2493,6 +2676,7 @@ input ProductInput {
   magazin_presentation: ID
   kind: String
   New_Date_Limit: Date
+  video: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -2514,6 +2698,7 @@ input editProductInput {
   magazin_presentation: ID
   kind: String
   New_Date_Limit: Date
+  video: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -2558,7 +2743,7 @@ type SectionUnderNavbar {
   button_text: String
   url: String
   images: UploadFile
-  position: ENUM_SECTIONUNDERNAVBAR_POSITION
+  position: ENUM_SECTIONUNDERNAVBAR_POSITION!
   published_at: DateTime
 }
 
@@ -2642,7 +2827,7 @@ input SectionUnderNavbarInput {
   button_text: String
   url: String
   images: ID
-  position: ENUM_SECTIONUNDERNAVBAR_POSITION
+  position: ENUM_SECTIONUNDERNAVBAR_POSITION!
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -3864,7 +4049,7 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionCategoryName | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | ContactDetails | ContactDetailsConnection | ContactDetailsAggregator | ContactDetailsGroupBy | ContactDetailsConnectionId | ContactDetailsConnectionCreated_at | ContactDetailsConnectionUpdated_at | ContactDetailsConnectionEmail | ContactDetailsConnectionPhone_number | ContactDetailsConnectionPublished_at | createContactDetailPayload | updateContactDetailPayload | deleteContactDetailPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_at | ContactConnectionUpdated_at | ContactConnectionTitle | ContactConnectionValue | ContactConnectionPublished_at | createContactPayload | updateContactPayload | deleteContactPayload | DiscountCodes | DiscountCodesConnection | DiscountCodesAggregator | DiscountCodesGroupBy | DiscountCodesConnectionId | DiscountCodesConnectionCreated_at | DiscountCodesConnectionUpdated_at | DiscountCodesConnectionName | DiscountCodesConnectionDescription | DiscountCodesConnectionStatus_voucher | DiscountCodesConnectionUnique_multiple | DiscountCodesConnectionMultiple_redemptions | DiscountCodesConnectionOne_redemption | DiscountCodesConnectionRedeem_until_usedup | DiscountCodesConnectionSingle_redemption | DiscountCodesConnectionMinimum_order_value | DiscountCodesConnectionValid_from_date_time | DiscountCodesConnectionValid_to_date_time | DiscountCodesConnectionCode_character_length | DiscountCodesConnectionAmount_discount | DiscountCodesConnectionType_of_discount | DiscountCodesConnectionPublished_at | createDiscountCodePayload | updateDiscountCodePayload | deleteDiscountCodePayload | Discount | updateDiscountPayload | deleteDiscountPayload | DpabStore | DpabStoreConnection | DpabStoreAggregator | DpabStoreGroupBy | DpabStoreConnectionId | DpabStoreConnectionCreated_at | DpabStoreConnectionUpdated_at | DpabStoreConnectionTitle | DpabStoreConnectionValue_1 | DpabStoreConnectionValue_2 | DpabStoreConnectionPublished_at | createDpabStorePayload | updateDpabStorePayload | deleteDpabStorePayload | FavoriteProduct | FavoriteProductConnection | FavoriteProductAggregator | FavoriteProductGroupBy | FavoriteProductConnectionId | FavoriteProductConnectionCreated_at | FavoriteProductConnectionUpdated_at | FavoriteProductConnectionUsers_permissions_user | FavoriteProductConnectionProduct | FavoriteProductConnectionPublished_at | createFavoriteProductPayload | updateFavoriteProductPayload | deleteFavoriteProductPayload | GiftWrap | GiftWrapConnection | GiftWrapAggregator | GiftWrapGroupBy | GiftWrapConnectionId | GiftWrapConnectionCreated_at | GiftWrapConnectionUpdated_at | GiftWrapConnectionPrice | GiftWrapConnectionName | GiftWrapConnectionText | GiftWrapConnectionPublished_at | createGiftWrapPayload | updateGiftWrapPayload | deleteGiftWrapPayload | HomePageAdvertising | HomePageAdvertisingConnection | HomePageAdvertisingAggregator | HomePageAdvertisingGroupBy | HomePageAdvertisingConnectionId | HomePageAdvertisingConnectionCreated_at | HomePageAdvertisingConnectionUpdated_at | HomePageAdvertisingConnectionName | HomePageAdvertisingConnectionDescription | HomePageAdvertisingConnectionAdvertising | HomePageAdvertisingConnectionOnImageAdvertising | HomePageAdvertisingConnectionOnImageText | HomePageAdvertisingConnectionPublished_at | createHomePageAdvertisingPayload | updateHomePageAdvertisingPayload | deleteHomePageAdvertisingPayload | HomePageSection3 | HomePageSection3Connection | HomePageSection3Aggregator | HomePageSection3GroupBy | HomePageSection3ConnectionId | HomePageSection3ConnectionCreated_at | HomePageSection3ConnectionUpdated_at | HomePageSection3ConnectionHeader | HomePageSection3ConnectionTitle | HomePageSection3ConnectionLink | HomePageSection3ConnectionImages | HomePageSection3ConnectionLink_text | HomePageSection3ConnectionHeader_fr | HomePageSection3ConnectionTesttt | HomePageSection3ConnectionPublished_at | createHomePageSection3Payload | updateHomePageSection3Payload | deleteHomePageSection3Payload | HomePageSection4 | HomePageSection4Connection | HomePageSection4Aggregator | HomePageSection4GroupBy | HomePageSection4ConnectionId | HomePageSection4ConnectionCreated_at | HomePageSection4ConnectionUpdated_at | HomePageSection4ConnectionHeader | HomePageSection4ConnectionTitle | HomePageSection4ConnectionText | HomePageSection4ConnectionButton_text | HomePageSection4ConnectionUrl | HomePageSection4ConnectionImages | HomePageSection4ConnectionImage_text | HomePageSection4ConnectionPublished_at | createHomePageSection4Payload | updateHomePageSection4Payload | deleteHomePageSection4Payload | HomePageSection5 | HomePageSection5Connection | HomePageSection5Aggregator | HomePageSection5GroupBy | HomePageSection5ConnectionId | HomePageSection5ConnectionCreated_at | HomePageSection5ConnectionUpdated_at | HomePageSection5ConnectionHeader | HomePageSection5ConnectionTitle | HomePageSection5ConnectionText | HomePageSection5ConnectionButton_text | HomePageSection5ConnectionUrl | HomePageSection5ConnectionImages | HomePageSection5ConnectionImage_header | HomePageSection5ConnectionImage_title | HomePageSection5ConnectionPublished_at | createHomePageSection5Payload | updateHomePageSection5Payload | deleteHomePageSection5Payload | MagazinPresentation | MagazinPresentationConnection | MagazinPresentationAggregator | MagazinPresentationGroupBy | MagazinPresentationConnectionId | MagazinPresentationConnectionCreated_at | MagazinPresentationConnectionUpdated_at | MagazinPresentationConnectionImages_1 | MagazinPresentationConnectionText_1 | MagazinPresentationConnectionText_2 | MagazinPresentationConnectionImages_2 | MagazinPresentationConnectionPosition | MagazinPresentationConnectionPublished_at | createMagazinPresentationPayload | updateMagazinPresentationPayload | deleteMagazinPresentationPayload | MeinKonto | MeinKontoConnection | MeinKontoAggregator | MeinKontoGroupBy | MeinKontoConnectionId | MeinKontoConnectionCreated_at | MeinKontoConnectionUpdated_at | MeinKontoConnectionTitle | MeinKontoConnectionPublished_at | createMeinKontoPayload | updateMeinKontoPayload | deleteMeinKontoPayload | MenuItem | MenuItemConnection | MenuItemAggregator | MenuItemGroupBy | MenuItemConnectionId | MenuItemConnectionCreated_at | MenuItemConnectionUpdated_at | MenuItemConnectionItem_name | MenuItemConnectionTitle | MenuItemConnectionImages | MenuItemConnectionPublished_at | createMenuItemPayload | updateMenuItemPayload | deleteMenuItemPayload | Navbar | NavbarConnection | NavbarAggregator | NavbarGroupBy | NavbarConnectionId | NavbarConnectionCreated_at | NavbarConnectionUpdated_at | NavbarConnectionCategories | NavbarConnectionPublished_at | createNavbarPayload | updateNavbarPayload | deleteNavbarPayload | NewProductLimit | updateNewProductLimitPayload | deleteNewProductLimitPayload | Newsletter | NewsletterConnection | NewsletterAggregator | NewsletterGroupBy | NewsletterConnectionId | NewsletterConnectionCreated_at | NewsletterConnectionUpdated_at | NewsletterConnectionSubject | NewsletterConnectionHTML_describe | NewsletterConnectionPublished_at | createNewsletterPayload | updateNewsletterPayload | deleteNewsletterPayload | PageHeader | PageHeaderConnection | PageHeaderAggregator | PageHeaderGroupBy | PageHeaderConnectionId | PageHeaderConnectionCreated_at | PageHeaderConnectionUpdated_at | PageHeaderConnectionDescribe_HTML_CSS | PageHeaderConnectionPosition | PageHeaderConnectionPublished_at | createPageHeaderPayload | updatePageHeaderPayload | deletePageHeaderPayload | PermanentDiscount | updatePermanentDiscountPayload | deletePermanentDiscountPayload | ProductWithLeftText | ProductWithLeftTextConnection | ProductWithLeftTextAggregator | ProductWithLeftTextGroupBy | ProductWithLeftTextConnectionId | ProductWithLeftTextConnectionCreated_at | ProductWithLeftTextConnectionUpdated_at | ProductWithLeftTextConnectionHeader | ProductWithLeftTextConnectionTitle | ProductWithLeftTextConnectionText | ProductWithLeftTextConnectionButton_text | ProductWithLeftTextConnectionUrl | ProductWithLeftTextConnectionPosition | ProductWithLeftTextConnectionPublished_at | createProductWithLeftTextPayload | updateProductWithLeftTextPayload | deleteProductWithLeftTextPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionPrice | ProductsConnectionClean_product | ProductsConnectionBrand | ProductsConnectionFor_sale_count | ProductsConnectionUnit | ProductsConnectionDiscount | ProductsConnectionType_test | ProductsConnectionCategory | ProductsConnectionSub_category | ProductsConnectionMenu_item | ProductsConnectionName | ProductsConnectionMagazin_presentation | ProductsConnectionKind | ProductsConnectionNew_Date_Limit | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | SectionUnderNavbar | SectionUnderNavbarConnection | SectionUnderNavbarAggregator | SectionUnderNavbarGroupBy | SectionUnderNavbarConnectionId | SectionUnderNavbarConnectionCreated_at | SectionUnderNavbarConnectionUpdated_at | SectionUnderNavbarConnectionHeader | SectionUnderNavbarConnectionTitle | SectionUnderNavbarConnectionButton_text | SectionUnderNavbarConnectionUrl | SectionUnderNavbarConnectionImages | SectionUnderNavbarConnectionPosition | SectionUnderNavbarConnectionPublished_at | createSectionUnderNavbarPayload | updateSectionUnderNavbarPayload | deleteSectionUnderNavbarPayload | ShoppingBasketRecommendation | ShoppingBasketRecommendationConnection | ShoppingBasketRecommendationAggregator | ShoppingBasketRecommendationGroupBy | ShoppingBasketRecommendationConnectionId | ShoppingBasketRecommendationConnectionCreated_at | ShoppingBasketRecommendationConnectionUpdated_at | ShoppingBasketRecommendationConnectionTo | ShoppingBasketRecommendationConnectionFrom | ShoppingBasketRecommendationConnectionCurrent_shopping_basket_product_id | ShoppingBasketRecommendationConnectionPublished_at | createShoppingBasketRecommendationPayload | updateShoppingBasketRecommendationPayload | deleteShoppingBasketRecommendationPayload | ShoppingBasket | ShoppingBasketConnection | ShoppingBasketAggregator | ShoppingBasketGroupBy | ShoppingBasketConnectionId | ShoppingBasketConnectionCreated_at | ShoppingBasketConnectionUpdated_at | ShoppingBasketConnectionUsers_permissions_user | ShoppingBasketConnectionProduct | ShoppingBasketConnectionQuantity | ShoppingBasketConnectionGift_wrap | ShoppingBasketConnectionType_test | ShoppingBasketConnectionPublished_at | createShoppingBasketPayload | updateShoppingBasketPayload | deleteShoppingBasketPayload | SubCategory | SubCategoryConnection | SubCategoryAggregator | SubCategoryGroupBy | SubCategoryConnectionId | SubCategoryConnectionCreated_at | SubCategoryConnectionUpdated_at | SubCategoryConnectionSubCategoryName | SubCategoryConnectionPublished_at | createSubCategoryPayload | updateSubCategoryPayload | deleteSubCategoryPayload | TypeTest | TypeTestConnection | TypeTestAggregator | TypeTestAggregatorSum | TypeTestAggregatorAvg | TypeTestAggregatorMin | TypeTestAggregatorMax | TypeTestGroupBy | TypeTestConnectionId | TypeTestConnectionCreated_at | TypeTestConnectionUpdated_at | TypeTestConnectionBrand | TypeTestConnectionPrice | TypeTestConnectionSize | TypeTestConnectionQuantity | TypeTestConnectionProduct | TypeTestConnectionImages | TypeTestConnectionPublished_at | createTypeTestPayload | updateTypeTestPayload | deleteTypeTestPayload | UserNewsletter | UserNewsletterConnection | UserNewsletterAggregator | UserNewsletterGroupBy | UserNewsletterConnectionId | UserNewsletterConnectionCreated_at | UserNewsletterConnectionUpdated_at | UserNewsletterConnectionFirst_name | UserNewsletterConnectionSurname | UserNewsletterConnectionGender | UserNewsletterConnectionEmail | UserNewsletterConnectionPublished_at | createUserNewsletterPayload | updateUserNewsletterPayload | deleteUserNewsletterPayload | Videos | VideosConnection | VideosAggregator | VideosGroupBy | VideosConnectionId | VideosConnectionCreated_at | VideosConnectionUpdated_at | VideosConnectionVideo | VideosConnectionReview_Bioeffect | VideosConnectionVideo_name | VideosConnectionDescription | VideosConnectionPublished_at | createVideoPayload | updateVideoPayload | deleteVideoPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionRegular_customer | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionCategoryName | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | CollectionShop | CollectionShopConnection | CollectionShopAggregator | CollectionShopGroupBy | CollectionShopConnectionId | CollectionShopConnectionCreated_at | CollectionShopConnectionUpdated_at | CollectionShopConnectionHeader | CollectionShopConnectionTitle | CollectionShopConnectionUrl | CollectionShopConnectionImages | CollectionShopConnectionLink_text | CollectionShopConnectionPosition | CollectionShopConnectionPublished_at | createCollectionShopPayload | updateCollectionShopPayload | deleteCollectionShopPayload | ContactDetails | ContactDetailsConnection | ContactDetailsAggregator | ContactDetailsGroupBy | ContactDetailsConnectionId | ContactDetailsConnectionCreated_at | ContactDetailsConnectionUpdated_at | ContactDetailsConnectionEmail | ContactDetailsConnectionPhone_number | ContactDetailsConnectionPublished_at | createContactDetailPayload | updateContactDetailPayload | deleteContactDetailPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_at | ContactConnectionUpdated_at | ContactConnectionTitle | ContactConnectionValue | ContactConnectionPublished_at | createContactPayload | updateContactPayload | deleteContactPayload | DiscountCodes | DiscountCodesConnection | DiscountCodesAggregator | DiscountCodesGroupBy | DiscountCodesConnectionId | DiscountCodesConnectionCreated_at | DiscountCodesConnectionUpdated_at | DiscountCodesConnectionName | DiscountCodesConnectionDescription | DiscountCodesConnectionStatus_voucher | DiscountCodesConnectionUnique_multiple | DiscountCodesConnectionMultiple_redemptions | DiscountCodesConnectionOne_redemption | DiscountCodesConnectionRedeem_until_usedup | DiscountCodesConnectionSingle_redemption | DiscountCodesConnectionMinimum_order_value | DiscountCodesConnectionValid_from_date_time | DiscountCodesConnectionValid_to_date_time | DiscountCodesConnectionCode_character_length | DiscountCodesConnectionAmount_discount | DiscountCodesConnectionType_of_discount | DiscountCodesConnectionPublished_at | createDiscountCodePayload | updateDiscountCodePayload | deleteDiscountCodePayload | Discount | updateDiscountPayload | deleteDiscountPayload | DpabStore | DpabStoreConnection | DpabStoreAggregator | DpabStoreGroupBy | DpabStoreConnectionId | DpabStoreConnectionCreated_at | DpabStoreConnectionUpdated_at | DpabStoreConnectionTitle | DpabStoreConnectionValue_1 | DpabStoreConnectionValue_2 | DpabStoreConnectionPublished_at | createDpabStorePayload | updateDpabStorePayload | deleteDpabStorePayload | FavoriteProduct | FavoriteProductConnection | FavoriteProductAggregator | FavoriteProductGroupBy | FavoriteProductConnectionId | FavoriteProductConnectionCreated_at | FavoriteProductConnectionUpdated_at | FavoriteProductConnectionUsers_permissions_user | FavoriteProductConnectionProduct | FavoriteProductConnectionPublished_at | createFavoriteProductPayload | updateFavoriteProductPayload | deleteFavoriteProductPayload | FourIcons | FourIconsConnection | FourIconsAggregator | FourIconsGroupBy | FourIconsConnectionId | FourIconsConnectionCreated_at | FourIconsConnectionUpdated_at | FourIconsConnectionHeader | FourIconsConnectionText | FourIconsConnectionSvg | FourIconsConnectionPublished_at | createFourIconPayload | updateFourIconPayload | deleteFourIconPayload | GiftWrap | GiftWrapConnection | GiftWrapAggregator | GiftWrapGroupBy | GiftWrapConnectionId | GiftWrapConnectionCreated_at | GiftWrapConnectionUpdated_at | GiftWrapConnectionPrice | GiftWrapConnectionName | GiftWrapConnectionText | GiftWrapConnectionPublished_at | createGiftWrapPayload | updateGiftWrapPayload | deleteGiftWrapPayload | HomePageAdvertising | HomePageAdvertisingConnection | HomePageAdvertisingAggregator | HomePageAdvertisingGroupBy | HomePageAdvertisingConnectionId | HomePageAdvertisingConnectionCreated_at | HomePageAdvertisingConnectionUpdated_at | HomePageAdvertisingConnectionName | HomePageAdvertisingConnectionDescription | HomePageAdvertisingConnectionAdvertising | HomePageAdvertisingConnectionOnImageAdvertising | HomePageAdvertisingConnectionOnImageText | HomePageAdvertisingConnectionPublished_at | createHomePageAdvertisingPayload | updateHomePageAdvertisingPayload | deleteHomePageAdvertisingPayload | Inspiration | InspirationConnection | InspirationAggregator | InspirationGroupBy | InspirationConnectionId | InspirationConnectionCreated_at | InspirationConnectionUpdated_at | InspirationConnectionHeader | InspirationConnectionTitle | InspirationConnectionText | InspirationConnectionButton_text | InspirationConnectionUrl | InspirationConnectionImages | InspirationConnectionImage_header | InspirationConnectionImage_title | InspirationConnectionPosition | InspirationConnectionPublished_at | createInspirationPayload | updateInspirationPayload | deleteInspirationPayload | MagazinPresentation | MagazinPresentationConnection | MagazinPresentationAggregator | MagazinPresentationGroupBy | MagazinPresentationConnectionId | MagazinPresentationConnectionCreated_at | MagazinPresentationConnectionUpdated_at | MagazinPresentationConnectionImages_1 | MagazinPresentationConnectionText_1 | MagazinPresentationConnectionText_2 | MagazinPresentationConnectionImages_2 | MagazinPresentationConnectionPosition | MagazinPresentationConnectionPublished_at | createMagazinPresentationPayload | updateMagazinPresentationPayload | deleteMagazinPresentationPayload | MeinKonto | MeinKontoConnection | MeinKontoAggregator | MeinKontoGroupBy | MeinKontoConnectionId | MeinKontoConnectionCreated_at | MeinKontoConnectionUpdated_at | MeinKontoConnectionTitle | MeinKontoConnectionPublished_at | createMeinKontoPayload | updateMeinKontoPayload | deleteMeinKontoPayload | MenuItem | MenuItemConnection | MenuItemAggregator | MenuItemGroupBy | MenuItemConnectionId | MenuItemConnectionCreated_at | MenuItemConnectionUpdated_at | MenuItemConnectionItem_name | MenuItemConnectionTitle | MenuItemConnectionImages | MenuItemConnectionUrl | MenuItemConnectionPosition | MenuItemConnectionPublished_at | createMenuItemPayload | updateMenuItemPayload | deleteMenuItemPayload | Navbar | NavbarConnection | NavbarAggregator | NavbarGroupBy | NavbarConnectionId | NavbarConnectionCreated_at | NavbarConnectionUpdated_at | NavbarConnectionCategories | NavbarConnectionPublished_at | createNavbarPayload | updateNavbarPayload | deleteNavbarPayload | NewProductLimit | updateNewProductLimitPayload | deleteNewProductLimitPayload | NewsReport | NewsReportConnection | NewsReportAggregator | NewsReportGroupBy | NewsReportConnectionId | NewsReportConnectionCreated_at | NewsReportConnectionUpdated_at | NewsReportConnectionHeader | NewsReportConnectionTitle | NewsReportConnectionText | NewsReportConnectionUrl | NewsReportConnectionLink_text | NewsReportConnectionImages | NewsReportConnectionPosition | NewsReportConnectionPublished_at | createNewsReportPayload | updateNewsReportPayload | deleteNewsReportPayload | Newsletter | NewsletterConnection | NewsletterAggregator | NewsletterGroupBy | NewsletterConnectionId | NewsletterConnectionCreated_at | NewsletterConnectionUpdated_at | NewsletterConnectionSubject | NewsletterConnectionHTML_describe | NewsletterConnectionPublished_at | createNewsletterPayload | updateNewsletterPayload | deleteNewsletterPayload | PageHeader | PageHeaderConnection | PageHeaderAggregator | PageHeaderGroupBy | PageHeaderConnectionId | PageHeaderConnectionCreated_at | PageHeaderConnectionUpdated_at | PageHeaderConnectionDescribe_HTML_CSS | PageHeaderConnectionPosition | PageHeaderConnectionPublished_at | createPageHeaderPayload | updatePageHeaderPayload | deletePageHeaderPayload | PermanentDiscount | updatePermanentDiscountPayload | deletePermanentDiscountPayload | ProductWithLeftText | ProductWithLeftTextConnection | ProductWithLeftTextAggregator | ProductWithLeftTextGroupBy | ProductWithLeftTextConnectionId | ProductWithLeftTextConnectionCreated_at | ProductWithLeftTextConnectionUpdated_at | ProductWithLeftTextConnectionHeader | ProductWithLeftTextConnectionTitle | ProductWithLeftTextConnectionText | ProductWithLeftTextConnectionButton_text | ProductWithLeftTextConnectionUrl | ProductWithLeftTextConnectionPosition | ProductWithLeftTextConnectionPublished_at | createProductWithLeftTextPayload | updateProductWithLeftTextPayload | deleteProductWithLeftTextPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionPrice | ProductsConnectionClean_product | ProductsConnectionBrand | ProductsConnectionFor_sale_count | ProductsConnectionUnit | ProductsConnectionDiscount | ProductsConnectionType_test | ProductsConnectionCategory | ProductsConnectionSub_category | ProductsConnectionMenu_item | ProductsConnectionName | ProductsConnectionMagazin_presentation | ProductsConnectionKind | ProductsConnectionNew_Date_Limit | ProductsConnectionVideo | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | SectionUnderNavbar | SectionUnderNavbarConnection | SectionUnderNavbarAggregator | SectionUnderNavbarGroupBy | SectionUnderNavbarConnectionId | SectionUnderNavbarConnectionCreated_at | SectionUnderNavbarConnectionUpdated_at | SectionUnderNavbarConnectionHeader | SectionUnderNavbarConnectionTitle | SectionUnderNavbarConnectionButton_text | SectionUnderNavbarConnectionUrl | SectionUnderNavbarConnectionImages | SectionUnderNavbarConnectionPosition | SectionUnderNavbarConnectionPublished_at | createSectionUnderNavbarPayload | updateSectionUnderNavbarPayload | deleteSectionUnderNavbarPayload | ShoppingBasketRecommendation | ShoppingBasketRecommendationConnection | ShoppingBasketRecommendationAggregator | ShoppingBasketRecommendationGroupBy | ShoppingBasketRecommendationConnectionId | ShoppingBasketRecommendationConnectionCreated_at | ShoppingBasketRecommendationConnectionUpdated_at | ShoppingBasketRecommendationConnectionTo | ShoppingBasketRecommendationConnectionFrom | ShoppingBasketRecommendationConnectionCurrent_shopping_basket_product_id | ShoppingBasketRecommendationConnectionPublished_at | createShoppingBasketRecommendationPayload | updateShoppingBasketRecommendationPayload | deleteShoppingBasketRecommendationPayload | ShoppingBasket | ShoppingBasketConnection | ShoppingBasketAggregator | ShoppingBasketGroupBy | ShoppingBasketConnectionId | ShoppingBasketConnectionCreated_at | ShoppingBasketConnectionUpdated_at | ShoppingBasketConnectionUsers_permissions_user | ShoppingBasketConnectionProduct | ShoppingBasketConnectionQuantity | ShoppingBasketConnectionGift_wrap | ShoppingBasketConnectionType_test | ShoppingBasketConnectionPublished_at | createShoppingBasketPayload | updateShoppingBasketPayload | deleteShoppingBasketPayload | SubCategory | SubCategoryConnection | SubCategoryAggregator | SubCategoryGroupBy | SubCategoryConnectionId | SubCategoryConnectionCreated_at | SubCategoryConnectionUpdated_at | SubCategoryConnectionSubCategoryName | SubCategoryConnectionPublished_at | createSubCategoryPayload | updateSubCategoryPayload | deleteSubCategoryPayload | TypeTest | TypeTestConnection | TypeTestAggregator | TypeTestAggregatorSum | TypeTestAggregatorAvg | TypeTestAggregatorMin | TypeTestAggregatorMax | TypeTestGroupBy | TypeTestConnectionId | TypeTestConnectionCreated_at | TypeTestConnectionUpdated_at | TypeTestConnectionBrand | TypeTestConnectionPrice | TypeTestConnectionSize | TypeTestConnectionQuantity | TypeTestConnectionProduct | TypeTestConnectionImages | TypeTestConnectionPublished_at | createTypeTestPayload | updateTypeTestPayload | deleteTypeTestPayload | UserNewsletter | UserNewsletterConnection | UserNewsletterAggregator | UserNewsletterGroupBy | UserNewsletterConnectionId | UserNewsletterConnectionCreated_at | UserNewsletterConnectionUpdated_at | UserNewsletterConnectionFirst_name | UserNewsletterConnectionSurname | UserNewsletterConnectionGender | UserNewsletterConnectionEmail | UserNewsletterConnectionPublished_at | createUserNewsletterPayload | updateUserNewsletterPayload | deleteUserNewsletterPayload | Videos | VideosConnection | VideosAggregator | VideosGroupBy | VideosConnectionId | VideosConnectionCreated_at | VideosConnectionUpdated_at | VideosConnectionVideo | VideosConnectionReview_Bioeffect | VideosConnectionVideo_name | VideosConnectionDescription | VideosConnectionPublished_at | createVideoPayload | updateVideoPayload | deleteVideoPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionRegular_customer | createUserPayload | updateUserPayload | deleteUserPayload
 
 input InputID {
   id: ID!
@@ -3886,6 +4071,9 @@ type Query {
   category(id: ID!, publicationState: PublicationState): Category
   categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Category]
   categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): CategoryConnection
+  collectionShop(id: ID!, publicationState: PublicationState): CollectionShop
+  collectionShops(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [CollectionShop]
+  collectionShopsConnection(sort: String, limit: Int, start: Int, where: JSON): CollectionShopConnection
   contactDetail(id: ID!, publicationState: PublicationState): ContactDetails
   contactDetails(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [ContactDetails]
   contactDetailsConnection(sort: String, limit: Int, start: Int, where: JSON): ContactDetailsConnection
@@ -3902,21 +4090,18 @@ type Query {
   favoriteProduct(id: ID!, publicationState: PublicationState): FavoriteProduct
   favoriteProducts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [FavoriteProduct]
   favoriteProductsConnection(sort: String, limit: Int, start: Int, where: JSON): FavoriteProductConnection
+  fourIcon(id: ID!, publicationState: PublicationState): FourIcons
+  fourIcons(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [FourIcons]
+  fourIconsConnection(sort: String, limit: Int, start: Int, where: JSON): FourIconsConnection
   giftWrap(id: ID!, publicationState: PublicationState): GiftWrap
   giftWraps(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [GiftWrap]
   giftWrapsConnection(sort: String, limit: Int, start: Int, where: JSON): GiftWrapConnection
   homePageAdvertising(id: ID!, publicationState: PublicationState): HomePageAdvertising
   homePageAdvertisings(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [HomePageAdvertising]
   homePageAdvertisingsConnection(sort: String, limit: Int, start: Int, where: JSON): HomePageAdvertisingConnection
-  homePageSection3(id: ID!, publicationState: PublicationState): HomePageSection3
-  homePageSection3s(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [HomePageSection3]
-  homePageSection3sConnection(sort: String, limit: Int, start: Int, where: JSON): HomePageSection3Connection
-  homePageSection4(id: ID!, publicationState: PublicationState): HomePageSection4
-  homePageSection4s(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [HomePageSection4]
-  homePageSection4sConnection(sort: String, limit: Int, start: Int, where: JSON): HomePageSection4Connection
-  homePageSection5(id: ID!, publicationState: PublicationState): HomePageSection5
-  homePageSection5s(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [HomePageSection5]
-  homePageSection5sConnection(sort: String, limit: Int, start: Int, where: JSON): HomePageSection5Connection
+  inspiration(id: ID!, publicationState: PublicationState): Inspiration
+  inspirations(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Inspiration]
+  inspirationsConnection(sort: String, limit: Int, start: Int, where: JSON): InspirationConnection
   magazinPresentation(id: ID!, publicationState: PublicationState): MagazinPresentation
   magazinPresentations(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [MagazinPresentation]
   magazinPresentationsConnection(sort: String, limit: Int, start: Int, where: JSON): MagazinPresentationConnection
@@ -3930,6 +4115,9 @@ type Query {
   navbars(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Navbar]
   navbarsConnection(sort: String, limit: Int, start: Int, where: JSON): NavbarConnection
   newProductLimit(publicationState: PublicationState): NewProductLimit
+  newsReport(id: ID!, publicationState: PublicationState): NewsReport
+  newsReports(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [NewsReport]
+  newsReportsConnection(sort: String, limit: Int, start: Int, where: JSON): NewsReportConnection
   newsletter(id: ID!, publicationState: PublicationState): Newsletter
   newsletters(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Newsletter]
   newslettersConnection(sort: String, limit: Int, start: Int, where: JSON): NewsletterConnection
@@ -3983,6 +4171,9 @@ type Mutation {
   createCategory(input: createCategoryInput): createCategoryPayload
   updateCategory(input: updateCategoryInput): updateCategoryPayload
   deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
+  createCollectionShop(input: createCollectionShopInput): createCollectionShopPayload
+  updateCollectionShop(input: updateCollectionShopInput): updateCollectionShopPayload
+  deleteCollectionShop(input: deleteCollectionShopInput): deleteCollectionShopPayload
   createContactDetail(input: createContactDetailInput): createContactDetailPayload
   updateContactDetail(input: updateContactDetailInput): updateContactDetailPayload
   deleteContactDetail(input: deleteContactDetailInput): deleteContactDetailPayload
@@ -4000,21 +4191,18 @@ type Mutation {
   createFavoriteProduct(input: createFavoriteProductInput): createFavoriteProductPayload
   updateFavoriteProduct(input: updateFavoriteProductInput): updateFavoriteProductPayload
   deleteFavoriteProduct(input: deleteFavoriteProductInput): deleteFavoriteProductPayload
+  createFourIcon(input: createFourIconInput): createFourIconPayload
+  updateFourIcon(input: updateFourIconInput): updateFourIconPayload
+  deleteFourIcon(input: deleteFourIconInput): deleteFourIconPayload
   createGiftWrap(input: createGiftWrapInput): createGiftWrapPayload
   updateGiftWrap(input: updateGiftWrapInput): updateGiftWrapPayload
   deleteGiftWrap(input: deleteGiftWrapInput): deleteGiftWrapPayload
   createHomePageAdvertising(input: createHomePageAdvertisingInput): createHomePageAdvertisingPayload
   updateHomePageAdvertising(input: updateHomePageAdvertisingInput): updateHomePageAdvertisingPayload
   deleteHomePageAdvertising(input: deleteHomePageAdvertisingInput): deleteHomePageAdvertisingPayload
-  createHomePageSection3(input: createHomePageSection3Input): createHomePageSection3Payload
-  updateHomePageSection3(input: updateHomePageSection3Input): updateHomePageSection3Payload
-  deleteHomePageSection3(input: deleteHomePageSection3Input): deleteHomePageSection3Payload
-  createHomePageSection4(input: createHomePageSection4Input): createHomePageSection4Payload
-  updateHomePageSection4(input: updateHomePageSection4Input): updateHomePageSection4Payload
-  deleteHomePageSection4(input: deleteHomePageSection4Input): deleteHomePageSection4Payload
-  createHomePageSection5(input: createHomePageSection5Input): createHomePageSection5Payload
-  updateHomePageSection5(input: updateHomePageSection5Input): updateHomePageSection5Payload
-  deleteHomePageSection5(input: deleteHomePageSection5Input): deleteHomePageSection5Payload
+  createInspiration(input: createInspirationInput): createInspirationPayload
+  updateInspiration(input: updateInspirationInput): updateInspirationPayload
+  deleteInspiration(input: deleteInspirationInput): deleteInspirationPayload
   createMagazinPresentation(input: createMagazinPresentationInput): createMagazinPresentationPayload
   updateMagazinPresentation(input: updateMagazinPresentationInput): updateMagazinPresentationPayload
   deleteMagazinPresentation(input: deleteMagazinPresentationInput): deleteMagazinPresentationPayload
@@ -4029,6 +4217,9 @@ type Mutation {
   deleteNavbar(input: deleteNavbarInput): deleteNavbarPayload
   updateNewProductLimit(input: updateNewProductLimitInput): updateNewProductLimitPayload
   deleteNewProductLimit: deleteNewProductLimitPayload
+  createNewsReport(input: createNewsReportInput): createNewsReportPayload
+  updateNewsReport(input: updateNewsReportInput): updateNewsReportPayload
+  deleteNewsReport(input: deleteNewsReportInput): deleteNewsReportPayload
   createNewsletter(input: createNewsletterInput): createNewsletterPayload
   updateNewsletter(input: updateNewsletterInput): updateNewsletterPayload
   deleteNewsletter(input: deleteNewsletterInput): deleteNewsletterPayload

@@ -643,7 +643,8 @@
     "schemas": {
       "Menu-item": {
         "required": [
-          "id"
+          "id",
+          "position"
         ],
         "properties": {
           "id": {
@@ -751,6 +752,29 @@
           "url": {
             "type": "string"
           },
+          "position": {
+            "type": "string",
+            "default": "A",
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "Q"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -758,6 +782,9 @@
         }
       },
       "NewMenu-item": {
+        "required": [
+          "position"
+        ],
         "properties": {
           "item_name": {
             "type": "string"
@@ -770,6 +797,29 @@
           },
           "url": {
             "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "default": "A",
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "Q"
+            ]
           },
           "published_at": {
             "type": "string",
