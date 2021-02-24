@@ -1,6 +1,10 @@
 'use strict';
 const { jwtSecret } = require('../../../extensions/users-permissions/config/jwt');
 const jwt = require('jsonwebtoken');
+const  {checkFavoriteProducts} = require('../services/products')
+
+
+
 
 module.exports = {
     /**
@@ -9,13 +13,25 @@ module.exports = {
      * @return {Object}
      */
 
+    async find(ctx) {
+        console.log(ctx.req.user);
+        let entities;
+        if (ctx.query._q) {
+          entities = await strapi.services.products.search(ctx.query);
+        } else {
+          entities = await strapi.services.products.find(ctx.query);
+        }
+           return (checkFavoriteProducts(ctx.req.user,entities))
+
+      },
+ 
+   
+      
+
     async findSubCategoryProducts(ctx) {
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
         }
-        let [bearer, token] = ctx.request.headers.authorization.split(' ')
-        let decoded = jwt.verify(token, jwtSecret)
-
         const knex = strapi.connections.default;
         const { id } = ctx.params;
         let products = await knex('products')
@@ -26,35 +42,11 @@ module.exports = {
             .select('products.id', 'products.price', 'products.clean_product',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
-                products =  getUniqueListBy(products)
+        products = getUniqueListBy(products)
+         
+         return (checkFavoriteProducts(ctx.req.user,products))
 
-                if (!decoded.id) return products
-
-        let entity = await strapi.services['favorite-product'].find({users_permissions_user:decoded.id})
-        console.log(entity);
-
-        products.map((el) => {
-            entity.map((elem) => {
-                if (el.id === elem.product.id) {
-                    Object.assign(el, { favorit: "true" });
-          
-                } 
-          
-            })
-          })
-
-
-        return products
     },
-
-
-
-
-
-
-
-
-
 
 
     async findCategoryProducts(ctx) {
@@ -63,7 +55,7 @@ module.exports = {
         }
         const knex = strapi.connections.default;
         const { id } = ctx.params;
-        const products = await knex('products')
+        let products = await knex('products')
             .where('category', `${id}`)
             .join('categories', 'categories.id', 'products.category')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
@@ -71,13 +63,16 @@ module.exports = {
             .select('products.id', 'products.price', 'products.clean_product',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
-        return getUniqueListBy(products)
+                products = getUniqueListBy(products)
+
+        return (checkFavoriteProducts(ctx.req.user,products))
+
     },
 
     async findTypetests(ctx) {
         const knex = strapi.connections.default;
         const { id } = ctx.params;
-        const products = await knex('products')
+        let products = await knex('products')
             .where('products.id', `${id}`)
             .join('type_tests', 'type_tests.id', 'products.type_test')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
@@ -95,7 +90,7 @@ module.exports = {
         }
         const knex = strapi.connections.default;
         const { id } = ctx.params;
-        const products = await knex('products')
+        let products = await knex('products')
             .where('menu_item', `${id}`)
             .join('menu_items', 'menu_items.id', 'products.menu_item')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
@@ -103,8 +98,10 @@ module.exports = {
             .select('products.id', 'products.price', 'products.clean_product',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
-        return getUniqueListBy(products)
-    },
+                products = getUniqueListBy(products)
+                return (checkFavoriteProducts(ctx.req.user,products))
+
+            },
 
     async getAllNewProducts() {
         let newProduct = []
