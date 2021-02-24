@@ -1,29 +1,23 @@
 'use strict';
-
-
-const { jwtSecret } = require('../../../extensions/users-permissions/config/jwt');
-const jwt = require('jsonwebtoken');
+const  {checkFavoriteProducts} = require('../../products/services/products')
 
 
 module.exports = {
 
     async findOne(ctx) {
-        let [bearer, token] = ctx.request.headers.authorization.split(' ')
-        let decoded = jwt.verify(token, jwtSecret)
         let favoritData = {
-            users_permissions_user: decoded.id
+            users_permissions_user: ctx.req.user.id
         }
         let entity = await strapi.services['favorite-product'].find(favoritData)
         let favoritProduct = []
         entity.map((e) => { favoritProduct.push(e.product) })
-        return favoritProduct
+        return (checkFavoriteProducts(ctx.req.user,favoritProduct))
     },
 
     async create(ctx) {
-        let [bearer, token] = ctx.request.headers.authorization.split(' ')
-        let decoded =  await jwt.verify(token, jwtSecret)
+       
         let favoritData = {
-            users_permissions_user: decoded.id,
+            users_permissions_user: ctx.req.user.id,
             product: ctx.request.body.product
         }
         console.log(favoritData);
@@ -33,11 +27,11 @@ module.exports = {
         let exist = await strapi.services.products.find({ id: ctx.request.body.product })
         if ((entity.length === 0) && (exist.length !== 0)) {
             await strapi.services['favorite-product'].create(favoritData)
-            return ({ message: "added to favorite products" })
+            return ({ isFavorite: true })
         }
         else if ((exist.length !== 0)) {
             await strapi.services['favorite-product'].delete(favoritData)
-            return ({ message: "deleted from favorite products" })
+            return ({ isFavorite: false })
         } else
             return ({ message: 'product doesnt exist' })
     }

@@ -1,7 +1,5 @@
 'use strict';
 
-const { jwtSecret } = require('../../../extensions/users-permissions/config/jwt');
-const jwt = require('jsonwebtoken');
 
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/services.html#core-services)

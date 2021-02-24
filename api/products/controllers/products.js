@@ -1,9 +1,6 @@
 'use strict';
-const { jwtSecret } = require('../../../extensions/users-permissions/config/jwt');
-const jwt = require('jsonwebtoken');
+
 const  {checkFavoriteProducts} = require('../services/products')
-
-
 
 
 module.exports = {
@@ -14,7 +11,6 @@ module.exports = {
      */
 
     async find(ctx) {
-        console.log(ctx.req.user);
         let entities;
         if (ctx.query._q) {
           entities = await strapi.services.products.search(ctx.query);
