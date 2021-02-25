@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/news-reports": {
+    "/shop-page-large-texts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "News-report"
+          "Shop-page-large-text"
         ],
         "parameters": [
           {
@@ -197,10 +197,9 @@
   },
   "components": {
     "schemas": {
-      "News-report": {
+      "Shop-page-large-text": {
         "required": [
-          "id",
-          "position"
+          "id"
         ],
         "properties": {
           "id": {
@@ -209,101 +208,8 @@
           "header": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
           "text": {
             "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "link_text": {
-            "type": "string"
-          },
-          "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
-            ]
           },
           "published_at": {
             "type": "string",
@@ -311,42 +217,13 @@
           }
         }
       },
-      "NewNews-report": {
-        "required": [
-          "position"
-        ],
+      "NewShop-page-large-text": {
         "properties": {
           "header": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
           "text": {
             "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "link_text": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
-            ]
           },
           "published_at": {
             "type": "string",

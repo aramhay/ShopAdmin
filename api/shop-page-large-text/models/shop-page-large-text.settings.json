@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_page_large_texts",
+  "info": {
+    "name": "shop_page_large_text"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "text"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

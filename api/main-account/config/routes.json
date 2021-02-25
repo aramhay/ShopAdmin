@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/main-accounts",
+      "handler": "main-account.find",
+      "config": {
+        "policies": []
+      }
+    }
+    
+  ]
+}

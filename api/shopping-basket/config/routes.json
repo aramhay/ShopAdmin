@@ -18,7 +18,7 @@
     },   
     {
       "method": "POST",
-      "path": "/shopping-baskets/product_samples",
+      "path": "/addProductSamplesInTheShoppingBasket",
       "handler": "shopping-basket.create_product_samples",
       "config": {
         "policies": []
@@ -28,7 +28,7 @@
  
     {
       "method": "POST",
-      "path": "/shopping-baskets",
+      "path": "/addProductInTheShoppingBasket",
       "handler": "shopping-basket.create",
       "config": {
         "policies": []
@@ -36,7 +36,7 @@
     },
     {
       "method": "POST",
-      "path": "/shopping-baskets/gift-wrap",
+      "path": "/addGiftWrapperInTheShoppingBasket",
       "handler": "shopping-basket.create_gift_wrap",
       "config": {
         "policies": []
@@ -44,7 +44,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/shopping-basket-gift-wrap/:userid",
+      "path": "/deleteGiftWrapperFromTheShoppingBasket",
       "handler": "shopping-basket.delete_gift_wrap",
       "config": {
         "policies": []
@@ -52,7 +52,7 @@
     }, 
     {
       "method": "DELETE",
-      "path": "/shopping-baskets/product_samples/:userid/:sampleid",
+      "path": "/deleteProductSamplesFormTheShoppingBasket/:sampleid",
       "handler": "shopping-basket.delete_product_samples",
       "config": {
         "policies": []
@@ -61,7 +61,7 @@
    
     {
       "method": "DELETE",
-      "path": "/shopping-baskets/:userid/:productid",
+      "path": "/deleteProductFormTheShoppingBasket/:productid",
       "handler": "shopping-basket.delete",
       "config": {
         "policies": []

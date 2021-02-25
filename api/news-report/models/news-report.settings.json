@@ -49,7 +49,9 @@
         "HerrenPageTwo",
         "ShopPageOne",
         "ShopPageTwo",
-        "ShopPageThree"
+        "ShopPageThree",
+        "MagazinPageOne",
+        "MagazinPageTwo"
       ],
       "required": true,
       "unique": true

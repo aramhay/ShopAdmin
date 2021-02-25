@@ -1,3 +1,7 @@
+
+
+
+
 'use strict';
 
 
@@ -75,24 +79,25 @@ module.exports = {
         return (res)
     },
 
-
     async create(ctx) {
-        let entity;
+        let data = {
+            users_permissions_user: ctx.req.user.id,
+            product: ctx.request.body.product
+        }
         let id = ctx.request.body.product
-        let exist = await strapi.services.products.find({ id })
-        if (exist.length === 0) return ({ success: false, message: "product is not exist" })
+        let product = await strapi.services.products.find({ id })
+        if (product.length === 0) return ({ success: false, message: "product is not exist" })
         else {
-            let availableCount = await strapi.services.products.find({ id })
-            if ((availableCount[0].for_sale_count) < ctx.request.body.quantity)
+            if ((product[0].for_sale_count) < ctx.request.body.quantity)
                 return ({ success: false, message: `product quantity is less than ${ctx.request.body.quantity}` })
         }
-        let entity1 = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.request.body.users_permissions_user, product: ctx.request.body.product });
-        if (entity1.length == 1) {
-            entity = await strapi.services['shopping-basket'].update({ id: entity1[0].id }, { ...ctx.request.body });
+        let entity1 = await strapi.services['shopping-basket'].find(data);
+        console.log(entity1);
+        if (entity1.length === 1) {
+            await strapi.services['shopping-basket'].update({ id: entity1[0].id }, { quantity: ctx.request.body.quantity });
             return { success: true };
         } else {
-
-            entity = await strapi.services['shopping-basket'].create(ctx.request.body);
+            await strapi.services['shopping-basket'].create({ quantity: ctx.request.body.quantity, ...data });
             return { success: true };
         }
 
@@ -106,15 +111,21 @@ module.exports = {
         const products = await knex('products')
             .where('products.id', `${id}`)
             .join('type_tests', 'type_tests.id', 'products.type_test')
-            .select('type_tests.id')
-
+            .select('type_tests.id', 'type_tests.quantity')
+        if (products.length === 0) {
+            return ({
+                success: false,
+                message: "product does not have sample"
+            })
+        }
         basketType.map((el) => {
-            if (el.users_permissions_user == ctx.request.body.users_permissions_user && el.type_test !== null) count += 1
+            if (el.users_permissions_user == ctx.req.user.id && el.type_test !== null) count += 1
         })
         if (count < 5) {
-            let tr = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0].id, quantity: 1 });
+            if (products[0].quantity < 1) return ({ success: false, message: "type test is not exist" })
+            let tr = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.req.user.id, type_test: products[0].id, quantity: 1 });
             if (tr.length == 0) {
-                await strapi.services['shopping-basket'].create({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0].id, quantity: 1 });
+                await strapi.services['shopping-basket'].create({ users_permissions_user: ctx.req.user.id, type_test: products[0].id, quantity: 1 });
             } else return {
                 success: false,
                 message: "Max 1 sample per fragrance per order"
@@ -130,47 +141,56 @@ module.exports = {
 
 
     async create_gift_wrap(ctx) {
-        ctx.request.body.product = 1;
-        let trust
+        let data = {
+            product: 1,
+            quantity: ctx.request.body.quantity,
+            users_permissions_user: ctx.req.user.id
+        }
         const knex = strapi.connections.default;
         const exist = await knex('shopping_baskets')
-            .where('shopping_baskets.users_permissions_user', `${ctx.request.body.users_permissions_user}`)
-            .select('shopping_baskets.product')
-        exist.map((el) => {
-            if (el.product == 1) trust = true;
-        }
-        )
-        if (trust) {
+            .where('shopping_baskets.users_permissions_user', `${ctx.req.user.id}`)
+            .select('shopping_baskets.product', 'shopping_baskets.quantity')
+        const trust = exist.find(({ product }) => product === 1);
+        if (!trust) {
+            await strapi.services['shopping-basket'].create(data);
+            return { success: true };
+        } else {
+            await strapi.services['shopping-basket'].update({ users_permissions_user: ctx.req.user.id, product: 1 }, { quantity: ctx.request.body.quantity });
             return {
-                success: false,
-                message: 'gift wrap exists in the users shopping basket'
+                success: true,
             }
-        } else
-            await strapi.services['shopping-basket'].create(ctx.request.body);
-        return { success: true };
+        }
     },
+
 
 
 
     async delete_gift_wrap(ctx) {
-        let { userid } = ctx.params
         const knex = strapi.connections.default;
         const gift_wrap = await knex('shopping_baskets')
-            .where('shopping_baskets.users_permissions_user', `${userid}`)
+            .where('shopping_baskets.users_permissions_user', `${ctx.req.user.id}`)
             .join('gift_wraps', 'gift_wraps.id', 'shopping_baskets.product')
             .select('shopping_baskets.id');
-        await strapi.services['shopping-basket'].delete({ id: gift_wrap[0].id });
-        return ({ success: true, message: 'success' })
+        if (gift_wrap.length !== 0) {
+            await strapi.services['shopping-basket'].delete({ id: gift_wrap[0].id });
+            return ({ success: true, message: 'success' })
+        } else
+            return ({ success: true, message: 'success' })
+
+
     },
+
+
     async delete_product_samples(ctx) {
-        let { userid, sampleid } = ctx.params
-        await strapi.services['shopping-basket'].delete({ users_permissions_user: userid, type_test: sampleid });
+        let {sampleid} = ctx.params
+        await strapi.services['shopping-basket'].delete({ users_permissions_user:ctx.req.user.id, type_test: sampleid });
         return ({ success: true, message: "deleted" })
     },
 
+
     async delete(ctx) {
-        let { userid, productid } = ctx.params
-        await strapi.services['shopping-basket'].delete({ users_permissions_user: userid, product: productid });
+        let { productid } = ctx.params
+        await strapi.services['shopping-basket'].delete({ users_permissions_user: ctx.req.user.id, product: productid });
         return ({ success: true, message: "deleted" })
     }
 

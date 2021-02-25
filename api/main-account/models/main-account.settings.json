@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_accounts",
+  "info": {
+    "name": "main_account",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "addresses": {
+      "type": "text"
+    },
+    "user_data": {
+      "type": "text"
+    },
+    "orders": {
+      "type": "text"
+    },
+    "wishlist": {
+      "type": "text"
+    },
+    "newsletter": {
+      "type": "text"
+    },
+    "my_bookmarks": {
+      "type": "text"
+    }
+  }
+}

@@ -16,14 +16,10 @@ module.exports = {
           entities = await strapi.services.products.search(ctx.query);
         } else {
           entities = await strapi.services.products.find(ctx.query);
-        }
+        }    
            return (checkFavoriteProducts(ctx.req.user,entities))
 
       },
- 
-   
-      
-
     async findSubCategoryProducts(ctx) {
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
@@ -64,7 +60,6 @@ module.exports = {
         return (checkFavoriteProducts(ctx.req.user,products))
 
     },
-
     async findTypetests(ctx) {
         const knex = strapi.connections.default;
         const { id } = ctx.params;
@@ -79,7 +74,6 @@ module.exports = {
         }
         return getUniqueListBy(products)
     },
-
     async findMenuItemProducts(ctx) {
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
@@ -98,7 +92,6 @@ module.exports = {
                 return (checkFavoriteProducts(ctx.req.user,products))
 
             },
-
     async getAllNewProducts() {
         let newProduct = []
         let now = new Date();

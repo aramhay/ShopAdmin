@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/news-reports": {
+    "/main-accounts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "News-report"
+          "Main-account"
         ],
         "parameters": [
           {
@@ -197,113 +197,31 @@
   },
   "components": {
     "schemas": {
-      "News-report": {
+      "Main-account": {
         "required": [
-          "id",
-          "position"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "header": {
+          "addresses": {
             "type": "string"
           },
-          "title": {
+          "user_data": {
             "type": "string"
           },
-          "text": {
+          "orders": {
             "type": "string"
           },
-          "url": {
+          "wishlist": {
             "type": "string"
           },
-          "link_text": {
+          "newsletter": {
             "type": "string"
           },
-          "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
-            ]
+          "my_bookmarks": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -311,42 +229,25 @@
           }
         }
       },
-      "NewNews-report": {
-        "required": [
-          "position"
-        ],
+      "NewMain-account": {
         "properties": {
-          "header": {
+          "addresses": {
             "type": "string"
           },
-          "title": {
+          "user_data": {
             "type": "string"
           },
-          "text": {
+          "orders": {
             "type": "string"
           },
-          "url": {
+          "wishlist": {
             "type": "string"
           },
-          "link_text": {
+          "newsletter": {
             "type": "string"
           },
-          "position": {
-            "type": "string",
-            "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
-            ]
+          "my_bookmarks": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

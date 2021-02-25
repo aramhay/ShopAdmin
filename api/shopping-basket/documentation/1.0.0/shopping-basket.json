@@ -192,71 +192,6 @@
             "deprecated": false
           }
         ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewShopping-basket"
-              }
-            }
-          }
-        }
       }
     },
     "/shopping-baskets/{userid}": {
@@ -327,7 +262,7 @@
         ]
       }
     },
-    "/shopping-baskets/product_samples": {
+    "/addProductSamplesInTheShoppingBasket": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -398,7 +333,74 @@
         }
       }
     },
-    "/shopping-baskets/gift-wrap": {
+    "/addProductInTheShoppingBasket": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Shopping-basket"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewShopping-basket"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addGiftWrapperInTheShoppingBasket": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -469,7 +471,7 @@
         }
       }
     },
-    "/shopping-basket-gift-wrap/{userid}": {
+    "/deleteGiftWrapperFromTheShoppingBasket": {
       "delete": {
         "deprecated": false,
         "description": "Delete a record",
@@ -520,21 +522,10 @@
         "tags": [
           "Shopping-basket"
         ],
-        "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
-    "/shopping-baskets/product_samples/{userid}/{sampleid}": {
+    "/deleteProductSamplesFormTheShoppingBasket/{sampleid}": {
       "delete": {
         "deprecated": false,
         "description": "Delete a record",
@@ -586,16 +577,6 @@
           "Shopping-basket"
         ],
         "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "sampleid",
             "in": "path",
@@ -609,7 +590,7 @@
         ]
       }
     },
-    "/shopping-baskets/{userid}/{productid}": {
+    "/deleteProductFormTheShoppingBasket/{productid}": {
       "delete": {
         "deprecated": false,
         "description": "Delete a record",
@@ -661,16 +642,6 @@
           "Shopping-basket"
         ],
         "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "productid",
             "in": "path",
@@ -824,7 +795,8 @@
           },
           "gift_wrap": {
             "required": [
-              "id"
+              "id",
+              "secure"
             ],
             "properties": {
               "id": {
@@ -843,6 +815,9 @@
                 "type": "string"
               },
               "Text": {
+                "type": "string"
+              },
+              "secure": {
                 "type": "string"
               },
               "published_at": {

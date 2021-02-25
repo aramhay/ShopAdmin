@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "gift_wraps",
   "info": {
-    "name": "gift_wrap"
+    "name": "gift_wrap",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -29,6 +30,15 @@
     },
     "Text": {
       "type": "string"
+    },
+    "secure": {
+      "type": "enumeration",
+      "enum": [
+        "One"
+      ],
+      "required": true,
+      "unique": true,
+      "default": "One"
     }
   }
 }

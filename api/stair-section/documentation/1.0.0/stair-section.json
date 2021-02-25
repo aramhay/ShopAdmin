@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/news-reports": {
+    "/stair-sections": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "News-report"
+          "Stair-section"
         ],
         "parameters": [
           {
@@ -197,7 +197,7 @@
   },
   "components": {
     "schemas": {
-      "News-report": {
+      "Stair-section": {
         "required": [
           "id",
           "position"
@@ -206,22 +206,13 @@
           "id": {
             "type": "string"
           },
-          "header": {
+          "header_1": {
             "type": "string"
           },
-          "title": {
+          "text_1": {
             "type": "string"
           },
-          "text": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "link_text": {
-            "type": "string"
-          },
-          "images": {
+          "images_1": {
             "required": [
               "id",
               "name",
@@ -290,20 +281,163 @@
           },
           "position": {
             "type": "string",
+            "default": "One",
             "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
+              "One",
+              "Two"
             ]
+          },
+          "header_2": {
+            "type": "string"
+          },
+          "text_2": {
+            "type": "string"
+          },
+          "images_2": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "header_3": {
+            "type": "string"
+          },
+          "text_3": {
+            "type": "string"
+          },
+          "images_3": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -311,42 +445,36 @@
           }
         }
       },
-      "NewNews-report": {
+      "NewStair-section": {
         "required": [
           "position"
         ],
         "properties": {
-          "header": {
+          "header_1": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "link_text": {
+          "text_1": {
             "type": "string"
           },
           "position": {
             "type": "string",
+            "default": "One",
             "enum": [
-              "HomePageOne",
-              "HomePageTwo",
-              "HomePageThree",
-              "HomePageFive",
-              "HomePageSix",
-              "HerrenPageOne",
-              "HerrenPageTwo",
-              "ShopPageOne",
-              "ShopPageTwo",
-              "ShopPageThree",
-              "MagazinPageOne",
-              "MagazinPageTwo"
+              "One",
+              "Two"
             ]
+          },
+          "header_2": {
+            "type": "string"
+          },
+          "text_2": {
+            "type": "string"
+          },
+          "header_3": {
+            "type": "string"
+          },
+          "text_3": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

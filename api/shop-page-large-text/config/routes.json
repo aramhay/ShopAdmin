@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shop-page-large-texts",
+      "handler": "shop-page-large-text.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

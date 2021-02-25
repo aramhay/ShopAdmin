@@ -20,8 +20,6 @@ module.exports = {
             users_permissions_user: ctx.req.user.id,
             product: ctx.request.body.product
         }
-        console.log(favoritData);
-
         let entity = await strapi.services['favorite-product'].find(favoritData)
         console.log(entity);
         let exist = await strapi.services.products.find({ id: ctx.request.body.product })
