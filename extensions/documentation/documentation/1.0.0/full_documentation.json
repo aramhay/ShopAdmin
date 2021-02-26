@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/25/2021 6:57:11 PM"
+    "x-generation-date": "02/26/2021 2:08:17 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9860,7 +9860,7 @@
         ]
       }
     },
-    "/shopping-baskets/{userid}": {
+    "/getUserShoppingBaskets": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -9914,18 +9914,7 @@
         "tags": [
           "Shopping-basket"
         ],
-        "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
     "/addProductSamplesInTheShoppingBasket": {

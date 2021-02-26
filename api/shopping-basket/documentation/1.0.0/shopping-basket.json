@@ -194,7 +194,7 @@
         ]
       }
     },
-    "/shopping-baskets/{userid}": {
+    "/getUserShoppingBaskets": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -248,18 +248,7 @@
         "tags": [
           "Shopping-basket"
         ],
-        "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
     "/addProductSamplesInTheShoppingBasket": {

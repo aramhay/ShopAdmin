@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/shopping-baskets/:userid",
+      "path": "/getUserShoppingBaskets",
       "handler": "shopping-basket.findOne",
       "config": {
         "policies": []

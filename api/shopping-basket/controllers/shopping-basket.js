@@ -1,9 +1,5 @@
 
-
-
-
 'use strict';
-
 
 const _ = require('loadsh');
 
@@ -18,13 +14,15 @@ module.exports = {
         //  console.log(await strapi.plugins['users-permissions'].services.user.fetchAll());
         //  console.log(  strapi.services);
 
-        const userid = ctx.params.userid;
+        const userid = ctx.req.user.id;
         const knex = strapi.connections.default;
         const result = await knex('shopping_baskets')
             .where('shopping_baskets.users_permissions_user', `${userid}`)
             .join('products', 'products.id', 'shopping_baskets.product')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'shopping_baskets.product')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
+            .where('upload_file_morph.related_type', "products")
+            .where('upload_file_morph.field', "images")
             .select('shopping_baskets.id', "shopping_baskets.quantity", 'products.brand', 'products.id', 'products.price', 'products.name', 'products.discount', 'upload_file.url as image_url',);
         const gift_wrap = await knex('shopping_baskets')
             .where('shopping_baskets.users_permissions_user', `${userid}`)
@@ -35,12 +33,14 @@ module.exports = {
             .join('type_tests', 'type_tests.id', 'shopping_baskets.type_test')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'shopping_baskets.type_test')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('type_tests.id', 'type_tests.brand', 'type_tests.price', 'type_tests.size', 'upload_file.url as image_url')
+            .where('upload_file_morph.related_type', "type_tests")
+            .where('upload_file_morph.field', "images")
+            .select('type_tests.id', 'type_tests.brand', 'type_tests.price', 'type_tests.size', 'upload_file.url')
 
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
         }
-        let res = (getUniqueListBy(result));
+        let res = getUniqueListBy(result)
         typeTest.map((el) => {
             res.push(el)
         })
