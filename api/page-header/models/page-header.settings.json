@@ -12,8 +12,7 @@
   },
   "attributes": {
     "describe_HTML_CSS": {
-      "type": "richtext",
-      "default": "<span> </span>"
+      "type": "richtext"
     },
     "position": {
       "type": "enumeration",

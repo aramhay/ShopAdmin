@@ -2,7 +2,7 @@
 
 const { checkFavoriteProducts } = require('../services/products')
 const { sanitizeEntity } = require('strapi-utils');
-const { deleteUnnecessaryKeyInObject } = require('../services/products')
+// const { deleteUnnecessaryKeyInObject } = require('../services/products')
 
 
 module.exports = {
@@ -20,7 +20,8 @@ module.exports = {
         } else {
             entities = await strapi.services.products.find(ctx.query);
         }
-        entities = deleteUnnecessaryKeyInObject(entities)
+        // entities = deleteUnnecessaryKeyInObject(entities)
+        
         return (checkFavoriteProducts(ctx.req.user, entities))
 
     },
@@ -30,7 +31,7 @@ module.exports = {
         const { id } = ctx.params;
 
         let entity = await strapi.services.products.findOne({ id });
-        entity = deleteUnnecessaryKeyInObject(entity)
+        // entity = deleteUnnecessaryKeyInObject(entity)
         return sanitizeEntity(entity, { model: strapi.models.products });
     },
 

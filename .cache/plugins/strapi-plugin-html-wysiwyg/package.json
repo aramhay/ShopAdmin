@@ -1,0 +1,60 @@
+{
+  "name": "strapi-plugin-html-wysiwyg",
+  "version": "1.0.5",
+  "description": "This plugin replaces markdown editor with html WYSIWYG editor in Strapi CMS.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/dannymatkovsky/strapi-plugin-html-wysiwyg.git"
+  },
+  "author": "Danny Matkovsky <booodyk@gmail.com>",
+  "maintainers": [
+    "Danny Matkovsky <booodyk@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@buffetjs/core": "^3.3.1",
+    "@buffetjs/icons": "^3.3.1",
+    "@buffetjs/styles": "^3.3.1",
+    "classnames": "^2.2.6",
+    "escape-html": "^1.0.3",
+    "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intl": "^5.8.5",
+    "slate": "^0.59.0",
+    "slate-history": "^0.59.0",
+    "slate-hyperscript": "^0.59.0",
+    "slate-react": "^0.59.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "name": "HTML WYSIWYG editor",
+    "icon": "plug",
+    "description": "This plugin replaces markdown editor with html WYSIWYG editor."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

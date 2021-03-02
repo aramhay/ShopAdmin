@@ -536,8 +536,7 @@
             "type": "string"
           },
           "describe_HTML_CSS": {
-            "type": "string",
-            "default": "<span> </span>"
+            "type": "string"
           },
           "position": {
             "type": "string",
@@ -555,8 +554,7 @@
       "NewPage-header": {
         "properties": {
           "describe_HTML_CSS": {
-            "type": "string",
-            "default": "<span> </span>"
+            "type": "string"
           },
           "position": {
             "type": "string",

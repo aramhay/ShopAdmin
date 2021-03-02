@@ -28,6 +28,7 @@ module.exports = {
 
     deleteUnnecessaryKeyInObject: (data) => {
         if (Array.isArray(data)) {
+            console.log(Array.isArray(data),'ssssssssssssss');
             data.map((el) => {
                 delete el.created_by,
                     delete el.updated_by,
@@ -46,7 +47,8 @@ module.exports = {
                     })
                 }
             })
-        } else {
+        } else {           
+
             delete data.created_by,
                 delete data.updated_by,
                 delete data.created_at,
