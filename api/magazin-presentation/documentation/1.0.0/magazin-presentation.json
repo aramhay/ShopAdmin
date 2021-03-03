@@ -746,6 +746,9 @@
                 "price": {
                   "type": "integer"
                 },
+                "limited_edition": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },

@@ -13,20 +13,6 @@ module.exports = {
      * 
      */
 
-    async findNewProducts(ctx) {
-        let entities;
-        let result
-        if (ctx.query._q) {
-            entities = await strapi.services.products.search(ctx.query);
-        } else {
-            entities = await strapi.services.products.find(ctx.query);
-        }
-        console.log(entities);
-        // entities.map((el)=>{
-        //     console.log(el);
-        // })
-    },
-
     async find(ctx) {
         let entities;
         if (ctx.query._q) {
@@ -62,7 +48,7 @@ module.exports = {
             .join('sub_categories', 'sub_categories.id', 'products.sub_category')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id', 'products.price', 'products.clean_product',
+            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
@@ -85,7 +71,7 @@ module.exports = {
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .where('upload_file_morph.related_type', "products")
             .where('upload_file_morph.field', "images")
-            .select('products.id', 'products.price', 'products.clean_product',
+            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
@@ -117,7 +103,7 @@ module.exports = {
             .join('menu_items', 'menu_items.id', 'products.menu_item')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id', 'products.price', 'products.clean_product',
+            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)

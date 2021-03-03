@@ -23,7 +23,8 @@
       "required": false
     },
     "clean_product": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "brand": {
       "type": "string"
@@ -77,6 +78,10 @@
     "price": {
       "type": "biginteger",
       "min": "0"
+    },
+    "limited_edition": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

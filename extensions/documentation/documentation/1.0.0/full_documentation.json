@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/03/2021 9:43:01 AM"
+    "x-generation-date": "03/03/2021 11:04:30 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -15819,6 +15819,9 @@
                 "price": {
                   "type": "integer"
                 },
+                "limited_edition": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -16117,6 +16120,9 @@
               "price": {
                 "type": "integer"
               },
+              "limited_edition": {
+                "type": "boolean"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -16264,6 +16270,9 @@
                 "price": {
                   "type": "integer"
                 },
+                "limited_edition": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -16345,6 +16354,9 @@
                 "price": {
                   "type": "integer"
                 },
+                "limited_edition": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -16417,6 +16429,9 @@
                 },
                 "price": {
                   "type": "integer"
+                },
+                "limited_edition": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -16994,6 +17009,9 @@
                 },
                 "price": {
                   "type": "integer"
+                },
+                "limited_edition": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -17943,7 +17961,8 @@
             }
           },
           "clean_product": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "brand": {
             "type": "string"
@@ -18232,6 +18251,10 @@
           "price": {
             "type": "integer"
           },
+          "limited_edition": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -18241,7 +18264,8 @@
       "NewProducts": {
         "properties": {
           "clean_product": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "brand": {
             "type": "string"
@@ -18282,6 +18306,10 @@
           },
           "price": {
             "type": "integer"
+          },
+          "limited_edition": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -18638,6 +18666,9 @@
               },
               "price": {
                 "type": "integer"
+              },
+              "limited_edition": {
+                "type": "boolean"
               },
               "published_at": {
                 "type": "string"
@@ -19173,6 +19204,9 @@
               },
               "price": {
                 "type": "integer"
+              },
+              "limited_edition": {
+                "type": "boolean"
               },
               "published_at": {
                 "type": "string"

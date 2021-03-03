@@ -922,7 +922,8 @@
             }
           },
           "clean_product": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "brand": {
             "type": "string"
@@ -1211,6 +1212,10 @@
           "price": {
             "type": "integer"
           },
+          "limited_edition": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1220,7 +1225,8 @@
       "NewProducts": {
         "properties": {
           "clean_product": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "brand": {
             "type": "string"
@@ -1261,6 +1267,10 @@
           },
           "price": {
             "type": "integer"
+          },
+          "limited_edition": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
