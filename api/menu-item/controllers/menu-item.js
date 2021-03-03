@@ -43,20 +43,20 @@ module.exports = {
     })
     let entity3 = await strapi.services['menu-item'].find()
     entity3.map((el) => {
-      menuitem.push({ id: el.id, name: el.item_name })
+      menuitem.push({ id: el.id, name: el.item_name,url:el.url })
     })
     let entity2 = await strapi.services['mein-konto'].find()
     entity2.map((el) => {
-      konto.push({ id: el.id, title: el.title })
+      konto.push({ id: el.id, title: el.title , url:el.url })
     })
     let entity = await strapi.services.contact.find()
     entity.map((el) => {
       contacts.push({ id: el.id, title: el.title, value: el.value })
     })
-    result.push(store)
-    result.push(konto)
-    result.push(menuitem)
     result.push(contacts)
+    result.push(store)
+    result.push(menuitem)
+    result.push(konto)
     return result
   },
 

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "mein_kontos",
   "info": {
-    "name": "MEIN_KONTO"
+    "name": "MEIN_KONTO",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,6 +12,9 @@
   },
   "attributes": {
     "title": {
+      "type": "string"
+    },
+    "url": {
       "type": "string"
     }
   }

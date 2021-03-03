@@ -654,28 +654,34 @@
             "type": "string"
           },
           "categories": {
-            "required": [
-              "id",
-              "CategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "CategoryName": {
-                "type": "string"
-              },
-              "sub_categories": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "CategoryName"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "CategoryName": {
+                  "type": "string"
+                },
+                "sub_categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -790,7 +796,10 @@
             "type": "string"
           },
           "categories": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "title": {
             "type": "string"

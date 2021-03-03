@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "four_icons",
   "info": {
-    "name": "four_icons"
+    "name": "four_icons",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -14,9 +15,6 @@
       "type": "string"
     },
     "text": {
-      "type": "text"
-    },
-    "svg": {
       "type": "text"
     }
   }

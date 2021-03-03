@@ -695,9 +695,6 @@
                 "id": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "string"
-                },
                 "images": {
                   "type": "array",
                   "items": {
@@ -745,6 +742,9 @@
                 },
                 "video": {
                   "type": "string"
+                },
+                "price": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"

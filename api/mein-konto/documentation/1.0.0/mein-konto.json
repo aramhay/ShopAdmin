@@ -538,6 +538,9 @@
           "title": {
             "type": "string"
           },
+          "url": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -547,6 +550,9 @@
       "NewMein-konto": {
         "properties": {
           "title": {
+            "type": "string"
+          },
+          "url": {
             "type": "string"
           },
           "published_at": {

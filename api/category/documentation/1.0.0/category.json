@@ -527,25 +527,28 @@
             "type": "string"
           },
           "sub_categories": {
-            "required": [
-              "id",
-              "SubCategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "SubCategoryName": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "SubCategoryName"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "SubCategoryName": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -564,7 +567,10 @@
             "type": "string"
           },
           "sub_categories": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

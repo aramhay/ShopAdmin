@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/01/2021 6:38:13 PM"
+    "x-generation-date": "03/03/2021 9:43:01 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6245,6 +6245,200 @@
             "schema": {
               "type": "string"
             }
+          }
+        ]
+      }
+    },
+    "/mid-footers": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Mid-footer"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
           }
         ]
       }
@@ -15225,25 +15419,28 @@
             "type": "string"
           },
           "sub_categories": {
-            "required": [
-              "id",
-              "SubCategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "SubCategoryName": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "SubCategoryName"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "SubCategoryName": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -15262,7 +15459,10 @@
             "type": "string"
           },
           "sub_categories": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -15559,72 +15759,75 @@
             ]
           },
           "products": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "for_sale_count": {
+                  "type": "integer"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -15690,7 +15893,10 @@
             ]
           },
           "products": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -15860,9 +16066,6 @@
               "id": {
                 "type": "string"
               },
-              "price": {
-                "type": "string"
-              },
               "images": {
                 "type": "array",
                 "items": {
@@ -15910,6 +16113,9 @@
               },
               "video": {
                 "type": "string"
+              },
+              "price": {
+                "type": "integer"
               },
               "published_at": {
                 "type": "string"
@@ -15962,9 +16168,6 @@
           "text": {
             "type": "string"
           },
-          "svg": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -15977,9 +16180,6 @@
             "type": "string"
           },
           "text": {
-            "type": "string"
-          },
-          "svg": {
             "type": "string"
           },
           "published_at": {
@@ -16004,72 +16204,75 @@
             "type": "string"
           },
           "Parfum": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "for_sale_count": {
+                  "type": "integer"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -16082,142 +16285,148 @@
             ]
           },
           "beauties": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "for_sale_count": {
+                  "type": "integer"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
           "Interieur": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "for_sale_count": {
+                  "type": "integer"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -16233,7 +16442,10 @@
         ],
         "properties": {
           "Parfum": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "position": {
             "type": "string",
@@ -16244,10 +16456,16 @@
             ]
           },
           "beauties": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "Interieur": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -16726,9 +16944,6 @@
                 "id": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "string"
-                },
                 "images": {
                   "type": "array",
                   "items": {
@@ -16776,6 +16991,9 @@
                 },
                 "video": {
                   "type": "string"
+                },
+                "price": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -16906,6 +17124,9 @@
           "title": {
             "type": "string"
           },
+          "url": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -16915,6 +17136,9 @@
       "NewMein-konto": {
         "properties": {
           "title": {
+            "type": "string"
+          },
+          "url": {
             "type": "string"
           },
           "published_at": {
@@ -16942,28 +17166,34 @@
             "type": "string"
           },
           "categories": {
-            "required": [
-              "id",
-              "CategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "CategoryName": {
-                "type": "string"
-              },
-              "sub_categories": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "CategoryName"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "CategoryName": {
+                  "type": "string"
+                },
+                "sub_categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -17078,7 +17308,10 @@
             "type": "string"
           },
           "categories": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "title": {
             "type": "string"
@@ -17108,6 +17341,113 @@
               "P",
               "Q"
             ]
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Mid-footer": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          },
+          "images": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "newsletter_text": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewMid-footer": {
+        "properties": {
+          "header": {
+            "type": "string"
+          },
+          "newsletter_text": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -17532,9 +17872,6 @@
           "id": {
             "type": "string"
           },
-          "price": {
-            "type": "string"
-          },
           "images": {
             "type": "array",
             "items": {
@@ -17670,7 +18007,10 @@
                 "type": "string"
               },
               "sub_categories": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -17719,7 +18059,10 @@
                 "type": "string"
               },
               "categories": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "title": {
                 "type": "string"
@@ -17731,7 +18074,26 @@
                 "type": "string"
               },
               "position": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G",
+                  "H",
+                  "I",
+                  "J",
+                  "K",
+                  "L",
+                  "M",
+                  "N",
+                  "O",
+                  "P",
+                  "Q"
+                ]
               },
               "published_at": {
                 "type": "string"
@@ -17768,7 +18130,13 @@
                 "type": "string"
               },
               "position": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "right",
+                  "left",
+                  "center",
+                  "full"
+                ]
               },
               "products": {
                 "type": "array",
@@ -17861,6 +18229,9 @@
               }
             }
           },
+          "price": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -17869,9 +18240,6 @@
       },
       "NewProducts": {
         "properties": {
-          "price": {
-            "type": "string"
-          },
           "clean_product": {
             "type": "boolean"
           },
@@ -17911,6 +18279,9 @@
           "New_Date_Limit": {
             "type": "string",
             "format": "date"
+          },
+          "price": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -18217,9 +18588,6 @@
               "id": {
                 "type": "string"
               },
-              "price": {
-                "type": "string"
-              },
               "images": {
                 "type": "array",
                 "items": {
@@ -18268,6 +18636,9 @@
               "video": {
                 "type": "string"
               },
+              "price": {
+                "type": "integer"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -18307,7 +18678,10 @@
                 "type": "string"
               },
               "secure": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "One"
+                ]
               },
               "published_at": {
                 "type": "string"
@@ -18749,9 +19123,6 @@
               "id": {
                 "type": "string"
               },
-              "price": {
-                "type": "string"
-              },
               "images": {
                 "type": "array",
                 "items": {
@@ -18799,6 +19170,9 @@
               },
               "video": {
                 "type": "string"
+              },
+              "price": {
+                "type": "integer"
               },
               "published_at": {
                 "type": "string"

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mid_footers",
+  "info": {
+    "name": "mid_footer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "newsletter_text": {
+      "type": "text"
+    }
+  }
+}

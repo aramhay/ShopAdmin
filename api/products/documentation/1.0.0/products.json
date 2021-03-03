@@ -851,9 +851,6 @@
           "id": {
             "type": "string"
           },
-          "price": {
-            "type": "string"
-          },
           "images": {
             "type": "array",
             "items": {
@@ -989,7 +986,10 @@
                 "type": "string"
               },
               "sub_categories": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -1038,7 +1038,10 @@
                 "type": "string"
               },
               "categories": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "title": {
                 "type": "string"
@@ -1050,7 +1053,26 @@
                 "type": "string"
               },
               "position": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G",
+                  "H",
+                  "I",
+                  "J",
+                  "K",
+                  "L",
+                  "M",
+                  "N",
+                  "O",
+                  "P",
+                  "Q"
+                ]
               },
               "published_at": {
                 "type": "string"
@@ -1087,7 +1109,13 @@
                 "type": "string"
               },
               "position": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "right",
+                  "left",
+                  "center",
+                  "full"
+                ]
               },
               "products": {
                 "type": "array",
@@ -1180,6 +1208,9 @@
               }
             }
           },
+          "price": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1188,9 +1219,6 @@
       },
       "NewProducts": {
         "properties": {
-          "price": {
-            "type": "string"
-          },
           "clean_product": {
             "type": "boolean"
           },
@@ -1230,6 +1258,9 @@
           "New_Date_Limit": {
             "type": "string",
             "format": "date"
+          },
+          "price": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mid-footers",
+      "handler": "mid-footer.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

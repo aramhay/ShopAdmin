@@ -13,6 +13,20 @@ module.exports = {
      * 
      */
 
+    async findNewProducts(ctx) {
+        let entities;
+        let result
+        if (ctx.query._q) {
+            entities = await strapi.services.products.search(ctx.query);
+        } else {
+            entities = await strapi.services.products.find(ctx.query);
+        }
+        console.log(entities);
+        // entities.map((el)=>{
+        //     console.log(el);
+        // })
+    },
+
     async find(ctx) {
         let entities;
         if (ctx.query._q) {
@@ -21,7 +35,7 @@ module.exports = {
             entities = await strapi.services.products.find(ctx.query);
         }
         // entities = deleteUnnecessaryKeyInObject(entities)
-        
+
         return (checkFavoriteProducts(ctx.req.user, entities))
 
     },
@@ -74,7 +88,7 @@ module.exports = {
             .select('products.id', 'products.price', 'products.clean_product',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
-                products = getUniqueListBy(products)
+        products = getUniqueListBy(products)
         return (checkFavoriteProducts(ctx.req.user, products))
 
     },
@@ -110,17 +124,21 @@ module.exports = {
         return (checkFavoriteProducts(ctx.req.user, products))
 
     },
-    async getAllNewProducts() {
+    async getAllNewProducts(ctx) {
         let newProduct = []
+        let entity
         let now = new Date();
-        let entity = await strapi.services.products.find({});
+        if (ctx.query._q) {
+            entity = await strapi.services.products.search(ctx.query);
+        } else {
+            entity = await strapi.services.products.find(ctx.query);
+        }
         const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
         entity.map((el) => {
-            if (now.toLocaleDateString("en-US", options) <= el.New_Date_Limit)
+            if (el.New_Date_Limit !== null && (now.toLocaleDateString("en-US", options) <= Date(el.New_Date_Limit)))
                 newProduct.push(el)
-
         })
-        return newProduct
+        return checkFavoriteProducts(ctx.req.user, newProduct)
 
     }
 

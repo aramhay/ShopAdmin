@@ -211,9 +211,6 @@
           "text": {
             "type": "string"
           },
-          "svg": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -226,9 +223,6 @@
             "type": "string"
           },
           "text": {
-            "type": "string"
-          },
-          "svg": {
             "type": "string"
           },
           "published_at": {

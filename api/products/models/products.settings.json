@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "price": {
-      "type": "string"
-    },
     "images": {
       "collection": "file",
       "via": "related",
@@ -76,6 +73,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "price": {
+      "type": "biginteger",
+      "min": "0"
     }
   }
 }
