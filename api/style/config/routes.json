@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/styles",
+      "handler": "style.find",
+      "config": {
+        "policies": []
+      }
+    }
+    
+  ]
+}

@@ -2,6 +2,7 @@
 'use strict';
 
 const _ = require('loadsh');
+const { findOne } = require('../../products/controllers/products');
 
 module.exports = {
     /**
@@ -80,10 +81,13 @@ module.exports = {
     },
 
     async create(ctx) {
+        
+         
+          
         let data = {
             users_permissions_user: ctx.req.user.id,
             product: ctx.request.body.product
-        }
+        }   
         let id = ctx.request.body.product
         let product = await strapi.services.products.find({ id })
         if (product.length === 0) return ({ success: false, message: "product is not exist" })
@@ -92,9 +96,9 @@ module.exports = {
                 return ({ success: false, message: `product quantity is less than ${ctx.request.body.quantity}` })
         }
         let entity1 = await strapi.services['shopping-basket'].find(data);
-        console.log(entity1);
         if (entity1.length === 1) {
-            await strapi.services['shopping-basket'].update({ id: entity1[0].id }, { quantity: ctx.request.body.quantity });
+            let quan =  ctx.request.body.quantity + parseInt(entity1[0].quantity)
+            await strapi.services['shopping-basket'].update({ id: entity1[0].id }, { quantity: quan });
             return { success: true };
         } else {
             await strapi.services['shopping-basket'].create({ quantity: ctx.request.body.quantity, ...data });

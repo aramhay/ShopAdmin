@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "styles",
+  "info": {
+    "name": "style"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "text": {
+      "type": "text"
+    },
+    "link_text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

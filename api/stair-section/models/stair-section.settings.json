@@ -11,13 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "header_1": {
-      "type": "string"
-    },
-    "text_1": {
-      "type": "text"
-    },
-    "images_1": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -28,49 +22,28 @@
       "plugin": "upload",
       "required": false
     },
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "date": {
+      "type": "datetime"
+    },
     "position": {
       "type": "enumeration",
       "enum": [
         "One",
-        "Two"
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six"
       ],
       "required": true,
       "unique": true,
       "default": "One"
-    },
-    "header_2": {
-      "type": "string"
-    },
-    "text_2": {
-      "type": "text"
-    },
-    "images_2": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "header_3": {
-      "type": "string"
-    },
-    "text_3": {
-      "type": "text"
-    },
-    "images_3": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
     }
   }
 }

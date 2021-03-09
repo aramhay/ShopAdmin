@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/interieurs",
+      "handler": "interieur.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/interieurs/count",
+      "handler": "interieur.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/interieurs/:id",
+      "handler": "interieur.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/interieurs",
+      "handler": "interieur.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/interieurs/:id",
+      "handler": "interieur.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/interieurs/:id",
+      "handler": "interieur.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

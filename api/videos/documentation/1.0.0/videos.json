@@ -522,63 +522,36 @@
           "id": {
             "type": "string"
           },
-          "video": {
+          "video_status": {
+            "type": "string"
+          },
+          "video_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "video_id": {
+            "type": "integer"
+          },
+          "bookmark": {
             "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "users_permissions_user": {
                 "type": "string"
               },
-              "alternativeText": {
+              "video": {
                 "type": "string"
               },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
+              "published_at": {
                 "type": "string"
               },
               "created_by": {
@@ -589,15 +562,6 @@
               }
             }
           },
-          "Review_Bioeffect": {
-            "type": "string"
-          },
-          "video_name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -606,13 +570,22 @@
       },
       "NewVideos": {
         "properties": {
-          "Review_Bioeffect": {
+          "video_status": {
             "type": "string"
           },
           "video_name": {
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "video_id": {
+            "type": "integer"
+          },
+          "bookmark": {
             "type": "string"
           },
           "published_at": {

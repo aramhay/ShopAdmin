@@ -771,6 +771,15 @@
               "limited_edition": {
                 "type": "boolean"
               },
+              "video_description": {
+                "type": "string"
+              },
+              "video_status": {
+                "type": "string"
+              },
+              "video_name": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -781,9 +790,6 @@
                 "type": "string"
               }
             }
-          },
-          "quantity": {
-            "type": "integer"
           },
           "gift_wrap": {
             "required": [
@@ -863,6 +869,9 @@
               }
             }
           },
+          "quantity": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -877,14 +886,14 @@
           "product": {
             "type": "string"
           },
-          "quantity": {
-            "type": "integer"
-          },
           "gift_wrap": {
             "type": "string"
           },
           "type_test": {
             "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

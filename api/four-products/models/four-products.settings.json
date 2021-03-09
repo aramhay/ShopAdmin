@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "four_products",
   "info": {
-    "name": "four_products"
+    "name": "four_products",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,9 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Parfum": {
-      "collection": "products"
-    },
     "position": {
       "type": "enumeration",
       "enum": [
@@ -23,11 +21,14 @@
       "unique": true,
       "default": "HomePage"
     },
-    "beauties": {
-      "collection": "products"
+    "parfums": {
+      "collection": "parfums"
     },
-    "Interieur": {
-      "collection": "products"
+    "beauties": {
+      "collection": "beauty"
+    },
+    "interieurs": {
+      "collection": "interieur"
     }
   }
 }

@@ -49,7 +49,8 @@
       "model": "sub-category"
     },
     "menu_item": {
-      "model": "menu-item"
+      "model": "menu-item",
+      "via": "products"
     },
     "name": {
       "type": "string"
@@ -82,6 +83,15 @@
     "limited_edition": {
       "type": "boolean",
       "default": false
+    },
+    "video_description": {
+      "type": "text"
+    },
+    "video_status": {
+      "type": "string"
+    },
+    "video_name": {
+      "type": "string"
     }
   }
 }

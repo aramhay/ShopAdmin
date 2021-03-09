@@ -58,6 +58,10 @@
       "required": true,
       "unique": true,
       "default": "A"
+    },
+    "products": {
+      "via": "menu_item",
+      "collection": "products"
     }
   }
 }

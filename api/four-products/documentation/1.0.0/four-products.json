@@ -192,336 +192,6 @@
             "deprecated": false
           }
         ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new four-products record",
-        "responses": {
-          "200": {
-            "description": "Retrieve four-products document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Four-products"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewFour-products"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/four-products/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of four-products documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve four-products document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Four-products"
-        ],
-        "parameters": []
-      }
-    },
-    "/four-products/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one four-products record",
-        "responses": {
-          "200": {
-            "description": "Retrieve four-products document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Four-products"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
-        "deprecated": false,
-        "description": "Update a single four-products record",
-        "responses": {
-          "200": {
-            "description": "Retrieve four-products document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Four-products"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewFour-products"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a single four-products record",
-        "responses": {
-          "200": {
-            "description": "deletes a single four-products based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Four-products"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
       }
     }
   },
@@ -536,7 +206,15 @@
           "id": {
             "type": "string"
           },
-          "Parfum": {
+          "position": {
+            "type": "string",
+            "default": "HomePage",
+            "enum": [
+              "HomePage",
+              "HerrenPage"
+            ]
+          },
+          "parfums": {
             "type": "array",
             "items": {
               "required": [
@@ -546,58 +224,31 @@
                 "id": {
                   "type": "string"
                 },
+                "productId": {
+                  "type": "integer"
+                },
                 "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
-                },
-                "type_test": {
-                  "type": "string"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
                   "type": "string"
                 },
                 "New_Date_Limit": {
                   "type": "string"
                 },
-                "video": {
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
                   "type": "string"
                 },
                 "price": {
                   "type": "integer"
                 },
-                "limited_edition": {
+                "clean_product": {
                   "type": "boolean"
                 },
                 "published_at": {
@@ -611,14 +262,6 @@
                 }
               }
             }
-          },
-          "position": {
-            "type": "string",
-            "default": "HomePage",
-            "enum": [
-              "HomePage",
-              "HerrenPage"
-            ]
           },
           "beauties": {
             "type": "array",
@@ -630,58 +273,31 @@
                 "id": {
                   "type": "string"
                 },
+                "productId": {
+                  "type": "integer"
+                },
                 "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
-                },
-                "type_test": {
-                  "type": "string"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
                   "type": "string"
                 },
                 "New_Date_Limit": {
                   "type": "string"
                 },
-                "video": {
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
                   "type": "string"
                 },
                 "price": {
                   "type": "integer"
                 },
-                "limited_edition": {
+                "clean_product": {
                   "type": "boolean"
                 },
                 "published_at": {
@@ -696,7 +312,7 @@
               }
             }
           },
-          "Interieur": {
+          "interieurs": {
             "type": "array",
             "items": {
               "required": [
@@ -706,58 +322,31 @@
                 "id": {
                   "type": "string"
                 },
+                "productId": {
+                  "type": "integer"
+                },
                 "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
-                },
-                "type_test": {
-                  "type": "string"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
                   "type": "string"
                 },
                 "New_Date_Limit": {
                   "type": "string"
                 },
-                "video": {
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
                   "type": "string"
                 },
                 "price": {
                   "type": "integer"
                 },
-                "limited_edition": {
+                "clean_product": {
                   "type": "boolean"
                 },
                 "published_at": {
@@ -783,12 +372,6 @@
           "position"
         ],
         "properties": {
-          "Parfum": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "position": {
             "type": "string",
             "default": "HomePage",
@@ -797,13 +380,19 @@
               "HerrenPage"
             ]
           },
+          "parfums": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "beauties": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "Interieur": {
+          "interieurs": {
             "type": "array",
             "items": {
               "type": "string"

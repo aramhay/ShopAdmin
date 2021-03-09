@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "videos",
   "info": {
-    "name": "videos"
+    "name": "videos",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,25 +11,24 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "video": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "Review_Bioeffect": {
+    "video_status": {
       "type": "string"
     },
     "video_name": {
-      "type": "text"
+      "type": "string"
     },
     "description": {
       "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "video_id": {
+      "type": "biginteger"
+    },
+    "bookmark": {
+      "via": "video",
+      "model": "bookmark"
     }
   }
 }

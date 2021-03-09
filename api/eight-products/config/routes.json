@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/eight-products",
+      "handler": "eight-products.find",
+      "config": {
+        "policies": []
+      }
+    }
+    
+  ]
+}

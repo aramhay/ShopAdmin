@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_of_the_footers",
+  "info": {
+    "name": "top_of_the_footer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

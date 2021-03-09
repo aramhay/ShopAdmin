@@ -24,7 +24,6 @@
     "strapi-plugin-documentation": "3.5.1",
     "strapi-plugin-email": "3.5.1",
     "strapi-plugin-graphql": "3.5.1",
-    "strapi-plugin-html-wysiwyg": "^1.0.5",
     "strapi-plugin-upload": "3.5.1",
     "strapi-plugin-users-permissions": "^3.5.1",
     "strapi-provider-email-sendgrid": "^3.5.1",

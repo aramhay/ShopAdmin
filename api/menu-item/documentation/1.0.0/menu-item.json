@@ -781,6 +781,91 @@
               "Q"
             ]
           },
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "for_sale_count": {
+                  "type": "integer"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "video_description": {
+                  "type": "string"
+                },
+                "video_status": {
+                  "type": "string"
+                },
+                "video_name": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -829,6 +914,12 @@
               "P",
               "Q"
             ]
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

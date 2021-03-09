@@ -5,4 +5,16 @@
  * to customize this model
  */
 
-module.exports = {};
+module.exports = {
+    lifecycles: {
+        beforeCreate: async (data) => {
+            let now = new Date();
+            data.date = now
+
+        },
+        afterUpdate: async (data) => {
+            let now = new Date();
+            data.date = now
+        },
+    }
+}

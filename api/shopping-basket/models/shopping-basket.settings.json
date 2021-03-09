@@ -20,9 +20,6 @@
       "columnName": "id",
       "model": "products"
     },
-    "quantity": {
-      "type": "biginteger"
-    },
     "gift_wrap": {
       "columnName": "id",
       "model": "gift-wrap"
@@ -30,6 +27,10 @@
     "type_test": {
       "columnName": "id",
       "model": "type-test"
+    },
+    "quantity": {
+      "type": "biginteger",
+      "min": "1"
     }
   }
 }

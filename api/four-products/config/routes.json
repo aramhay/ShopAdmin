@@ -7,46 +7,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "GET",
-      "path": "/four-products/count",
-      "handler": "four-products.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/four-products/:id",
-      "handler": "four-products.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/four-products",
-      "handler": "four-products.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/four-products/:id",
-      "handler": "four-products.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/four-products/:id",
-      "handler": "four-products.delete",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }

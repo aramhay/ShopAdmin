@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eight_products",
+  "info": {
+    "name": "eight_products"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "HerrenPage"
+      ],
+      "required": true,
+      "unique": true,
+      "default": "HerrenPage"
+    },
+    "beauties": {
+      "collection": "beauty"
+    },
+    "interieurs": {
+      "collection": "interieur"
+    },
+    "parfums": {
+      "collection": "parfums"
+    }
+  }
+}

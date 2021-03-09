@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/parfums",
+      "handler": "parfums.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/parfums/count",
+      "handler": "parfums.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/parfums/:id",
+      "handler": "parfums.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/parfums",
+      "handler": "parfums.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/parfums/:id",
+      "handler": "parfums.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/parfums/:id",
+      "handler": "parfums.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

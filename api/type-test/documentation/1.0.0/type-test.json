@@ -609,6 +609,15 @@
               "limited_edition": {
                 "type": "boolean"
               },
+              "video_description": {
+                "type": "string"
+              },
+              "video_status": {
+                "type": "string"
+              },
+              "video_name": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
