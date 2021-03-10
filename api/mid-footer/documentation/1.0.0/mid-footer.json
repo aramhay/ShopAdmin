@@ -275,7 +275,13 @@
               }
             }
           },
-          "newsletter_text": {
+          "text_1": {
+            "type": "string"
+          },
+          "text_2": {
+            "type": "string"
+          },
+          "text_3": {
             "type": "string"
           },
           "published_at": {
@@ -289,7 +295,13 @@
           "header": {
             "type": "string"
           },
-          "newsletter_text": {
+          "text_1": {
+            "type": "string"
+          },
+          "text_2": {
+            "type": "string"
+          },
+          "text_3": {
             "type": "string"
           },
           "published_at": {

@@ -32,7 +32,7 @@ module.exports = {
         }
         entities = await strapi.services.bookmark.find(favoritData)
         let favoritVideos = []
-        entities.map((e) => { favoritVideos.push(e.video) })
+        entities.map((e) => { if (e.video) favoritVideos.push(e.video) })
         return favoritVideos
 
     },

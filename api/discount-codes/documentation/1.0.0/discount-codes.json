@@ -661,6 +661,9 @@
                 "video_name": {
                   "type": "string"
                 },
+                "favorite_product": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

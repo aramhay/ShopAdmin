@@ -92,6 +92,10 @@
     },
     "video_name": {
       "type": "string"
+    },
+    "favorite_product": {
+      "via": "product",
+      "model": "favorite-product"
     }
   }
 }

@@ -1231,6 +1231,31 @@
           "video_name": {
             "type": "string"
           },
+          "favorite_product": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "product": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1294,6 +1319,9 @@
             "type": "string"
           },
           "video_name": {
+            "type": "string"
+          },
+          "favorite_product": {
             "type": "string"
           },
           "published_at": {

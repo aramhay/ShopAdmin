@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_texts",
+  "info": {
+    "name": "Newsletter_text"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

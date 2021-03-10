@@ -31,7 +31,7 @@ module.exports = {
                 await strapi.services.beauty.create(field)
             if (interieur.includes(data.menu_item?.item_name))
                 await strapi.services.interieur.create(field);
-            if (data.video.url) {
+            if (data.video?.url) {
                 let forVideoField = {
                     video_id: data.id,
                     video_status: data.video_status,
@@ -43,7 +43,7 @@ module.exports = {
             }
         },
         afterUpdate: async (data) => {
-            if (data.video.url) {
+            if (data.video?.url) {
                 let forVideoField = {
                     video_id: data.id,
                     video_status: data.video_status,
