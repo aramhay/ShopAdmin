@@ -13,7 +13,7 @@ module.exports = {
         product.map((el) => {
             Object.assign(el, { favorit: false });
             entity.map((elem, index) => {
-                if ((el.id === elem.product.id) || (elem.product.id == el.productId)) {
+                if ((el.id === elem.product?.id) || (elem.product?.id == el.productId)) {
                     Object.assign(el, { favorit: true });
                     return
                 } else

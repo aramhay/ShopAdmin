@@ -7,46 +7,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "GET",
-      "path": "/newsletter-texts/count",
-      "handler": "newsletter-text.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/newsletter-texts/:id",
-      "handler": "newsletter-text.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/newsletter-texts",
-      "handler": "newsletter-text.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/newsletter-texts/:id",
-      "handler": "newsletter-text.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/newsletter-texts/:id",
-      "handler": "newsletter-text.delete",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }
