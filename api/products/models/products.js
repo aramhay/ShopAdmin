@@ -64,14 +64,29 @@ module.exports = {
                 price: data?.price,
                 clean_product: data?.clean_product
             }
-            strapi.services.beauty.update({ productId: data.id }, forFourAndEight)
-                .then(res => {
-                    if (res) return
-                    strapi.services.parfums.update({ productId: data.id }, forFourAndEight).then(res1 => {
-                        if (res1) return
-                    })
-                    strapi.services.interieur.update({ productId: data.id }, forFourAndEight)
+            let p1 = new Promise((res, rej) => {
+                strapi.services.beauty.update({ productId: data.id }, forFourAndEight)
+            })
+            let p2 = new Promise((res, rej) => {
+                strapi.services.parfums.update({ productId: data.id }, forFourAndEight)
+            })
+            let p3 = new Promise((res, rej) => {
+                strapi.services.interieur.update({ productId: data.id }, forFourAndEight)
+            })
+            Promise.all([p1, p2, p3])
+                .then(values => {
                 })
+                .catch(error => {
+                });
+
+            // strapi.services.beauty.update({ productId: data.id }, forFourAndEight)
+            //     .then(res => { console.log(res,'res')
+            //         if (res) return
+            //         strapi.services.parfums.update({ productId: data.id }, forFourAndEight).then(res1 => {
+            //             if (res1) return console.log(res1)
+            //         })
+            //         strapi.services.interieur.update({ productId: data.id }, forFourAndEight)
+            //     })
         },
         beforeDelete: async (data) => {
             await strapi.services.videos.delete({ video_id: data.id })

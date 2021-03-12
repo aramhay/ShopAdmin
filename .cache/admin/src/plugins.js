@@ -26,7 +26,6 @@ module.exports = {
 'documentation': require('../../plugins/strapi-plugin-documentation/admin/src').default,
 'email': require('../../plugins/strapi-plugin-email/admin/src').default,
 'graphql': require('../../plugins/strapi-plugin-graphql/admin/src').default,
-'html-wysiwyg': require('../../plugins/strapi-plugin-html-wysiwyg/admin/src').default,
 'upload': require('../../plugins/strapi-plugin-upload/admin/src').default,
 'users-permissions': require('../../plugins/strapi-plugin-users-permissions/admin/src').default,
   
