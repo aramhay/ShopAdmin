@@ -211,7 +211,7 @@
             "default": "HomePage",
             "enum": [
               "HomePage",
-              "HerrenPage"
+              "ProductPage"
             ]
           },
           "parfums": {
@@ -377,7 +377,7 @@
             "default": "HomePage",
             "enum": [
               "HomePage",
-              "HerrenPage"
+              "ProductPage"
             ]
           },
           "parfums": {

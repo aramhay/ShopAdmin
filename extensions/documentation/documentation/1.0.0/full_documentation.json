@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/12/2021 5:38:30 PM"
+    "x-generation-date": "03/16/2021 12:00:27 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -18648,8 +18648,11 @@
                 "video_name": {
                   "type": "string"
                 },
-                "favorite_product": {
-                  "type": "string"
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -18839,9 +18842,10 @@
           },
           "position": {
             "type": "string",
-            "default": "HerrenPage",
+            "default": "HerrenPageOne",
             "enum": [
-              "HerrenPage"
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "beauties": {
@@ -19004,9 +19008,10 @@
         "properties": {
           "position": {
             "type": "string",
-            "default": "HerrenPage",
+            "default": "HerrenPageOne",
             "enum": [
-              "HerrenPage"
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "beauties": {
@@ -19172,8 +19177,11 @@
               "video_name": {
                 "type": "string"
               },
-              "favorite_product": {
-                "type": "string"
+              "favorite_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -19266,7 +19274,7 @@
             "default": "HomePage",
             "enum": [
               "HomePage",
-              "HerrenPage"
+              "ProductPage"
             ]
           },
           "parfums": {
@@ -19432,7 +19440,7 @@
             "default": "HomePage",
             "enum": [
               "HomePage",
-              "HerrenPage"
+              "ProductPage"
             ]
           },
           "parfums": {
@@ -20077,8 +20085,11 @@
                 "video_name": {
                   "type": "string"
                 },
-                "favorite_product": {
-                  "type": "string"
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -20451,8 +20462,11 @@
                 "video_name": {
                   "type": "string"
                 },
-                "favorite_product": {
-                  "type": "string"
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -21561,28 +21575,31 @@
           "video_name": {
             "type": "string"
           },
-          "favorite_product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "product": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -21651,8 +21668,11 @@
           "video_name": {
             "type": "string"
           },
-          "favorite_product": {
-            "type": "string"
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -22022,8 +22042,11 @@
               "video_name": {
                 "type": "string"
               },
-              "favorite_product": {
-                "type": "string"
+              "favorite_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -22644,8 +22667,11 @@
               "video_name": {
                 "type": "string"
               },
-              "favorite_product": {
-                "type": "string"
+              "favorite_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "eight_products",
   "info": {
-    "name": "eight_products"
+    "name": "eight_products",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -13,11 +14,12 @@
     "position": {
       "type": "enumeration",
       "enum": [
-        "HerrenPage"
+        "HerrenPageOne",
+        "HerrenPageTwo"
       ],
       "required": true,
       "unique": true,
-      "default": "HerrenPage"
+      "default": "HerrenPageOne"
     },
     "beauties": {
       "collection": "beauty"

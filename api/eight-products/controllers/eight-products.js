@@ -9,7 +9,6 @@ const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
     async find(ctx) {
-        let result = [];
         let entities;
         if (ctx.query._q) {
             entities = await strapi.services['eight-products'].search(ctx.query);
@@ -17,9 +16,12 @@ module.exports = {
             entities = await strapi.services['eight-products'].find(ctx.query);
         }
         let ent = entities.map(entity => sanitizeEntity(entity, { model: strapi.models['eight-products'] }));
-        await checkFavoriteProducts(ctx.req.user, ent[0].parfums)
-        await checkFavoriteProducts(ctx.req.user, ent[0].beauties)
-        await checkFavoriteProducts(ctx.req.user, ent[0].interieurs)
+            for (let i = 0;i<ent.length ; i++){
+                await checkFavoriteProducts(ctx.req.user, ent[i].parfums)
+                await checkFavoriteProducts(ctx.req.user, ent[i].beauties)
+                await checkFavoriteProducts(ctx.req.user, ent[i].interieurs)
+            }
+       
         return ent
     }
 };

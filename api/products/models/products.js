@@ -78,15 +78,6 @@ module.exports = {
                 })
                 .catch(error => {
                 });
-
-            // strapi.services.beauty.update({ productId: data.id }, forFourAndEight)
-            //     .then(res => { console.log(res,'res')
-            //         if (res) return
-            //         strapi.services.parfums.update({ productId: data.id }, forFourAndEight).then(res1 => {
-            //             if (res1) return console.log(res1)
-            //         })
-            //         strapi.services.interieur.update({ productId: data.id }, forFourAndEight)
-            //     })
         },
         beforeDelete: async (data) => {
             await strapi.services.videos.delete({ video_id: data.id })

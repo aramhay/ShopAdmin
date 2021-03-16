@@ -93,9 +93,9 @@
     "video_name": {
       "type": "string"
     },
-    "favorite_product": {
+    "favorite_products": {
       "via": "product",
-      "model": "favorite-product"
+      "collection": "favorite-product"
     }
   }
 }

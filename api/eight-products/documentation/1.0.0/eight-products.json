@@ -208,9 +208,10 @@
           },
           "position": {
             "type": "string",
-            "default": "HerrenPage",
+            "default": "HerrenPageOne",
             "enum": [
-              "HerrenPage"
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "beauties": {
@@ -373,9 +374,10 @@
         "properties": {
           "position": {
             "type": "string",
-            "default": "HerrenPage",
+            "default": "HerrenPageOne",
             "enum": [
-              "HerrenPage"
+              "HerrenPageOne",
+              "HerrenPageTwo"
             ]
           },
           "beauties": {
