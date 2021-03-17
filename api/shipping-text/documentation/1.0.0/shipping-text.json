@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/main-account": {
+    "/shipping-text": {
       "get": {
         "deprecated": false,
-        "description": "Find all the main-account's records",
+        "description": "Find all the shipping-text's records",
         "responses": {
           "200": {
-            "description": "Retrieve main-account document(s)",
+            "description": "Retrieve shipping-text document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Main-account"
+          "Shipping-text"
         ],
         "parameters": [
           {
@@ -197,7 +197,7 @@
   },
   "components": {
     "schemas": {
-      "Main-account": {
+      "Shipping-text": {
         "required": [
           "id"
         ],
@@ -205,22 +205,19 @@
           "id": {
             "type": "string"
           },
-          "addresses": {
+          "text_1": {
             "type": "string"
           },
-          "user_data": {
+          "text_2": {
             "type": "string"
           },
-          "orders": {
+          "text_3": {
             "type": "string"
           },
-          "wishlist": {
+          "text_4": {
             "type": "string"
           },
-          "newsletter": {
-            "type": "string"
-          },
-          "my_bookmarks": {
+          "text_5": {
             "type": "string"
           },
           "published_at": {
@@ -229,24 +226,21 @@
           }
         }
       },
-      "NewMain-account": {
+      "NewShipping-text": {
         "properties": {
-          "addresses": {
+          "text_1": {
             "type": "string"
           },
-          "user_data": {
+          "text_2": {
             "type": "string"
           },
-          "orders": {
+          "text_3": {
             "type": "string"
           },
-          "wishlist": {
+          "text_4": {
             "type": "string"
           },
-          "newsletter": {
-            "type": "string"
-          },
-          "my_bookmarks": {
+          "text_5": {
             "type": "string"
           },
           "published_at": {

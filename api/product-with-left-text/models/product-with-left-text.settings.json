@@ -30,7 +30,8 @@
       "type": "enumeration",
       "enum": [
         "HomePageOne",
-        "HomePageTwo"
+        "HomePageTwo",
+        "HerrenPageOne"
       ],
       "required": true,
       "unique": true

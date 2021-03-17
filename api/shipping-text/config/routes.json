@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/main-account",
-      "handler": "main-account.find",
+      "path": "/shipping-text",
+      "handler": "shipping-text.find",
       "config": {
         "policies": []
       }

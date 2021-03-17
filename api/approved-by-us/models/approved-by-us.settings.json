@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "approved_by_uses",
+  "info": {
+    "name": "approved_by_us"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "approved_by_us": {
+      "type": "string"
+    },
+    "approved_by_us_text": {
+      "type": "richtext"
+    },
+    "right_header_of_the_image": {
+      "type": "string"
+    },
+    "right_text1_of_the_image": {
+      "type": "richtext"
+    },
+    "right_text2_of_the_image": {
+      "type": "richtext"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

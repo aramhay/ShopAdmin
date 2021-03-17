@@ -94,8 +94,11 @@
       "type": "string"
     },
     "favorite_products": {
-      "via": "product",
-      "collection": "favorite-product"
+      "collection": "favorite-product",
+      "via": "product"
+    },
+    "approved_by_DPAB": {
+      "type": "boolean"
     }
   }
 }

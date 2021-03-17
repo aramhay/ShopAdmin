@@ -860,6 +860,9 @@
                     "type": "string"
                   }
                 },
+                "approved_by_DPAB": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },

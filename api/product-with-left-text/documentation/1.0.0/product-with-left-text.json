@@ -225,7 +225,8 @@
             "type": "string",
             "enum": [
               "HomePageOne",
-              "HomePageTwo"
+              "HomePageTwo",
+              "HerrenPageOne"
             ]
           },
           "published_at": {
@@ -258,7 +259,8 @@
             "type": "string",
             "enum": [
               "HomePageOne",
-              "HomePageTwo"
+              "HomePageTwo",
+              "HerrenPageOne"
             ]
           },
           "published_at": {

@@ -16,8 +16,8 @@
       "model": "user"
     },
     "product": {
-      "model": "products",
-      "via": "favorite_products"
+      "via": "favorite_products",
+      "model": "products"
     }
   }
 }

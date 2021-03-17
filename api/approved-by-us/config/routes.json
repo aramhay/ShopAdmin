@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/main-account",
-      "handler": "main-account.find",
+      "path": "/approved-by-us",
+      "handler": "approved-by-us.find",
       "config": {
         "policies": []
       }

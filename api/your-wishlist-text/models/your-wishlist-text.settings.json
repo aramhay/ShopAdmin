@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "your_wishlist_texts",
+  "info": {
+    "name": "your_wishlist_text"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

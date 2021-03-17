@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/main-account": {
+    "/approved-by-us": {
       "get": {
         "deprecated": false,
-        "description": "Find all the main-account's records",
+        "description": "Find all the approved-by-us's records",
         "responses": {
           "200": {
-            "description": "Retrieve main-account document(s)",
+            "description": "Retrieve approved-by-us document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Main-account"
+          "Approved-by-us"
         ],
         "parameters": [
           {
@@ -197,7 +197,7 @@
   },
   "components": {
     "schemas": {
-      "Main-account": {
+      "Approved-by-us": {
         "required": [
           "id"
         ],
@@ -205,23 +205,90 @@
           "id": {
             "type": "string"
           },
-          "addresses": {
+          "header": {
             "type": "string"
           },
-          "user_data": {
+          "approved_by_us": {
             "type": "string"
           },
-          "orders": {
+          "approved_by_us_text": {
             "type": "string"
           },
-          "wishlist": {
+          "right_header_of_the_image": {
             "type": "string"
           },
-          "newsletter": {
+          "right_text1_of_the_image": {
             "type": "string"
           },
-          "my_bookmarks": {
+          "right_text2_of_the_image": {
             "type": "string"
+          },
+          "images": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -229,24 +296,24 @@
           }
         }
       },
-      "NewMain-account": {
+      "NewApproved-by-us": {
         "properties": {
-          "addresses": {
+          "header": {
             "type": "string"
           },
-          "user_data": {
+          "approved_by_us": {
             "type": "string"
           },
-          "orders": {
+          "approved_by_us_text": {
             "type": "string"
           },
-          "wishlist": {
+          "right_header_of_the_image": {
             "type": "string"
           },
-          "newsletter": {
+          "right_text1_of_the_image": {
             "type": "string"
           },
-          "my_bookmarks": {
+          "right_text2_of_the_image": {
             "type": "string"
           },
           "published_at": {

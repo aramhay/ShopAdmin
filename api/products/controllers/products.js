@@ -20,8 +20,7 @@ module.exports = {
         } else {
             entities = await strapi.services.products.find(ctx.query);
         }
-        // entities = deleteUnnecessaryKeyInObject(entities)
-
+             entities =  entities.map(entity => sanitizeEntity(entity, { model: strapi.models.products }));
         return (checkFavoriteProducts(ctx.req.user, entities))
 
     },
@@ -29,10 +28,9 @@ module.exports = {
 
     async findOne(ctx) {
         const { id } = ctx.params;
-
         let entity = await strapi.services.products.findOne({ id });
-        // entity = deleteUnnecessaryKeyInObject(entity)
-        return sanitizeEntity(entity, { model: strapi.models.products });
+        let product = await checkFavoriteProducts(ctx.req.user,[sanitizeEntity(entity, { model: strapi.models.products })])
+        return product[0]
     },
 
 
@@ -48,7 +46,7 @@ module.exports = {
             .join('sub_categories', 'sub_categories.id', 'products.sub_category')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
+            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition','products.approved_by_DPAB',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
@@ -73,7 +71,7 @@ module.exports = {
             .where('upload_file_morph.field', "images")
             .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
                 'products.brand', 'products.name', 'products.kind',
-                'products.unit', 'products.discount', 'upload_file.url as image_url');
+                'products.unit', 'products.discount', 'products.approved_by_DPAB','upload_file.url as image_url');
         products = getUniqueListBy(products)
         return (checkFavoriteProducts(ctx.req.user, products))
 
@@ -104,13 +102,14 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
-                'products.brand', 'products.name', 'products.kind',
+                'products.brand', 'products.name', 'products.kind','products.approved_by_DPAB',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
         return (checkFavoriteProducts(ctx.req.user, products))
 
     },
     async getAllNewProducts(ctx) {
+        // http://localhost:1337/products?New_Date_Limit_gt=2025-01-11T14:11:43.705Z
         let newProduct = []
         let entity
         let now = new Date();

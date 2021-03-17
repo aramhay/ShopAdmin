@@ -8,6 +8,13 @@
 
 module.exports = {
     checkFavoriteProducts: async (user, product) => {
+        product.map((el) =>{
+            delete el?.favorite_products;
+            delete el?.menu_item;
+            delete el?.sub_category;
+            delete el?.category;
+            delete el?.type_test
+        })
         if (!user) return product
         let entity = await strapi.services['favorite-product'].find({ users_permissions_user: user.id })
         product.map((el) => {

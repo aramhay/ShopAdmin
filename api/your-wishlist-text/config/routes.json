@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/main-account",
-      "handler": "main-account.find",
+      "path": "/your-wishlist-text",
+      "handler": "your-wishlist-text.find",
       "config": {
         "policies": []
       }

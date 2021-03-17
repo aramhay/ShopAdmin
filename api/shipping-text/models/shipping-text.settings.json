@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "main_accounts",
+  "collectionName": "shipping_texts",
   "info": {
-    "name": "main_account"
+    "name": "shipping_text"
   },
   "options": {
     "increments": true,
@@ -10,22 +10,19 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "addresses": {
+    "text_1": {
       "type": "text"
     },
-    "user_data": {
+    "text_2": {
       "type": "text"
     },
-    "orders": {
+    "text_3": {
       "type": "text"
     },
-    "wishlist": {
+    "text_4": {
       "type": "text"
     },
-    "newsletter": {
-      "type": "text"
-    },
-    "my_bookmarks": {
+    "text_5": {
       "type": "text"
     }
   }
