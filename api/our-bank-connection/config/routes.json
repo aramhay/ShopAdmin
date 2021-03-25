@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/our-bank-connections",
+      "handler": "our-bank-connection.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/our-bank-connections/count",
+      "handler": "our-bank-connection.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/our-bank-connections/:id",
+      "handler": "our-bank-connection.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/our-bank-connections",
+      "handler": "our-bank-connection.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/our-bank-connections/:id",
+      "handler": "our-bank-connection.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/our-bank-connections/:id",
+      "handler": "our-bank-connection.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

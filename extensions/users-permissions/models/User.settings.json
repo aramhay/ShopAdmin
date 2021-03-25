@@ -59,20 +59,24 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "images": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "regular_customer": {
       "type": "boolean",
       "default": false
+    },
+    "favorite_products": {
+      "private": true,
+      "collection": "favorite-product",
+      "via": "users_permissions_user"
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

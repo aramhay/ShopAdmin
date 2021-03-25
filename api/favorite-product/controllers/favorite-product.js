@@ -9,7 +9,6 @@ module.exports = {
             users_permissions_user: ctx.req.user.id
         }
         let entity = await strapi.services['favorite-product'].find(favoritData)
-        console.log(entity);
         let favoritProduct = []
         entity.map((e) => { if (e.product) favoritProduct.push(e.product) })
         return (checkFavoriteProducts(ctx.req.user,favoritProduct))
@@ -22,7 +21,6 @@ module.exports = {
             product: ctx.request.body.product
         }
         let entity = await strapi.services['favorite-product'].find(favoritData)
-        console.log(entity);
         let exist = await strapi.services.products.find({ id: ctx.request.body.product })
         if ((entity.length === 0) && (exist.length !== 0)) {
             await strapi.services['favorite-product'].create(favoritData)

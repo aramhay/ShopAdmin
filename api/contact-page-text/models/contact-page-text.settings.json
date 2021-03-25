@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_page_texts",
+  "info": {
+    "name": "contact_page_text"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "contact_text": {
+      "type": "string"
+    },
+    "text_1": {
+      "type": "string"
+    },
+    "text_2": {
+      "type": "string"
+    },
+    "text_3": {
+      "type": "string"
+    },
+    "text_4": {
+      "type": "string"
+    },
+    "text_5": {
+      "type": "string"
+    },
+    "text_6": {
+      "type": "string"
+    },
+    "top_of_form_header": {
+      "type": "string"
+    },
+    "top_of_form_text": {
+      "type": "text"
+    }
+  }
+}

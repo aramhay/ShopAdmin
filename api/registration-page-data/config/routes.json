@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/registration-page-data",
+      "handler": "registration-page-data.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

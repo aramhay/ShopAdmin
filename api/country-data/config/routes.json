@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/country-data",
+      "handler": "country-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/country-data",
+      "handler": "country-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/country-data",
+      "handler": "country-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

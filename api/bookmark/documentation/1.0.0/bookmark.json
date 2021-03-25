@@ -517,7 +517,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "surname"
             ],
             "properties": {
               "id": {
@@ -550,14 +551,23 @@
               "role": {
                 "type": "string"
               },
-              "images": {
+              "regular_customer": {
+                "type": "boolean"
+              },
+              "favorite_products": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "regular_customer": {
-                "type": "boolean"
+              "surname": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contact-page-text",
+      "handler": "contact-page-text.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

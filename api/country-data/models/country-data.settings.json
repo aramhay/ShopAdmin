@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "country_data",
+  "info": {
+    "name": "country_data",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Data": {
+      "type": "json"
+    }
+  }
+}

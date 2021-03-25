@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shipping-method",
+      "handler": "shipping-method.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shipping-method",
+      "handler": "shipping-method.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shipping-method",
+      "handler": "shipping-method.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

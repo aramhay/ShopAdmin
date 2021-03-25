@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipping_conditions",
+  "info": {
+    "name": "shipping_conditions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hedaer": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

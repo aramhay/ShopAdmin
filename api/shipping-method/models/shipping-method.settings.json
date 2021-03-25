@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "shipping_methods",
+  "info": {
+    "name": "shipping_method",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "shipping_text": {
+      "type": "string"
+    },
+    "header": {
+      "type": "text"
+    },
+    "payment_text": {
+      "type": "string"
+    },
+    "shipping_conditions": {
+      "collection": "shipping-conditions"
+    },
+    "our_bank_connections": {
+      "collection": "our-bank-connection"
+    },
+    "payment_options": {
+      "collection": "payment-options"
+    }
+  }
+}

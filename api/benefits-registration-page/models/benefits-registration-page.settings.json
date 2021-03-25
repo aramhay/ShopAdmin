@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefits_registration_pages",
+  "info": {
+    "name": "benefits_registration_page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "benefit": {
+      "type": "string"
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

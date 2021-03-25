@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "registration_page_data",
+  "info": {
+    "name": "registration_page_data",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "register": {
+      "type": "string"
+    },
+    "text_under_register": {
+      "type": "text"
+    },
+    "text_top_of_form": {
+      "type": "text"
+    },
+    "text_top_of_image": {
+      "type": "text"
+    },
+    "benefits": {
+      "collection": "benefits-registration-page"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

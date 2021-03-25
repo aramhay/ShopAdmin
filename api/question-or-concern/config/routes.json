@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/question-or-concerns",
+      "handler": "question-or-concern.create",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

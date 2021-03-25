@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "main_accounts",
   "info": {
     "name": "main_account"
@@ -10,22 +10,10 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "addresses": {
-      "type": "text"
+    "title": {
+      "type": "string"
     },
-    "user_data": {
-      "type": "text"
-    },
-    "orders": {
-      "type": "text"
-    },
-    "wishlist": {
-      "type": "text"
-    },
-    "newsletter": {
-      "type": "text"
-    },
-    "my_bookmarks": {
+    "text": {
       "type": "text"
     }
   }

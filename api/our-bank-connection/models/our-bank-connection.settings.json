@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_bank_connections",
+  "info": {
+    "name": "our_bank_connection"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}
