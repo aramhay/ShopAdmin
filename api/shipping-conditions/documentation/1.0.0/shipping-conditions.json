@@ -535,11 +535,18 @@
           "id": {
             "type": "string"
           },
-          "hedaer": {
+          "header": {
             "type": "string"
           },
           "text": {
             "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "enum": [
+              "left",
+              "right"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -549,11 +556,18 @@
       },
       "NewShipping-conditions": {
         "properties": {
-          "hedaer": {
+          "header": {
             "type": "string"
           },
           "text": {
             "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "enum": [
+              "left",
+              "right"
+            ]
           },
           "published_at": {
             "type": "string",

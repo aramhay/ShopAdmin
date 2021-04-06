@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/home-page-popup-content",
+      "handler": "home-page-popup-content.find",
+      "config": {
+        "policies": []
+      }
+    }
+    
+  ]
+}

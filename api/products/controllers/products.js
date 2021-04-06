@@ -5,6 +5,9 @@ const { sanitizeEntity } = require('strapi-utils');
 // const { deleteUnnecessaryKeyInObject } = require('../services/products')
 
 
+
+const _ = require('lodash');
+
 module.exports = {
     /**
      * Retrieve a record.
@@ -20,16 +23,28 @@ module.exports = {
         } else {
             entities = await strapi.services.products.find(ctx.query);
         }
-             entities =  entities.map(entity => sanitizeEntity(entity, { model: strapi.models.products }));
+        entities = entities.map(entity => sanitizeEntity(entity, { model: strapi.models.products }));
         return (checkFavoriteProducts(ctx.req.user, entities))
 
+    },
+
+    async findByLimit(ctx) {
+        let result = []
+        let { limit } = ctx.params
+        let { quantity } = ctx.params
+        let products = await strapi.services.products.find();
+        products = products.map(product => sanitizeEntity(product, { model: strapi.models.products }))
+        for (let i = 0; i < quantity; i++) {
+            result.push(_.sampleSize(products, limit))
+        }
+        return result
     },
 
 
     async findOne(ctx) {
         const { id } = ctx.params;
         let entity = await strapi.services.products.findOne({ id });
-        let product = await checkFavoriteProducts(ctx.req.user,[sanitizeEntity(entity, { model: strapi.models.products })])
+        let product = await checkFavoriteProducts(ctx.req.user, [sanitizeEntity(entity, { model: strapi.models.products })])
         return product[0]
     },
 
@@ -46,7 +61,7 @@ module.exports = {
             .join('sub_categories', 'sub_categories.id', 'products.sub_category')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition','products.approved_by_DPAB',
+            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition', 'products.approved_by_DPAB',
                 'products.brand', 'products.name', 'products.kind',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
@@ -69,9 +84,9 @@ module.exports = {
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .where('upload_file_morph.related_type', "products")
             .where('upload_file_morph.field', "images")
-            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
+            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition',
                 'products.brand', 'products.name', 'products.kind',
-                'products.unit', 'products.discount', 'products.approved_by_DPAB','upload_file.url as image_url');
+                'products.unit', 'products.discount', 'products.approved_by_DPAB', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
         return (checkFavoriteProducts(ctx.req.user, products))
 
@@ -101,8 +116,8 @@ module.exports = {
             .join('menu_items', 'menu_items.id', 'products.menu_item')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id',  'products.price', 'products.clean_product','products.limited_edition',
-                'products.brand', 'products.name', 'products.kind','products.approved_by_DPAB',
+            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition',
+                'products.brand', 'products.name', 'products.kind', 'products.approved_by_DPAB',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         products = getUniqueListBy(products)
         return (checkFavoriteProducts(ctx.req.user, products))

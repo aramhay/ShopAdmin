@@ -31,28 +31,28 @@ module.exports = {
                 await strapi.services.beauty.create(field)
             if (interieur.includes(data.menu_item?.item_name))
                 await strapi.services.interieur.create(field);
-            if (data.video?.url) {
-                let forVideoField = {
-                    video_id: data.id,
-                    video_status: data.video_status,
-                    video_name: data.video_name,
-                    description: data.video_description,
-                    url: data.video?.url
-                }
-                await strapi.services.videos.create(forVideoField)
-            }
+            // if (data.video?.url) {
+            //     let forVideoField = {
+            //         video_id: data.id,
+            //         video_status: data.video_status,
+            //         video_name: data.video_name,
+            //         description: data.video_description,
+            //         url: data.video?.url
+            //     }
+            //     await strapi.services.videos.create(forVideoField)
+            // }
         },
         afterUpdate: async (data) => {
-            if (data.video?.url) {
-                let forVideoField = {
-                    video_id: data.id,
-                    video_status: data.video_status,
-                    video_name: data.video_name,
-                    description: data.video_description,
-                    url: data.video?.url
-                }
-                await strapi.services.videos.update({ video_id: data.id }, forVideoField)
-            }
+            // if (data.video?.url) {
+            //     let forVideoField = {
+            //         video_id: data.id,
+            //         video_status: data.video_status,
+            //         video_name: data.video_name,
+            //         description: data.video_description,
+            //         url: data.video?.url
+            //     }
+            //     await strapi.services.videos.update({ video_id: data.id }, forVideoField)
+            // }
             let forFourAndEight = {
                 productId: data.id,
                 images: data?.images[0]?.url,
@@ -80,7 +80,7 @@ module.exports = {
                 });
         },
         beforeDelete: async (data) => {
-            await strapi.services.videos.delete({ video_id: data.id })
+            // await strapi.services.videos.delete({ video_id: data.id })
             await strapi.services['favorite-product'].delete({ product: data.id })
             await strapi.services.beauty.delete({ productId: data.id })
             await strapi.services.parfums.delete({ productId: data.id })

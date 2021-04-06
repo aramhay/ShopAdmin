@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/brand-page-section-3-s",
+      "handler": "brand-page-section-3.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

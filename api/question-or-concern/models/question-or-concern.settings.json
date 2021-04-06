@@ -31,6 +31,9 @@
     },
     "copy_to_me": {
       "type": "boolean"
+    },
+    "privacy": {
+      "type": "boolean"
     }
   }
 }

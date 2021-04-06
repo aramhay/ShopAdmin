@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page_popup_contents",
+  "info": {
+    "name": "home_page_popup_content"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "privacy": {
+      "type": "string"
+    },
+    "text_1": {
+      "type": "text"
+    },
+    "text_2": {
+      "type": "text"
+    }
+  }
+}

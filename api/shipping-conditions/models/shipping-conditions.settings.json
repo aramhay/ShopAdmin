@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "shipping_conditions",
   "info": {
-    "name": "shipping_conditions"
+    "name": "shipping_conditions",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,11 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "hedaer": {
+    "header": {
       "type": "string"
     },
     "text": {
       "type": "text"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ]
     }
   }
 }

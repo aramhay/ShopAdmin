@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_page_section_1s",
+  "info": {
+    "name": "brand_page_section_1",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "subheader": {
+      "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "BrandPageOne",
+        "BrandPageTwo"
+      ],
+      "default": "BrandPageOne",
+      "required": true,
+      "unique": true
+    }
+  }
+}

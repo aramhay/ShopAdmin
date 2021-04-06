@@ -50,6 +50,15 @@
         "policies": []
       }
     },
+    {
+      "method": "GET",
+      "path": "/findByLimit/:limit/:quantity",
+      "handler": "products.findByLimit",
+      "config": {
+        "policies": []
+      }
+    },
+    
     
     {
       "method": "GET",

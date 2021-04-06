@@ -99,6 +99,9 @@
           "copy_to_me": {
             "type": "boolean"
           },
+          "privacy": {
+            "type": "boolean"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -128,6 +131,9 @@
             "type": "string"
           },
           "copy_to_me": {
+            "type": "boolean"
+          },
+          "privacy": {
             "type": "boolean"
           },
           "published_at": {

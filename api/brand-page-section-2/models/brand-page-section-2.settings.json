@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_page_section_2s",
+  "info": {
+    "name": "brand_page_section_2",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "header": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "text": {
+      "type": "richtext",
+      "default": "<b></b>"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "image_text": {
+      "type": "richtext"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "BrandPageOne",
+        "BrandPageTwo",
+        "BrandPageThre",
+        "BrandPageThree"
+      ],
+      "private": false,
+      "required": true,
+      "unique": true
+    }
+  }
+}

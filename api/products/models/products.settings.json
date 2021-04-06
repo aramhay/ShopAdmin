@@ -39,16 +39,20 @@
       "type": "biginteger"
     },
     "type_test": {
+      "private": true,
       "model": "type-test",
       "via": "product"
     },
     "category": {
+      "private": true,
       "model": "category"
     },
     "sub_category": {
+      "private": true,
       "model": "sub-category"
     },
     "menu_item": {
+      "private": true,
       "model": "menu-item",
       "via": "products"
     },
@@ -94,8 +98,9 @@
       "type": "string"
     },
     "favorite_products": {
-      "via": "product",
-      "collection": "favorite-product"
+      "private": true,
+      "collection": "favorite-product",
+      "via": "product"
     },
     "approved_by_DPAB": {
       "type": "boolean"
