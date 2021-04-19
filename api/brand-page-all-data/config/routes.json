@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/brand-page-all-data",
+      "handler": "brand-page-all-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/brand-page-all-data",
+      "handler": "brand-page-all-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/brand-page-all-data",
+      "handler": "brand-page-all-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

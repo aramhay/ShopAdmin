@@ -610,12 +610,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
                 "discount": {
                   "type": "integer"
                 },
@@ -646,9 +640,6 @@
                 "video": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "integer"
-                },
                 "limited_edition": {
                   "type": "boolean"
                 },
@@ -669,6 +660,15 @@
                 },
                 "approved_by_DPAB": {
                   "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"

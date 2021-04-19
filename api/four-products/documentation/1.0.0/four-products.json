@@ -227,29 +227,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -276,29 +258,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -325,29 +289,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"

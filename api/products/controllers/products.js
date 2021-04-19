@@ -51,45 +51,48 @@ module.exports = {
 
 
     async findSubCategoryProducts(ctx) {
-        function getUniqueListBy(arr) {
-            return [...new Map(arr.map(item => [item['id'], item])).values()]
-        }
         const knex = strapi.connections.default;
         const { id } = ctx.params;
         let products = await knex('products')
             .where('sub_category', `${id}`)
-            .join('sub_categories', 'sub_categories.id', 'products.sub_category')
-            .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
-            .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition', 'products.approved_by_DPAB',
-                'products.brand', 'products.name', 'products.kind',
-                'products.unit', 'products.discount', 'upload_file.url as image_url');
-        products = getUniqueListBy(products)
+            .select('products.id');
+            const ps = products.map((el) => {
+                let entity = strapi.services.products.findOne({ id: el.id })
+                return entity
+            })
+            let res = await Promise.all(ps)
+            res.map((el) => {
+                delete el?.created_by
+                delete el?.updated_by
+                delete el?.category
+                delete el?.menu_item
+                delete el?.sub_category
+            })
+            return (checkFavoriteProducts(ctx.req.user, res))
 
-        return (checkFavoriteProducts(ctx.req.user, products))
 
     },
 
 
     async findCategoryProducts(ctx) {
-        function getUniqueListBy(arr) {
-            return [...new Map(arr.map(item => [item['id'], item])).values()]
-        }
         const knex = strapi.connections.default;
         const { id } = ctx.params;
         let products = await knex('products')
             .where('category', `${id}`)
-            .join('categories', 'categories.id', 'products.category')
-            .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
-            .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .where('upload_file_morph.related_type', "products")
-            .where('upload_file_morph.field', "images")
-            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition',
-                'products.brand', 'products.name', 'products.kind',
-                'products.unit', 'products.discount', 'products.approved_by_DPAB', 'upload_file.url as image_url');
-        products = getUniqueListBy(products)
-        return (checkFavoriteProducts(ctx.req.user, products))
-
+            .select('products.id');
+        const ps = products.map((el) => {
+            let entity = strapi.services.products.findOne({ id: el.id })
+            return entity
+        })
+        let res = await Promise.all(ps)
+        res.map((el) => {
+            delete el?.created_by
+            delete el?.updated_by
+            delete el?.category
+            delete el?.menu_item
+            delete el?.sub_category
+        })
+        return (checkFavoriteProducts(ctx.req.user, res))
     },
     async findTypetests(ctx) {
         const knex = strapi.connections.default;
@@ -106,21 +109,24 @@ module.exports = {
         return getUniqueListBy(products)
     },
     async findMenuItemProducts(ctx) {
-        function getUniqueListBy(arr) {
-            return [...new Map(arr.map(item => [item['id'], item])).values()]
-        }
         const knex = strapi.connections.default;
         const { id } = ctx.params;
         let products = await knex('products')
             .where('menu_item', `${id}`)
-            .join('menu_items', 'menu_items.id', 'products.menu_item')
-            .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
-            .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('products.id', 'products.price', 'products.clean_product', 'products.limited_edition',
-                'products.brand', 'products.name', 'products.kind', 'products.approved_by_DPAB',
-                'products.unit', 'products.discount', 'upload_file.url as image_url');
-        products = getUniqueListBy(products)
-        return (checkFavoriteProducts(ctx.req.user, products))
+            .select('products.id');
+            const ps = products.map((el) => {
+                let entity = strapi.services.products.findOne({ id: el.id })
+                return entity
+            })
+            let res = await Promise.all(ps)
+            res.map((el) => {
+                delete el?.created_by
+                delete el?.updated_by
+                delete el?.category
+                delete el?.menu_item
+                delete el?.sub_category
+            })
+            return (checkFavoriteProducts(ctx.req.user, res))
 
     },
     async getAllNewProducts(ctx) {

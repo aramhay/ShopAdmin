@@ -1256,6 +1256,37 @@
             "type": "boolean",
             "default": false
           },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "variants_of_a_product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "surname": {
             "type": "string"
           },

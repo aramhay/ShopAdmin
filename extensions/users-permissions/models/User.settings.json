@@ -64,9 +64,8 @@
       "default": false
     },
     "favorite_products": {
-      "private": true,
-      "collection": "favorite-product",
-      "via": "users_permissions_user"
+      "via": "users_permissions_user",
+      "collection": "favorite-product"
     },
     "surname": {
       "type": "string",

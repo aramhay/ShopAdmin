@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/type-tests": {
+    "/brand-page-all-data": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the brand-page-all-data's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve brand-page-all-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Type-test"
+          "Brand-page-all-data"
         ],
         "parameters": [
           {
@@ -193,202 +193,12 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewType-test"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/type-tests/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": []
-      }
-    },
-    "/type-tests/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single brand-page-all-data record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve brand-page-all-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Type-test"
+          "Brand-page-all-data"
         ],
         "requestBody": {
           "description": "",
@@ -442,30 +252,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewType-test"
+                "$ref": "#/components/schemas/NewBrand-page-all-data"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single brand-page-all-data record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single brand-page-all-data based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,26 +307,15 @@
         },
         "summary": "",
         "tags": [
-          "Type-test"
+          "Brand-page-all-data"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Type-test": {
+      "Brand-page-all-data": {
         "required": [
           "id"
         ],
@@ -535,97 +323,42 @@
           "id": {
             "type": "string"
           },
-          "brand": {
-            "type": "string"
-          },
-          "price": {
-            "type": "number"
-          },
-          "size": {
-            "type": "integer"
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "product": {
+          "brand_page_section_1": {
             "required": [
-              "id"
+              "id",
+              "position"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
+              "title": {
+                "type": "string"
+              },
+              "header": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "button_text": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
               "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
                 "type": "string"
               },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
+              "subheader": {
                 "type": "string"
               },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "limited_edition": {
-                "type": "boolean"
-              },
-              "video_description": {
-                "type": "string"
-              },
-              "video_status": {
-                "type": "string"
-              },
-              "video_name": {
-                "type": "string"
-              },
-              "favorite_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "approved_by_DPAB": {
-                "type": "boolean"
-              },
-              "EAN_barcodes": {
-                "type": "string"
-              },
-              "variants_of_a_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "position": {
+                "type": "string",
+                "enum": [
+                  "BrandPageOne",
+                  "BrandPageTwo"
+                ]
               },
               "published_at": {
                 "type": "string"
@@ -638,63 +371,139 @@
               }
             }
           },
-          "images": {
+          "brand_page_section_2": {
             "required": [
               "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "position"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "title": {
                 "type": "string"
               },
-              "alternativeText": {
+              "header": {
                 "type": "string"
               },
-              "caption": {
+              "description": {
                 "type": "string"
               },
-              "width": {
+              "text": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "image_text": {
+                "type": "string"
+              },
+              "position": {
+                "type": "string",
+                "enum": [
+                  "BrandPageOne",
+                  "BrandPageTwo",
+                  "BrandPageThre",
+                  "BrandPageThree"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_3": {
+            "required": [
+              "id",
+              "image_position"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "link_text": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "image_position": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "summary"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_4": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
                 "type": "integer"
               },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "text": {
                 "type": "string"
               },
-              "ext": {
+              "published_at": {
                 "type": "string"
               },
-              "mime": {
+              "created_by": {
                 "type": "string"
               },
-              "size": {
-                "type": "number"
-              },
-              "url": {
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_5": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
                 "type": "string"
               },
-              "previewUrl": {
+              "link": {
                 "type": "string"
               },
-              "provider": {
+              "link_text": {
                 "type": "string"
               },
-              "provider_metadata": {
-                "type": "object"
+              "images": {
+                "type": "string"
               },
-              "related": {
+              "published_at": {
                 "type": "string"
               },
               "created_by": {
@@ -711,21 +520,21 @@
           }
         }
       },
-      "NewType-test": {
+      "NewBrand-page-all-data": {
         "properties": {
-          "brand": {
+          "brand_page_section_1": {
             "type": "string"
           },
-          "price": {
-            "type": "number"
+          "brand_page_section_2": {
+            "type": "string"
           },
-          "size": {
-            "type": "integer"
+          "brand_page_section_3": {
+            "type": "string"
           },
-          "quantity": {
-            "type": "integer"
+          "brand_page_section_4": {
+            "type": "string"
           },
-          "product": {
+          "brand_page_section_5": {
             "type": "string"
           },
           "published_at": {

@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@hapi/boom": "^9.1.2",
     "knex": "<0.20.0",
     "loadsh": "^0.0.4",
     "pg": "^8.5.1",

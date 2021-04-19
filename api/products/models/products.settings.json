@@ -29,12 +29,6 @@
     "brand": {
       "type": "string"
     },
-    "for_sale_count": {
-      "type": "biginteger"
-    },
-    "unit": {
-      "type": "string"
-    },
     "discount": {
       "type": "biginteger"
     },
@@ -80,10 +74,6 @@
       "plugin": "upload",
       "required": false
     },
-    "price": {
-      "type": "biginteger",
-      "min": "0"
-    },
     "limited_edition": {
       "type": "boolean",
       "default": false
@@ -98,12 +88,17 @@
       "type": "string"
     },
     "favorite_products": {
-      "private": true,
       "collection": "favorite-product",
       "via": "product"
     },
     "approved_by_DPAB": {
       "type": "boolean"
+    },
+    "EAN_barcodes": {
+      "type": "string"
+    },
+    "variants_of_a_products": {
+      "collection": "variants-of-a-product"
     }
   }
 }

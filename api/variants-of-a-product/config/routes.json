@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/variants-of-a-products",
+      "handler": "variants-of-a-product.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/variants-of-a-products/count",
+      "handler": "variants-of-a-product.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/variants-of-a-products/:id",
+      "handler": "variants-of-a-product.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/variants-of-a-products",
+      "handler": "variants-of-a-product.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/variants-of-a-products/:id",
+      "handler": "variants-of-a-product.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/variants-of-a-products/:id",
+      "handler": "variants-of-a-product.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

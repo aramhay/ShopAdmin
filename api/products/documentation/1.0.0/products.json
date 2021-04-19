@@ -1006,12 +1006,6 @@
           "brand": {
             "type": "string"
           },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
-            "type": "string"
-          },
           "discount": {
             "type": "integer"
           },
@@ -1138,9 +1132,6 @@
               }
             }
           },
-          "price": {
-            "type": "integer"
-          },
           "limited_edition": {
             "type": "boolean",
             "default": false
@@ -1154,8 +1145,88 @@
           "video_name": {
             "type": "string"
           },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "variants_of_a_product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "approved_by_DPAB": {
             "type": "boolean"
+          },
+          "EAN_barcodes": {
+            "type": "string"
+          },
+          "variants_of_a_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "bottle_sizes",
+                "main",
+                "sample"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "bottle_sizes": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "main": {
+                  "type": "boolean"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "sample": {
+                  "type": "boolean"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -1170,12 +1241,6 @@
             "default": false
           },
           "brand": {
-            "type": "string"
-          },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
             "type": "string"
           },
           "discount": {
@@ -1206,9 +1271,6 @@
             "type": "string",
             "format": "date"
           },
-          "price": {
-            "type": "integer"
-          },
           "limited_edition": {
             "type": "boolean",
             "default": false
@@ -1230,6 +1292,15 @@
           },
           "approved_by_DPAB": {
             "type": "boolean"
+          },
+          "EAN_barcodes": {
+            "type": "string"
+          },
+          "variants_of_a_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

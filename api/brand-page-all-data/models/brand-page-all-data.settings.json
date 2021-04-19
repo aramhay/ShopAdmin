@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "brand_page_all_data",
+  "info": {
+    "name": "brand_page_all_data"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brand_page_section_1": {
+      "model": "brand-page-section-1"
+    },
+    "brand_page_section_2": {
+      "model": "brand-page-section-2"
+    },
+    "brand_page_section_3": {
+      "model": "brand-page-section-3"
+    },
+    "brand_page_section_4": {
+      "model": "brand-page-section-4"
+    },
+    "brand_page_section_5": {
+      "model": "brand-page-section-5"
+    }
+  }
+}

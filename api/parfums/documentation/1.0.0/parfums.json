@@ -525,30 +525,99 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "video_description": {
+                  "type": "string"
+                },
+                "video_status": {
+                  "type": "string"
+                },
+                "video_name": {
+                  "type": "string"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "approved_by_DPAB": {
+                  "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -561,30 +630,11 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

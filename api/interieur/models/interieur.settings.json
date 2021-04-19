@@ -14,29 +14,8 @@
     "productId": {
       "type": "biginteger"
     },
-    "images": {
-      "type": "string"
-    },
-    "New_Date_Limit": {
-      "type": "date"
-    },
-    "limited_edition": {
-      "type": "boolean"
-    },
-    "brand": {
-      "type": "string"
-    },
-    "kind": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "price": {
-      "type": "biginteger"
-    },
-    "clean_product": {
-      "type": "boolean"
+    "products": {
+      "collection": "products"
     }
   }
 }

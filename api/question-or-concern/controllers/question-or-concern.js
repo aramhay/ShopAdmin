@@ -16,7 +16,6 @@ module.exports = {
 
     async create(ctx) {
         let entity;
-        console.log(ctx.request.body);
         if (!ctx.request.body.privacy) {
             return ({ 
                 success:false,

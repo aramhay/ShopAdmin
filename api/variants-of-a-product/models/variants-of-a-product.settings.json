@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variants_of_a_products",
+  "info": {
+    "name": "variants_of_a_product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "bottle_sizes": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "main": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "favorite_products": {
+      "collection": "favorite-product",
+      "via": "variants_of_a_product"
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "sample": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

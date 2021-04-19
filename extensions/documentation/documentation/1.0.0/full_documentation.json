@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/05/2021 6:38:19 PM"
+    "x-generation-date": "04/19/2021 4:33:12 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1444,6 +1444,318 @@
             }
           }
         ]
+      }
+    },
+    "/brand-page-all-data": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the brand-page-all-data's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve brand-page-all-data document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-all-data"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single brand-page-all-data record",
+        "responses": {
+          "200": {
+            "description": "Retrieve brand-page-all-data document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-all-data"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBrand-page-all-data"
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single brand-page-all-data record",
+        "responses": {
+          "200": {
+            "description": "deletes a single brand-page-all-data based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-all-data"
+        ],
+        "parameters": []
       }
     },
     "/brand-page-section-1-s": {
@@ -17282,328 +17594,6 @@
         ]
       }
     },
-    "/shopping-baskets": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      }
-    },
-    "/getUserShoppingBaskets": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": []
-      }
-    },
-    "/addProductSamplesInTheShoppingBasket": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/addProductInTheShoppingBasket": {
       "post": {
         "deprecated": false,
@@ -17669,261 +17659,6 @@
             }
           }
         }
-      }
-    },
-    "/addGiftWrapperInTheShoppingBasket": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/deleteGiftWrapperFromTheShoppingBasket": {
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": []
-      }
-    },
-    "/deleteProductSamplesFormTheShoppingBasket/{sampleid}": {
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": [
-          {
-            "name": "sampleid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/deleteProductFormTheShoppingBasket/{productid}": {
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": [
-          {
-            "name": "productid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
       }
     },
     "/stair-sections": {
@@ -20064,6 +19799,530 @@
         "summary": "",
         "tags": [
           "User-newsletter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/variants-of-a-products": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewVariants-of-a-product"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/variants-of-a-products/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
+        ],
+        "parameters": []
+      }
+    },
+    "/variants-of-a-products/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewVariants-of-a-product"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Variants-of-a-product"
         ],
         "parameters": [
           {
@@ -23155,30 +23414,99 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "video_description": {
+                  "type": "string"
+                },
+                "video_status": {
+                  "type": "string"
+                },
+                "video_name": {
+                  "type": "string"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "approved_by_DPAB": {
+                  "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -23191,30 +23519,11 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -23450,6 +23759,240 @@
             "type": "string"
           },
           "video": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Brand-page-all-data": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "brand_page_section_1": {
+            "required": [
+              "id",
+              "position"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "header": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "button_text": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "subheader": {
+                "type": "string"
+              },
+              "position": {
+                "type": "string",
+                "enum": [
+                  "BrandPageOne",
+                  "BrandPageTwo"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_2": {
+            "required": [
+              "id",
+              "position"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "header": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "image_text": {
+                "type": "string"
+              },
+              "position": {
+                "type": "string",
+                "enum": [
+                  "BrandPageOne",
+                  "BrandPageTwo",
+                  "BrandPageThre",
+                  "BrandPageThree"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_3": {
+            "required": [
+              "id",
+              "image_position"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "link_text": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "image_position": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "summary"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_4": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
+                "type": "integer"
+              },
+              "text": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_page_section_5": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "link_text": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewBrand-page-all-data": {
+        "properties": {
+          "brand_page_section_1": {
+            "type": "string"
+          },
+          "brand_page_section_2": {
+            "type": "string"
+          },
+          "brand_page_section_3": {
+            "type": "string"
+          },
+          "brand_page_section_4": {
+            "type": "string"
+          },
+          "brand_page_section_5": {
             "type": "string"
           },
           "published_at": {
@@ -24607,12 +25150,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
                 "discount": {
                   "type": "integer"
                 },
@@ -24643,9 +25180,6 @@
                 "video": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "integer"
-                },
                 "limited_edition": {
                   "type": "boolean"
                 },
@@ -24666,6 +25200,15 @@
                 },
                 "approved_by_DPAB": {
                   "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -24874,29 +25417,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -24923,29 +25448,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -24972,29 +25479,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -25149,12 +25638,6 @@
               "brand": {
                 "type": "string"
               },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
               "discount": {
                 "type": "integer"
               },
@@ -25185,9 +25668,6 @@
               "video": {
                 "type": "string"
               },
-              "price": {
-                "type": "integer"
-              },
               "limited_edition": {
                 "type": "boolean"
               },
@@ -25207,6 +25687,58 @@
                 }
               },
               "approved_by_DPAB": {
+                "type": "boolean"
+              },
+              "EAN_barcodes": {
+                "type": "string"
+              },
+              "variants_of_a_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "variants_of_a_product": {
+            "required": [
+              "id",
+              "bottle_sizes",
+              "main",
+              "sample"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "bottle_sizes": {
+                "type": "number"
+              },
+              "price": {
+                "type": "number"
+              },
+              "main": {
+                "type": "boolean"
+              },
+              "favorite_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "sample": {
                 "type": "boolean"
               },
               "published_at": {
@@ -25232,6 +25764,9 @@
             "type": "string"
           },
           "product": {
+            "type": "string"
+          },
+          "variants_of_a_product": {
             "type": "string"
           },
           "published_at": {
@@ -25316,29 +25851,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -25365,29 +25882,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -25414,29 +25913,11 @@
                 "productId": {
                   "type": "integer"
                 },
-                "images": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "clean_product": {
-                  "type": "boolean"
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -25932,30 +26413,99 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "video_description": {
+                  "type": "string"
+                },
+                "video_status": {
+                  "type": "string"
+                },
+                "video_name": {
+                  "type": "string"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "approved_by_DPAB": {
+                  "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -25968,30 +26518,11 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -26185,12 +26716,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
                 "discount": {
                   "type": "integer"
                 },
@@ -26221,9 +26746,6 @@
                 "video": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "integer"
-                },
                 "limited_edition": {
                   "type": "boolean"
                 },
@@ -26244,6 +26766,15 @@
                 },
                 "approved_by_DPAB": {
                   "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -26541,12 +27072,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "for_sale_count": {
-                  "type": "integer"
-                },
-                "unit": {
-                  "type": "string"
-                },
                 "discount": {
                   "type": "integer"
                 },
@@ -26577,9 +27102,6 @@
                 "video": {
                   "type": "string"
                 },
-                "price": {
-                  "type": "integer"
-                },
                 "limited_edition": {
                   "type": "boolean"
                 },
@@ -26600,6 +27122,15 @@
                 },
                 "approved_by_DPAB": {
                   "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -27169,30 +27700,99 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "clean_product": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "integer"
+                },
+                "type_test": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "sub_category": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "magazin_presentation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "New_Date_Limit": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "limited_edition": {
+                  "type": "boolean"
+                },
+                "video_description": {
+                  "type": "string"
+                },
+                "video_status": {
+                  "type": "string"
+                },
+                "video_name": {
+                  "type": "string"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "approved_by_DPAB": {
+                  "type": "boolean"
+                },
+                "EAN_barcodes": {
+                  "type": "string"
+                },
+                "variants_of_a_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -27205,30 +27805,11 @@
           "productId": {
             "type": "integer"
           },
-          "images": {
-            "type": "string"
-          },
-          "New_Date_Limit": {
-            "type": "string",
-            "format": "date"
-          },
-          "limited_edition": {
-            "type": "boolean"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "price": {
-            "type": "integer"
-          },
-          "clean_product": {
-            "type": "boolean"
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -27481,12 +28062,6 @@
           "brand": {
             "type": "string"
           },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
-            "type": "string"
-          },
           "discount": {
             "type": "integer"
           },
@@ -27613,9 +28188,6 @@
               }
             }
           },
-          "price": {
-            "type": "integer"
-          },
           "limited_edition": {
             "type": "boolean",
             "default": false
@@ -27629,8 +28201,88 @@
           "video_name": {
             "type": "string"
           },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "variants_of_a_product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "approved_by_DPAB": {
             "type": "boolean"
+          },
+          "EAN_barcodes": {
+            "type": "string"
+          },
+          "variants_of_a_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "bottle_sizes",
+                "main",
+                "sample"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "bottle_sizes": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "main": {
+                  "type": "boolean"
+                },
+                "favorite_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "sample": {
+                  "type": "boolean"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -27645,12 +28297,6 @@
             "default": false
           },
           "brand": {
-            "type": "string"
-          },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
             "type": "string"
           },
           "discount": {
@@ -27681,9 +28327,6 @@
             "type": "string",
             "format": "date"
           },
-          "price": {
-            "type": "integer"
-          },
           "limited_edition": {
             "type": "boolean",
             "default": false
@@ -27705,6 +28348,15 @@
           },
           "approved_by_DPAB": {
             "type": "boolean"
+          },
+          "EAN_barcodes": {
+            "type": "string"
+          },
+          "variants_of_a_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -28505,7 +29157,8 @@
       },
       "Shopping-basket": {
         "required": [
-          "id"
+          "id",
+          "variant_id"
         ],
         "properties": {
           "id": {
@@ -28595,12 +29248,6 @@
               "brand": {
                 "type": "string"
               },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
               "discount": {
                 "type": "integer"
               },
@@ -28631,9 +29278,6 @@
               "video": {
                 "type": "string"
               },
-              "price": {
-                "type": "integer"
-              },
               "limited_edition": {
                 "type": "boolean"
               },
@@ -28654,6 +29298,15 @@
               },
               "approved_by_DPAB": {
                 "type": "boolean"
+              },
+              "EAN_barcodes": {
+                "type": "string"
+              },
+              "variants_of_a_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -28707,45 +29360,15 @@
               }
             }
           },
-          "type_test": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "size": {
-                "type": "integer"
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "product": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "quantity": {
             "type": "integer"
+          },
+          "variant_id": {
+            "type": "integer"
+          },
+          "type_test": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -28754,6 +29377,9 @@
         }
       },
       "NewShopping-basket": {
+        "required": [
+          "variant_id"
+        ],
         "properties": {
           "users_permissions_user": {
             "type": "string"
@@ -28764,11 +29390,15 @@
           "gift_wrap": {
             "type": "string"
           },
-          "type_test": {
-            "type": "string"
-          },
           "quantity": {
             "type": "integer"
+          },
+          "variant_id": {
+            "type": "integer"
+          },
+          "type_test": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -29223,12 +29853,6 @@
               "brand": {
                 "type": "string"
               },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
               "discount": {
                 "type": "integer"
               },
@@ -29259,9 +29883,6 @@
               "video": {
                 "type": "string"
               },
-              "price": {
-                "type": "integer"
-              },
               "limited_edition": {
                 "type": "boolean"
               },
@@ -29282,6 +29903,15 @@
               },
               "approved_by_DPAB": {
                 "type": "boolean"
+              },
+              "EAN_barcodes": {
+                "type": "string"
+              },
+              "variants_of_a_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -29435,6 +30065,113 @@
           },
           "Email": {
             "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Variants-of-a-product": {
+        "required": [
+          "id",
+          "bottle_sizes",
+          "main",
+          "sample"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "bottle_sizes": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "main": {
+            "type": "boolean",
+            "default": false
+          },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "variants_of_a_product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "sample": {
+            "type": "boolean",
+            "default": false
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewVariants-of-a-product": {
+        "required": [
+          "bottle_sizes",
+          "main",
+          "sample"
+        ],
+        "properties": {
+          "bottle_sizes": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "main": {
+            "type": "boolean",
+            "default": false
+          },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "sample": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -29803,6 +30540,37 @@
           "regular_customer": {
             "type": "boolean",
             "default": false
+          },
+          "favorite_products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "variants_of_a_product": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "surname": {
             "type": "string"

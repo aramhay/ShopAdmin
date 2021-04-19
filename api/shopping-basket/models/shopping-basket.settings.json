@@ -24,13 +24,18 @@
       "columnName": "id",
       "model": "gift-wrap"
     },
-    "type_test": {
-      "columnName": "id",
-      "model": "type-test"
-    },
     "quantity": {
       "type": "biginteger",
       "min": "1"
+    },
+    "variant_id": {
+      "type": "biginteger",
+      "required": true,
+      "unique": false
+    },
+    "type_test": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

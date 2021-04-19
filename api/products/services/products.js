@@ -1,36 +1,30 @@
 'use strict';
 
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/services.html#core-services)
- * to customize this service
- */
-
 module.exports = {
     checkFavoriteProducts: async (user, product) => {
-        product.map((el) =>{
-            delete el?.favorite_products;
-            delete el?.menu_item;
-            delete el?.sub_category;
-            delete el?.category;
-            delete el?.type_test
-        })
+        delete product?.menu_item;
+        delete product?.sub_category;
+        delete product?.category;
+        delete product?.type_test;
+        delete product?.created_by;
+        delete product?.updated_by
         if (!user) return product
-        let entity = await strapi.services['favorite-product'].find({ users_permissions_user: user.id })
-        product.map((el) => {
-            Object.assign(el, { favorit: false });
-            entity.map((elem, index) => {
-                if ((el.id === elem.product?.id) || (elem.product?.id == el.productId)) {
-                    Object.assign(el, { favorit: true });
-                    return
-                } else
-                    if (entity.length - 1 === index && !el.favorit) {
-                        Object.assign(el, { favorit: false });
-                    }
+        const includes = product.favorite_products.filter(e => e.users_permissions_user === user.id)
+        product.variants_of_a_products.map((el) => {
+            Object.assign(el, { favorite: false })
+            includes.map((elem, index) => {
+                if (el.id === elem.variants_of_a_product && product.id === elem.product) {
+                    Object.assign(el, { favorite: true })
+                } else if (product.variants_of_a_products - 1 === index && !el.favorit) {
+                    Object.assign(el, { favorit: false });
+                }
             })
         })
-
-        return product
-
+        delete product?.favorite_products;
+        return product;
     },
+  
 };
+
+   

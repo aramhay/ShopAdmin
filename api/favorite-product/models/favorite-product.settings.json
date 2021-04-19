@@ -12,13 +12,17 @@
   },
   "attributes": {
     "users_permissions_user": {
-      "via": "favorite_products",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "favorite_products"
     },
     "product": {
       "via": "favorite_products",
       "model": "products"
+    },
+    "variants_of_a_product": {
+      "via": "favorite_products",
+      "model": "variants-of-a-product"
     }
   }
 }
