@@ -10,13 +10,13 @@ module.exports = {
         delete product?.created_by;
         delete product?.updated_by
         if (!user) return product
-        const includes = product.favorite_products.filter(e => e.users_permissions_user === user.id)
-        product.variants_of_a_products.map((el) => {
+        const includes = product?.favorite_products?.filter(e => e.users_permissions_user === user.id)
+        product?.variants_of_a_products?.map((el) => {
             Object.assign(el, { favorite: false })
             includes.map((elem, index) => {
-                if (el.id === elem.variants_of_a_product && product.id === elem.product) {
+                if (el.id === elem?.variants_of_a_product && product.id === elem.product) {
                     Object.assign(el, { favorite: true })
-                } else if (product.variants_of_a_products - 1 === index && !el.favorit) {
+                } else if (product?.variants_of_a_products - 1 === index && !el.favorit) {
                     Object.assign(el, { favorit: false });
                 }
             })

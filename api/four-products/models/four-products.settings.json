@@ -15,7 +15,8 @@
       "type": "enumeration",
       "enum": [
         "HomePage",
-        "ProductPage"
+        "ProductPage",
+        "NotFoundPage"
       ],
       "required": true,
       "unique": true,

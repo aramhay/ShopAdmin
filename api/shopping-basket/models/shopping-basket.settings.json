@@ -36,6 +36,9 @@
     "type_test": {
       "type": "boolean",
       "default": false
+    },
+    "product_id": {
+      "type": "biginteger"
     }
   }
 }

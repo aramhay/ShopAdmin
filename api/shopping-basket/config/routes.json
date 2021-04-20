@@ -1,7 +1,15 @@
 {
   "routes": [
    
-
+    {
+      "method": "GET",
+      "path": "/getProductsInTheShoppingBasket",
+      "handler": "shopping-basket.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+  
  
     {
       "method": "POST",
@@ -10,8 +18,27 @@
       "config": {
         "policies": []
       }
-    }]
+    },
+    {
+      "method": "POST",
+      "path": "/addGiftWrapperInTheShoppingBasket",
+      "handler": "shopping-basket.create_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deleteGiftWrapperFromTheShoppingBasket",
+      "handler": "shopping-basket.delete_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    }
+
+
     
+  ]
 }
 
 

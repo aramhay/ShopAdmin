@@ -12,6 +12,7 @@ module.exports = {
         let entities;
         let obj1 = {}
         let obj2 = {}
+        let obj3 ={}
         let result = []
         entities = await strapi.services['four-products'].find(ctx.query);
         let ent = entities.map(entity => sanitizeEntity(entity, { model: strapi.models['four-products'] }));
@@ -75,6 +76,38 @@ module.exports = {
             Object.assign(obj2, { position: ent[0].position })
             result.push(obj2)
         }
+
+
+        if (ent[2] !== undefined) {
+            let parf = ent[2]?.parfums.map((el) => strapi.services.products.find({ id: el.productId }))
+            let inter = ent[2]?.interieurs.map((el) => strapi.services.products.find({ id: el.productId }))
+            let beaut = ent[2]?.beauties.map((el) => strapi.services.products.find({ id: el.productId }))
+            if (parf.length) {
+                a = await Promise.all(parf)
+                a.map(e => {
+                    checkFavoriteProducts(ctx.req.user, e[2])
+                })
+            }
+            if (inter.length) {
+                aa = await Promise.all(inter)
+                aa.map(e => {
+                    checkFavoriteProducts(ctx.req.user, e[2])
+                })
+            }
+            if (beaut.length) {
+                aaa = await Promise.all(beaut)
+                aaa.map(e => {
+                    checkFavoriteProducts(ctx.req.user, e[2])
+                })
+            }
+            Object.assign(obj3, { parfum: a })
+            Object.assign(obj3, { interieur: aa })
+            Object.assign(obj3, { beauties: aaa })
+            Object.assign(obj3, { position: ent[2].position })
+            result.push(obj3)
+        }
+
+
         return result
     }
 };
