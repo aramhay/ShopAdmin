@@ -5,10 +5,6 @@ const { getProductsInBasket } = require('../services/shopping-basket')
 const { checkFavoriteProducts } = require('../../products/services/products')
 const { sanitizeEntity } = require('strapi-utils');
 
-
-// const _ = require('loadsh');
-// const { findOne } = require('../../products/controllers/products');
-
 module.exports = {
 
     async create(ctx) {
@@ -86,41 +82,22 @@ module.exports = {
                 }
             } else {
                 if (found) {
-                    await strapi.services['shopping-basket'].create({ ...data, type_test: true, quantity: ctx.request.body.quantity, product_id: ctx.request.body.product })
+                    await strapi.services['shopping-basket'].create({
+                        ...data, type_test: true,
+                        quantity: ctx.request.body.quantity,
+                        product_id: ctx.request.body.product
+                    })
                     return { success: true };
 
                 }
             }
-            await strapi.services['shopping-basket'].create({ ...data, quantity: ctx.request.body.quantity, product_id: ctx.request.body.product })
+            await strapi.services['shopping-basket'].create({
+                ...data, quantity: ctx.request.body.quantity,
+                product_id: ctx.request.body.product
+            })
             return { success: true };
         }
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //     /**
-    //      * Retrieve a record.
-    //      *
-    //      * @return {Object}
-    //      */
 
     async findOne(ctx) {
         let gift_wrap_price = 0
@@ -145,7 +122,10 @@ module.exports = {
         let basket = await Promise.all(tt)
 
         basket.map((el, index) => {
-            if (el.gift_wrap !== undefined) { gift_wrap_price = el.quantity * gift_wrap[0].price; basket[index] = gift_wrap[0], Object.assign(basket[index], { quantity: el.quantity }) }
+            if (el.gift_wrap !== undefined) {
+                gift_wrap_price = el.quantity * gift_wrap[0].price; basket[index] = gift_wrap[0],
+                    Object.assign(basket[index], { quantity: el.quantity })
+            }
         })
 
         basket.map((el) => {
@@ -164,15 +144,12 @@ module.exports = {
         return basket
     },
 
-
-
-
-
     async create_gift_wrap(ctx) {
         let data = {
             product: 1,
             quantity: ctx.request.body.quantity,
             users_permissions_user: ctx.req.user.id,
+            product_id: 1,
             variant_id: 1
         }
         const knex = strapi.connections.default;
@@ -191,29 +168,20 @@ module.exports = {
         }
     },
 
-
-
-
     async delete_gift_wrap(ctx) {
-        let data = {
+        await strapi.services['shopping-basket'].delete({
             users_permissions_user: ctx.req.user.id,
-            product: 1
-        }
-        await strapi.services['shopping-basket'].delete( {
-            users_permissions_user: ctx.req.user.id,
-            product: 1,
-            variant_id:1
+            product_id: 1,
         });
         return ({ success: true, message: "deleted" })
     },
 
-
-
-    //     async delete(ctx) {
-    //         let { productid } = ctx.params
-    //         await strapi.services['shopping-basket'].delete({ users_permissions_user: ctx.req.user.id, product: productid });
-    //         return ({ success: true, message: "deleted" })
-    //     }
+    async delete(ctx) {
+        let { product_id } = ctx.params
+        let { variant_id } = ctx.params
+        await strapi.services['shopping-basket'].delete({ users_permissions_user: ctx.req.user.id, product_id: product_id, variant_id: variant_id });
+        return ({ success: true, message: "deleted" })
+    }
 
 };
 

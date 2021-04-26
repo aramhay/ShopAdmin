@@ -34,6 +34,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deleteProductFromTheShoppingBasket/:product_id/:variant_id",
+      "handler": "shopping-basket.delete",
+      "config": {
+        "policies": []
+      }
     }
 
 

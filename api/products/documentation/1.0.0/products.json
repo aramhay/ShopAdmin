@@ -1216,6 +1216,12 @@
                 "sample": {
                   "type": "boolean"
                 },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },

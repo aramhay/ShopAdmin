@@ -6287,6 +6287,7 @@ type VariantsOfAProduct {
   sample: Boolean!
   published_at: DateTime
   favorite_products(sort: String, limit: Int, start: Int, where: JSON): [FavoriteProduct]
+  images(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 type VariantsOfAProductConnection {
@@ -6388,6 +6389,7 @@ input VariantsOfAProductInput {
   favorite_products: [ID]
   quantity: Long
   sample: Boolean
+  images: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -6400,6 +6402,7 @@ input editVariantsOfAProductInput {
   favorite_products: [ID]
   quantity: Long
   sample: Boolean
+  images: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
