@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/not-found-page-section-3-s",
+      "handler": "not-found-page-section-3.find",
+      "config": {
+        "policies": []
+      }
+    }
+    
+  ]
+}

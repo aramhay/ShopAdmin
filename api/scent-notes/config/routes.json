@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/scent-notes",
+      "handler": "scent-notes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scent-notes/count",
+      "handler": "scent-notes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scent-notes/:id",
+      "handler": "scent-notes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/scent-notes",
+      "handler": "scent-notes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/scent-notes/:id",
+      "handler": "scent-notes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/scent-notes/:id",
+      "handler": "scent-notes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

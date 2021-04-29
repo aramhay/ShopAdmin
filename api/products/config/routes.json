@@ -52,6 +52,22 @@
     },
     {
       "method": "GET",
+      "path": "/allCleanProducts",
+      "handler": "products.findAllCleanProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allSamples",
+      "handler": "products.findAllSample",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/findByLimit/:limit/:quantity",
       "handler": "products.findByLimit",
       "config": {
@@ -64,6 +80,14 @@
       "method": "GET",
       "path": "/products/count",
       "handler": "products.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getTopTen/:scent_note",
+      "handler": "products.findTopTen",
       "config": {
         "policies": []
       }

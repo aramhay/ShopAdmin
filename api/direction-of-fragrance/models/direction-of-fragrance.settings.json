@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "direction_of_fragrances",
+  "info": {
+    "name": "direction_of_fragrance"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

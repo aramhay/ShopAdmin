@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fragrance-occasions",
+      "handler": "fragrance-occasion.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fragrance-occasions/count",
+      "handler": "fragrance-occasion.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fragrance-occasions/:id",
+      "handler": "fragrance-occasion.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fragrance-occasions",
+      "handler": "fragrance-occasion.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fragrance-occasions/:id",
+      "handler": "fragrance-occasion.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fragrance-occasions/:id",
+      "handler": "fragrance-occasion.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

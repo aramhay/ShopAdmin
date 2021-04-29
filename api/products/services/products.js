@@ -8,7 +8,10 @@ module.exports = {
         delete product?.category;
         delete product?.type_test;
         delete product?.created_by;
-        delete product?.updated_by
+        delete product?.updated_by;
+        delete product?.scent_note
+        delete product?.fragrance_occasion
+        delete product?.direction_of_fragrance
         if (!user) return product
         const includes = product?.favorite_products?.filter(e => e.users_permissions_user === user.id)
         product?.variants_of_a_products?.map((el) => {
@@ -24,7 +27,6 @@ module.exports = {
         delete product?.favorite_products;
         return product;
     },
-  
+
 };
 
-   

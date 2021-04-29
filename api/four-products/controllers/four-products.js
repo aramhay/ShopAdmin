@@ -24,19 +24,20 @@ module.exports = {
             if (parf.length) {
                 a = await Promise.all(parf)
                 a.map(e => {
-                    checkFavoriteProducts(ctx.req.user, e[0])
+                    checkFavoriteProducts(ctx.req.user, e[1])
                 })
             }
             if (inter.length) {
                 aa = await Promise.all(inter)
                 aa.map(e => {
-                    checkFavoriteProducts(ctx.req.user, e[0])
+
+                    checkFavoriteProducts(ctx.req.user, e[1])
                 })
             }
             if (beaut.length) {
                 aaa = await Promise.all(beaut)
                 aaa.map(e => {
-                    checkFavoriteProducts(ctx.req.user, e[0])
+                    checkFavoriteProducts(ctx.req.user, e[1])
                 })
             }
             Object.assign(obj1, { parfum: a })

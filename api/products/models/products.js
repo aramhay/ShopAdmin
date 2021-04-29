@@ -12,6 +12,24 @@ module.exports = {
     lifecycles: {
 
         async beforeCreate(data) {
+            let count = 0
+            let variants = await strapi.services["variants-of-a-product"].find({})
+            variants.map((el)=>{
+                if( data.variants_of_a_products.includes(el.id) && el.main) count++
+
+                if (count>1){
+                     throw Boom.badRequest(
+                    'The product can not have several main variants',
+                )
+            
+            }
+            if (count<1) {
+                throw Boom.badRequest(
+                    'The product should have at least one main variant',
+                )
+            }
+            })
+
             // checkUniqueVariants()
             // console.log(data);
             // if (true)

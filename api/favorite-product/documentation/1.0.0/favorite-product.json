@@ -279,6 +279,18 @@
                   "type": "string"
                 }
               },
+              "top_10": {
+                "type": "boolean"
+              },
+              "fragrance_occasion": {
+                "type": "string"
+              },
+              "scent_note": {
+                "type": "string"
+              },
+              "direction_of_fragrance": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

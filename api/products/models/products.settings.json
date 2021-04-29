@@ -20,7 +20,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "clean_product": {
       "type": "boolean",
@@ -72,7 +73,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "limited_edition": {
       "type": "boolean",
@@ -99,6 +101,19 @@
     },
     "variants_of_a_products": {
       "collection": "variants-of-a-product"
+    },
+    "top_10": {
+      "type": "boolean",
+      "default": false
+    },
+    "fragrance_occasion": {
+      "model": "fragrance-occasion"
+    },
+    "scent_note": {
+      "model": "scent-notes"
+    },
+    "direction_of_fragrance": {
+      "model": "direction-of-fragrance"
     }
   }
 }

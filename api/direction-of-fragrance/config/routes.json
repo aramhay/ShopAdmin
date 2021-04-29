@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/direction-of-fragrances",
+      "handler": "direction-of-fragrance.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/direction-of-fragrances/count",
+      "handler": "direction-of-fragrance.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/direction-of-fragrances/:id",
+      "handler": "direction-of-fragrance.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/direction-of-fragrances",
+      "handler": "direction-of-fragrance.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/direction-of-fragrances/:id",
+      "handler": "direction-of-fragrance.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/direction-of-fragrances/:id",
+      "handler": "direction-of-fragrance.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

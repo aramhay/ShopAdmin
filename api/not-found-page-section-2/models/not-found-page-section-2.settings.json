@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "not_found_page_section_2s",
+  "info": {
+    "name": "not_found_page_section_2"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

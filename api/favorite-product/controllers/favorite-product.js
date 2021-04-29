@@ -1,18 +1,27 @@
 'use strict';
+const products = require('../../products/services/products');
 const { checkFavoriteProducts } = require('../../products/services/products')
+const { sanitizeEntity } = require('strapi-utils');
 
 
 module.exports = {
 
     async findOne(ctx) {
-        let favoritData = {
-            users_permissions_user: ctx.req.user.id,
-        }
-        let prod = await strapi.services.products.find({})
-        prod.map((el) => {
-            checkFavoriteProducts(ctx.req.user, el)
+        let res = []
+        let result
+        let prod = await strapi.services['favorite-product'].find({ users_permissions_user: ctx.req.user.id })
+        let p = prod.map(product => {
+            delete product?.users_permissions_user,
+                delete product?.product?.category,
+                delete product?.product?.sub_category,
+                delete product?.product?.shopping_basket
+                Object.assign(product?.product,{variants_of_a_products:[product?.variants_of_a_product ]})
+                Object.assign(product?.product?.variants_of_a_products[0],{favorite:true})
+                return product?.product
         })
-        return (prod)
+
+        return await Promise.all(p)
+
     },
 
 
@@ -36,11 +45,13 @@ module.exports = {
         let entity = await strapi.services['favorite-product'].find(favoritData)
         if ((entity.length === 0) && (exist.length !== 0)) {
             await strapi.services['favorite-product'].create(favoritData)
-            return ({ isFavorite: true })
+            let prod =  await strapi.services.products.find({id: ctx.request.body.product})
+            return await checkFavoriteProducts(ctx.req.user,prod[0])
         }
         else if ((exist.length !== 0)) {
             await strapi.services['favorite-product'].delete(favoritData)
-            return ({ isFavorite: false })
+            let prod =  await strapi.services.products.find({id: ctx.request.body.product})
+            return prod[0]
         } else
             return ({ message: 'product doesnt exist x' })
     }

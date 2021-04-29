@@ -23,8 +23,11 @@ module.exports = {
         } else {
             entities = await strapi.services.products.find(ctx.query);
         }
-        entities = entities.map(entity => sanitizeEntity(entity, { model: strapi.models.products }));
-        return (checkFavoriteProducts(ctx.req.user, entities))
+        entities.map(entity => { sanitizeEntity(entity, { model: strapi.models.products }) });
+        let p = entities.map((el) => {
+            return checkFavoriteProducts(ctx.req.user, el);
+        })
+        return await Promise.all(p)
 
     },
 
@@ -33,10 +36,12 @@ module.exports = {
         let { limit } = ctx.params
         let { quantity } = ctx.params
         let products = await strapi.services.products.find();
+        products.map((el)=> checkFavoriteProducts(ctx.req.user,el) )
         products = products.map(product => sanitizeEntity(product, { model: strapi.models.products }))
         for (let i = 0; i < quantity; i++) {
             result.push(_.sampleSize(products, limit))
         }
+
         return result
     },
 
@@ -44,8 +49,10 @@ module.exports = {
     async findOne(ctx) {
         const { id } = ctx.params;
         let entity = await strapi.services.products.findOne({ id });
-        let product = await checkFavoriteProducts(ctx.req.user, [sanitizeEntity(entity, { model: strapi.models.products })])
-        return product[0]
+        console.log(entity);
+        let product = sanitizeEntity(entity, { model: strapi.models.products })
+        await checkFavoriteProducts(ctx.req.user, product)
+        return product
     },
 
 
@@ -56,19 +63,19 @@ module.exports = {
         let products = await knex('products')
             .where('sub_category', `${id}`)
             .select('products.id');
-            const ps = products.map((el) => {
-                let entity = strapi.services.products.findOne({ id: el.id })
-                return entity
-            })
-            let res = await Promise.all(ps)
-            res.map((el) => {
-                delete el?.created_by
-                delete el?.updated_by
-                delete el?.category
-                delete el?.menu_item
-                delete el?.sub_category
-            })
-            return (checkFavoriteProducts(ctx.req.user, res))
+        const ps = products.map((el) => {
+            let entity = strapi.services.products.findOne({ id: el.id })
+            return entity
+        })
+        let res = await Promise.all(ps)
+        res.map((el) => {
+            delete el?.created_by
+            delete el?.updated_by
+            delete el?.category
+            delete el?.menu_item
+            delete el?.sub_category
+        })
+        return (checkFavoriteProducts(ctx.req.user, res))
 
 
     },
@@ -114,19 +121,15 @@ module.exports = {
         let products = await knex('products')
             .where('menu_item', `${id}`)
             .select('products.id');
-            const ps = products.map((el) => {
-                let entity = strapi.services.products.findOne({ id: el.id })
-                return entity
-            })
-            let res = await Promise.all(ps)
-            res.map((el) => {
-                delete el?.created_by
-                delete el?.updated_by
-                delete el?.category
-                delete el?.menu_item
-                delete el?.sub_category
-            })
-            return (checkFavoriteProducts(ctx.req.user, res))
+        const ps = products.map((el) => {
+            let entity = strapi.services.products.findOne({ id: el.id })
+            return entity
+        })
+        let res = await Promise.all(ps)
+        let k = res.map((el) => {
+            return checkFavoriteProducts(ctx.req.user, el)
+        })
+        return await Promise.all(k)
 
     },
     async getAllNewProducts(ctx) {
@@ -146,6 +149,56 @@ module.exports = {
         })
         return checkFavoriteProducts(ctx.req.user, newProduct)
 
-    }
+    },
+
+    async findAllCleanProducts(ctx) {
+        let entity = await strapi.services.products.find({ clean_product: true })
+        let p = entity.map((el) => {
+            return checkFavoriteProducts(ctx.req.user, el)
+        })
+        return await Promise.all(p)
+
+    },
+
+    async findAllSample(ctx) {
+        let result = []
+        let entity = await strapi.services.products.find({})
+        let p = entity.map((el) => {
+            el.variants_of_a_products?.map((elem) => {
+                if (elem.sample) {
+                    el.variants_of_a_products.lenght = 0
+                    el.variants_of_a_products = [elem]
+                }
+                checkFavoriteProducts(ctx.req.user, el)
+                sanitizeEntity(el, { model: strapi.models.products })
+
+                result.push(el)
+
+            })
+            return result
+        })
+        let k = await Promise.all(p)
+        return k[0]
+
+    },
+
+    async findTopTen(ctx) {
+       let entity = await strapi.services.products.find({top_10:true})
+       console.log(entity);
+       let p = entity.map((el) =>{
+           return checkFavoriteProducts(ctx.req.user,el)
+       })
+       return await Promise.all(p)
+     },
+
+    // async findTopTen(ctx) {
+    //     let scentIds = ctx.params.scent_note.split(',')
+    //     let products = await strapi.query('products').find({});
+    //     let p = products
+    //         .filter((el) => scentIds.includes(String(el?.scent_note?.id)))
+    //         .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
+    //     return await Promise.all(p)
+    // },
+
 
 };
