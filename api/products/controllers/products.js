@@ -34,14 +34,13 @@ module.exports = {
     async findByLimit(ctx) {
         let result = []
         let { limit } = ctx.params
-        let { quantity } = ctx.params
         let products = await strapi.services.products.find();
-        products.map((el)=> checkFavoriteProducts(ctx.req.user,el) )
         products = products.map(product => sanitizeEntity(product, { model: strapi.models.products }))
-        for (let i = 0; i < quantity; i++) {
-            result.push(_.sampleSize(products, limit))
-        }
-
+        result =  _.sampleSize(products, limit)
+          result.map(product => sanitizeEntity(product, { model: strapi.models.products }))
+          result.map((el)=>{
+              checkFavoriteProducts(ctx.req.user,el)
+          })
         return result
     },
 

@@ -1,7 +1,7 @@
 'use strict';
 const Boom = require('boom');
 const { LOG_VERSION } = require('strapi-utils/lib/logger');
-const {checkUniqueVariants} = require("../services/products")
+const { checkUniqueVariants } = require("../services/products")
 
 
 
@@ -11,46 +11,42 @@ module.exports = {
 
     lifecycles: {
 
+
         async beforeCreate(data) {
             let count = 0
             let variants = await strapi.services["variants-of-a-product"].find({})
-            variants.map((el)=>{
-                if( data.variants_of_a_products.includes(el.id) && el.main) count++
+            console.log(data);
+            console.log(variants);
+            variants.map((el) => {
+                if (data?.variants_of_a_products?.includes(el?.id) && el?.main) count++
+            })
 
-                if (count>1){
-                     throw Boom.badRequest(
+            if (count > 1) {
+                throw Boom.badRequest(
                     'The product can not have several main variants',
                 )
-            
+
             }
-            if (count<1) {
+            if (count < 1) {
                 throw Boom.badRequest(
                     'The product should have at least one main variant',
                 )
             }
-            })
 
-            // checkUniqueVariants()
-            // console.log(data);
-            // if (true)
-            //     throw Boom.badRequest(
-            //         'Cannot perform your save action because of business rule so and so',
-            //     )
-
-                const entity = await strapi.services['new-product-limit'].find();
-                let numWeeks = entity.new_product_limit;
-                let now = new Date();
-                now.setDate(now.getDate() + numWeeks * 7);
-                data.New_Date_Limit == null ? data.New_Date_Limit = now : null
+            const entity = await strapi.services['new-product-limit'].find();
+            let numWeeks = entity.new_product_limit;
+            let now = new Date();
+            now.setDate(now.getDate() + numWeeks * 7);
+            data.New_Date_Limit == null ? data.New_Date_Limit = now : null
         },
 
         // beforeCreate: async (data) => {
-         
+
         // },
         afterCreate: async (data) => {
             let field = {
                 productId: data.id,
-                products:data
+                products: data
             }
             let beauty = ["Gesicht", "Körper", "Clean Beauty", "Make-Up", "Haare"]
             let interieur = ["Raumdüfte", "Lifestyle"]
@@ -71,6 +67,33 @@ module.exports = {
             //     await strapi.services.videos.create(forVideoField)
             // }
         },
+
+        // async beforeSave(data) {
+        //   console.log('lllll')
+        //     console.log(data)
+
+            // console.log(data,"dskjdkkkkkkkjsh",params,'kkkkkkkkkkkkkkkkkkkk')
+            // let count = 0
+            // let variants = await strapi.services["variants-of-a-product"].find({})
+            // if (!data.variants_of_a_products.length ) console.log('chkaaaaaaaaaaaaaaaa')
+            // variants.map((el) => {
+            //     if (data?.variants_of_a_products?.includes(el?.id) && el?.main) {count++}
+            // })
+
+
+            // if (count > 1) {
+            //     throw Boom.badRequest(
+            //         'The product can not have several main variants',
+            //     )
+
+            // } else 
+            // if (count < 1) {
+            //     throw Boom.badRequest(
+            //         'The product should have at least one main variant',
+            //     )
+            // }
+        // },
+
         afterUpdate: async (data) => {
             // if (data.video?.url) {
             //     let forVideoField = {
@@ -84,7 +107,7 @@ module.exports = {
             // }
             let forFourAndEight = {
                 productId: data.id,
-                products:data
+                products: data
 
             }
             let p1 = new Promise((res, rej) => {

@@ -46,12 +46,14 @@ module.exports = {
         if ((entity.length === 0) && (exist.length !== 0)) {
             await strapi.services['favorite-product'].create(favoritData)
             let prod =  await strapi.services.products.find({id: ctx.request.body.product})
+            sanitizeEntity(prod[0], { model: strapi.models.products })
             return await checkFavoriteProducts(ctx.req.user,prod[0])
         }
         else if ((exist.length !== 0)) {
             await strapi.services['favorite-product'].delete(favoritData)
             let prod =  await strapi.services.products.find({id: ctx.request.body.product})
-            return prod[0]
+            sanitizeEntity(prod[0], { model: strapi.models.products })
+            return  await checkFavoriteProducts(ctx.req.user,prod[0])
         } else
             return ({ message: 'product doesnt exist x' })
     }

@@ -697,7 +697,7 @@
         "parameters": []
       }
     },
-    "/findByLimit/{limit}/{quantity}": {
+    "/findByLimit/{limit}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -754,16 +754,6 @@
         "parameters": [
           {
             "name": "limit",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "quantity",
             "in": "path",
             "description": "",
             "deprecated": false,

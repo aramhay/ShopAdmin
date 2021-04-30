@@ -68,7 +68,7 @@
     },
     {
       "method": "GET",
-      "path": "/findByLimit/:limit/:quantity",
+      "path": "/findByLimit/:limit",
       "handler": "products.findByLimit",
       "config": {
         "policies": []
