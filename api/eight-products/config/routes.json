@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/eight-products",
+      "path": "/eight-products/:page",
       "handler": "eight-products.find",
       "config": {
         "policies": []

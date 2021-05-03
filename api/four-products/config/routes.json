@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/four-products",
+      "path": "/four-products/:page",
       "handler": "four-products.find",
       "config": {
         "policies": []

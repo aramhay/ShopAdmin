@@ -100,6 +100,7 @@
       "type": "string"
     },
     "variants_of_a_products": {
+      "unique": true,
       "collection": "variants-of-a-product"
     },
     "top_10": {

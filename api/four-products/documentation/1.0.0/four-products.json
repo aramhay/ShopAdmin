@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/four-products": {
+    "/four-products/{page}": {
       "get": {
         "deprecated": false,
         "description": "Find all the four-products's records",
@@ -55,6 +55,16 @@
           "Four-products"
         ],
         "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "_limit",
             "in": "query",

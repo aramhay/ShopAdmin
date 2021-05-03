@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/29/2021 5:39:33 PM"
+    "x-generation-date": "05/03/2021 12:57:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6523,7 +6523,7 @@
         ]
       }
     },
-    "/eight-products": {
+    "/eight-products/{page}": {
       "get": {
         "deprecated": false,
         "description": "Find all the eight-products's records",
@@ -6578,6 +6578,16 @@
           "Eight-products"
         ],
         "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "_limit",
             "in": "query",
@@ -7035,7 +7045,7 @@
         ]
       }
     },
-    "/four-products": {
+    "/four-products/{page}": {
       "get": {
         "deprecated": false,
         "description": "Find all the four-products's records",
@@ -7090,6 +7100,16 @@
           "Four-products"
         ],
         "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "_limit",
             "in": "query",
