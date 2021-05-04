@@ -10,12 +10,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "brand_page_section_1": {
-      "model": "brand-page-section-1"
-    },
-    "brand_page_section_2": {
-      "model": "brand-page-section-2"
-    },
     "brand_page_section_3": {
       "model": "brand-page-section-3"
     },

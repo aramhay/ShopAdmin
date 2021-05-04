@@ -1,0 +1,187 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_page_data",
+  "info": {
+    "name": "brand_page_data",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header_title": {
+      "type": "string"
+    },
+    "header_head": {
+      "type": "string"
+    },
+    "header_text": {
+      "type": "text"
+    },
+    "header_link": {
+      "type": "string"
+    },
+    "header_btn": {
+      "type": "string"
+    },
+    "header_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "summary_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "summary_title": {
+      "type": "string"
+    },
+    "summary_head": {
+      "type": "string"
+    },
+    "summary_head2": {
+      "type": "string"
+    },
+    "summary_text": {
+      "type": "text"
+    },
+    "summary_link": {
+      "type": "string"
+    },
+    "summary_linktxt": {
+      "type": "string"
+    },
+    "brand_portrait_title": {
+      "type": "string"
+    },
+    "brand_portraid_head": {
+      "type": "string"
+    },
+    "brand_portraid_desc": {
+      "type": "text"
+    },
+    "brand_portraid_text": {
+      "type": "richtext"
+    },
+    "brand_portraid_quote": {
+      "type": "text"
+    },
+    "brand_portraid_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "brand_portraid_imgtext": {
+      "type": "richtext"
+    },
+    "active_ingridients_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "active_ingridients_imgtext": {
+      "type": "richtext"
+    },
+    "active_ingridients_title": {
+      "type": "string"
+    },
+    "active_ingridients_header": {
+      "type": "string"
+    },
+    "active_ingridients_text": {
+      "type": "richtext"
+    },
+    "brand_page_section_3s": {
+      "collection": "brand-page-section-3"
+    },
+    "care_products_desc": {
+      "type": "text"
+    },
+    "application_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "application_imgtext": {
+      "type": "richtext"
+    },
+    "aplication_title": {
+      "type": "text"
+    },
+    "application_header": {
+      "type": "string"
+    },
+    "application_text": {
+      "type": "richtext"
+    },
+    "brand_page_section_4s": {
+      "collection": "brand-page-section-4"
+    },
+    "press_reviews_title": {
+      "type": "text"
+    },
+    "press_reviews_header": {
+      "type": "string"
+    },
+    "press_reviews_text": {
+      "type": "richtext"
+    },
+    "press_reviews_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "press_reviews_imgtext": {
+      "type": "richtext"
+    },
+    "brand_page_section_5s": {
+      "collection": "brand-page-section-5"
+    }
+  }
+}

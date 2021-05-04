@@ -323,104 +323,6 @@
           "id": {
             "type": "string"
           },
-          "brand_page_section_1": {
-            "required": [
-              "id",
-              "position"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "header": {
-                "type": "string"
-              },
-              "text": {
-                "type": "string"
-              },
-              "button_text": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "subheader": {
-                "type": "string"
-              },
-              "position": {
-                "type": "string",
-                "enum": [
-                  "BrandPageOne",
-                  "BrandPageTwo"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "brand_page_section_2": {
-            "required": [
-              "id",
-              "position"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "header": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "text": {
-                "type": "string"
-              },
-              "quote": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "image_text": {
-                "type": "string"
-              },
-              "position": {
-                "type": "string",
-                "enum": [
-                  "BrandPageOne",
-                  "BrandPageTwo",
-                  "BrandPageThre",
-                  "BrandPageThree"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "brand_page_section_3": {
             "required": [
               "id",
@@ -522,12 +424,6 @@
       },
       "NewBrand-page-all-data": {
         "properties": {
-          "brand_page_section_1": {
-            "type": "string"
-          },
-          "brand_page_section_2": {
-            "type": "string"
-          },
           "brand_page_section_3": {
             "type": "string"
           },

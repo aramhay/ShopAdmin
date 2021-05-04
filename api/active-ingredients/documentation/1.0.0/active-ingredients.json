@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/discount-codes": {
+    "/active-ingredients": {
       "get": {
         "deprecated": false,
-        "description": "Find all the discount-codes's records",
+        "description": "Find all the active-ingredients's records",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "Retrieve active-ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new discount-codes record",
+        "description": "Create a new active-ingredients record",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "Retrieve active-ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDiscount-codes"
+                "$ref": "#/components/schemas/NewActive-ingredients"
               }
             }
           }
         }
       }
     },
-    "/discount-codes/count": {
+    "/active-ingredients/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of discount-codes documents",
+        "description": "Retrieve the numver of active-ingredients documents",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "Retrieve active-ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,18 +311,18 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "parameters": []
       }
     },
-    "/discount-codes/{id}": {
+    "/active-ingredients/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one discount-codes record",
+        "description": "Find one active-ingredients record",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "Retrieve active-ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "parameters": [
           {
@@ -385,10 +385,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single discount-codes record",
+        "description": "Update a single active-ingredients record",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "Retrieve active-ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDiscount-codes"
+                "$ref": "#/components/schemas/NewActive-ingredients"
               }
             }
           }
@@ -462,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single discount-codes record",
+        "description": "Delete a single active-ingredients record",
         "responses": {
           "200": {
-            "description": "deletes a single discount-codes based on the ID supplied",
+            "description": "deletes a single active-ingredients based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Active-ingredients"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Discount-codes": {
+      "Active-ingredients": {
         "required": [
           "id"
         ],
@@ -535,164 +535,8 @@
           "id": {
             "type": "string"
           },
-          "Name": {
-            "type": "string",
-            "default": "test",
-            "maxLength": 50
-          },
-          "Description": {
-            "type": "string",
-            "maxLength": 150
-          },
-          "status_voucher": {
-            "type": "boolean"
-          },
-          "unique_multiple": {
-            "type": "boolean"
-          },
-          "multiple_redemptions": {
-            "type": "boolean"
-          },
-          "one_redemption": {
-            "type": "boolean"
-          },
-          "redeem_until_usedup": {
-            "type": "object"
-          },
-          "single_redemption": {
-            "type": "object"
-          },
-          "Minimum_order_value": {
-            "type": "integer"
-          },
-          "valid_from_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Valid_to_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "code_character_length": {
-            "type": "integer"
-          },
-          "amount_discount": {
-            "type": "integer"
-          },
-          "type_of_discount": {
-            "type": "string",
-            "enum": [
-              "prozentual",
-              "absolut",
-              "Stuck",
-              "Versand"
-            ]
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "video": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "video_description": {
-                  "type": "string"
-                },
-                "video_status": {
-                  "type": "string"
-                },
-                "video_name": {
-                  "type": "string"
-                },
-                "favorite_products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "approved_by_DPAB": {
-                  "type": "boolean"
-                },
-                "EAN_barcodes": {
-                  "type": "string"
-                },
-                "variants_of_a_products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "top_10": {
-                  "type": "boolean"
-                },
-                "fragrance_occasion": {
-                  "type": "string"
-                },
-                "scent_note": {
-                  "type": "string"
-                },
-                "direction_of_fragrance": {
-                  "type": "string"
-                },
-                "active_ingredients": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -700,66 +544,10 @@
           }
         }
       },
-      "NewDiscount-codes": {
+      "NewActive-ingredients": {
         "properties": {
-          "Name": {
-            "type": "string",
-            "default": "test",
-            "maxLength": 50
-          },
-          "Description": {
-            "type": "string",
-            "maxLength": 150
-          },
-          "status_voucher": {
-            "type": "boolean"
-          },
-          "unique_multiple": {
-            "type": "boolean"
-          },
-          "multiple_redemptions": {
-            "type": "boolean"
-          },
-          "one_redemption": {
-            "type": "boolean"
-          },
-          "redeem_until_usedup": {
-            "type": "object"
-          },
-          "single_redemption": {
-            "type": "object"
-          },
-          "Minimum_order_value": {
-            "type": "integer"
-          },
-          "valid_from_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Valid_to_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "code_character_length": {
-            "type": "integer"
-          },
-          "amount_discount": {
-            "type": "integer"
-          },
-          "type_of_discount": {
-            "type": "string",
-            "enum": [
-              "prozentual",
-              "absolut",
-              "Stuck",
-              "Versand"
-            ]
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

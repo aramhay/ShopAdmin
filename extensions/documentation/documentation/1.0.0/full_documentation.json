@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/03/2021 12:57:42 PM"
+    "x-generation-date": "05/03/2021 6:48:52 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -45,6 +45,530 @@
     }
   ],
   "paths": {
+    "/active-ingredients": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the active-ingredients's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve active-ingredients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new active-ingredients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve active-ingredients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewActive-ingredients"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/active-ingredients/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the numver of active-ingredients documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve active-ingredients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "parameters": []
+      }
+    },
+    "/active-ingredients/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one active-ingredients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve active-ingredients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single active-ingredients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve active-ingredients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewActive-ingredients"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single active-ingredients record",
+        "responses": {
+          "200": {
+            "description": "deletes a single active-ingredients based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Active-ingredients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/approved-by-us": {
       "get": {
         "deprecated": false,
@@ -1758,13 +2282,13 @@
         "parameters": []
       }
     },
-    "/brand-page-section-1-s": {
+    "/brand-page-data": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the brand-page-data's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve brand-page-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -1810,7 +2334,7 @@
         },
         "summary": "",
         "tags": [
-          "Brand-page-section-1"
+          "Brand-page-data"
         ],
         "parameters": [
           {
@@ -1950,15 +2474,13 @@
             "deprecated": false
           }
         ]
-      }
-    },
-    "/brand-page-section-2-s": {
-      "get": {
+      },
+      "post": {
         "deprecated": false,
-        "description": "",
+        "description": "Create a new brand-page-data record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve brand-page-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -2004,144 +2526,282 @@
         },
         "summary": "",
         "tags": [
-          "Brand-page-section-2"
+          "Brand-page-data"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBrand-page-data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/brand-page-data/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the numver of brand-page-data documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve brand-page-data document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-data"
+        ],
+        "parameters": []
+      }
+    },
+    "/brand-page-data/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one brand-page-data record",
+        "responses": {
+          "200": {
+            "description": "Retrieve brand-page-data document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-data"
         ],
         "parameters": [
           {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
             "schema": {
               "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single brand-page-data record",
+        "responses": {
+          "200": {
+            "description": "Retrieve brand-page-data document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
-            },
-            "deprecated": false
+            }
           },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
-            },
-            "deprecated": false
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-data"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBrand-page-data"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single brand-page-data record",
+        "responses": {
+          "200": {
+            "description": "deletes a single brand-page-data based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Brand-page-data"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ]
       }
@@ -16666,7 +17326,211 @@
         "parameters": []
       }
     },
-    "/getTopTen/{scent_note}": {
+    "/getDirectionOfFragrance/{fragrance}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "fragrance",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/getActiveIngredients/{ingridient}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "ingridient",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/getFragranceOccasion/{fragrance}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "fragrance",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/getScentNotes/{scent_note}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -16732,6 +17596,63 @@
             }
           }
         ]
+      }
+    },
+    "/getTopTen": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": []
       }
     },
     "/products/{id}": {
@@ -21232,530 +22153,6 @@
         ]
       }
     },
-    "/type-tests": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewType-test"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/type-tests/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": []
-      }
-    },
-    "/type-tests/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewType-test"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Type-test"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
     "/user-newsletters": {
       "get": {
         "deprecated": false,
@@ -25738,6 +26135,40 @@
   },
   "components": {
     "schemas": {
+      "Active-ingredients": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewActive-ingredients": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
       "Approved-by-us": {
         "required": [
           "id"
@@ -25905,9 +26336,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -25972,6 +26400,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -26259,104 +26690,6 @@
           "id": {
             "type": "string"
           },
-          "brand_page_section_1": {
-            "required": [
-              "id",
-              "position"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "header": {
-                "type": "string"
-              },
-              "text": {
-                "type": "string"
-              },
-              "button_text": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "subheader": {
-                "type": "string"
-              },
-              "position": {
-                "type": "string",
-                "enum": [
-                  "BrandPageOne",
-                  "BrandPageTwo"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "brand_page_section_2": {
-            "required": [
-              "id",
-              "position"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "header": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "text": {
-                "type": "string"
-              },
-              "quote": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "image_text": {
-                "type": "string"
-              },
-              "position": {
-                "type": "string",
-                "enum": [
-                  "BrandPageOne",
-                  "BrandPageTwo",
-                  "BrandPageThre",
-                  "BrandPageThree"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "brand_page_section_3": {
             "required": [
               "id",
@@ -26458,12 +26791,6 @@
       },
       "NewBrand-page-all-data": {
         "properties": {
-          "brand_page_section_1": {
-            "type": "string"
-          },
-          "brand_page_section_2": {
-            "type": "string"
-          },
           "brand_page_section_3": {
             "type": "string"
           },
@@ -26485,31 +26812,30 @@
           }
         }
       },
-      "Brand-page-section-1": {
+      "Brand-page-data": {
         "required": [
-          "id",
-          "position"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "header_title": {
             "type": "string"
           },
-          "header": {
+          "header_head": {
             "type": "string"
           },
-          "text": {
+          "header_text": {
             "type": "string"
           },
-          "button_text": {
+          "header_link": {
             "type": "string"
           },
-          "link": {
+          "header_btn": {
             "type": "string"
           },
-          "images": {
+          "header_img": {
             "required": [
               "id",
               "name",
@@ -26576,92 +26902,7 @@
               }
             }
           },
-          "subheader": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string",
-            "default": "BrandPageOne",
-            "enum": [
-              "BrandPageOne",
-              "BrandPageTwo"
-            ]
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewBrand-page-section-1": {
-        "required": [
-          "position"
-        ],
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "header": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          },
-          "button_text": {
-            "type": "string"
-          },
-          "link": {
-            "type": "string"
-          },
-          "subheader": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string",
-            "default": "BrandPageOne",
-            "enum": [
-              "BrandPageOne",
-              "BrandPageTwo"
-            ]
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Brand-page-section-2": {
-        "required": [
-          "id",
-          "position"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "header": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string",
-            "default": "<b></b>"
-          },
-          "quote": {
-            "type": "string"
-          },
-          "images": {
+          "summary_img": {
             "required": [
               "id",
               "name",
@@ -26728,17 +26969,450 @@
               }
             }
           },
-          "image_text": {
+          "summary_title": {
             "type": "string"
           },
-          "position": {
-            "type": "string",
-            "enum": [
-              "BrandPageOne",
-              "BrandPageTwo",
-              "BrandPageThre",
-              "BrandPageThree"
-            ]
+          "summary_head": {
+            "type": "string"
+          },
+          "summary_head2": {
+            "type": "string"
+          },
+          "summary_text": {
+            "type": "string"
+          },
+          "summary_link": {
+            "type": "string"
+          },
+          "summary_linktxt": {
+            "type": "string"
+          },
+          "brand_portrait_title": {
+            "type": "string"
+          },
+          "brand_portraid_head": {
+            "type": "string"
+          },
+          "brand_portraid_desc": {
+            "type": "string"
+          },
+          "brand_portraid_text": {
+            "type": "string"
+          },
+          "brand_portraid_quote": {
+            "type": "string"
+          },
+          "brand_portraid_img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "brand_portraid_imgtext": {
+            "type": "string"
+          },
+          "active_ingridients_img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "active_ingridients_imgtext": {
+            "type": "string"
+          },
+          "active_ingridients_title": {
+            "type": "string"
+          },
+          "active_ingridients_header": {
+            "type": "string"
+          },
+          "active_ingridients_text": {
+            "type": "string"
+          },
+          "brand_page_section_3s": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "image_position"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "link_text": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "string"
+                },
+                "image_position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right",
+                    "summary"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "care_products_desc": {
+            "type": "string"
+          },
+          "application_img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "application_imgtext": {
+            "type": "string"
+          },
+          "aplication_title": {
+            "type": "string"
+          },
+          "application_header": {
+            "type": "string"
+          },
+          "application_text": {
+            "type": "string"
+          },
+          "brand_page_section_4s": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "press_reviews_title": {
+            "type": "string"
+          },
+          "press_reviews_header": {
+            "type": "string"
+          },
+          "press_reviews_text": {
+            "type": "string"
+          },
+          "press_reviews_img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "press_reviews_imgtext": {
+            "type": "string"
+          },
+          "brand_page_section_5s": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "link_text": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -26746,38 +27420,115 @@
           }
         }
       },
-      "NewBrand-page-section-2": {
-        "required": [
-          "position"
-        ],
+      "NewBrand-page-data": {
         "properties": {
-          "title": {
+          "header_title": {
             "type": "string"
           },
-          "header": {
+          "header_head": {
             "type": "string"
           },
-          "description": {
+          "header_text": {
             "type": "string"
           },
-          "text": {
-            "type": "string",
-            "default": "<b></b>"
-          },
-          "quote": {
+          "header_link": {
             "type": "string"
           },
-          "image_text": {
+          "header_btn": {
             "type": "string"
           },
-          "position": {
-            "type": "string",
-            "enum": [
-              "BrandPageOne",
-              "BrandPageTwo",
-              "BrandPageThre",
-              "BrandPageThree"
-            ]
+          "summary_title": {
+            "type": "string"
+          },
+          "summary_head": {
+            "type": "string"
+          },
+          "summary_head2": {
+            "type": "string"
+          },
+          "summary_text": {
+            "type": "string"
+          },
+          "summary_link": {
+            "type": "string"
+          },
+          "summary_linktxt": {
+            "type": "string"
+          },
+          "brand_portrait_title": {
+            "type": "string"
+          },
+          "brand_portraid_head": {
+            "type": "string"
+          },
+          "brand_portraid_desc": {
+            "type": "string"
+          },
+          "brand_portraid_text": {
+            "type": "string"
+          },
+          "brand_portraid_quote": {
+            "type": "string"
+          },
+          "brand_portraid_imgtext": {
+            "type": "string"
+          },
+          "active_ingridients_imgtext": {
+            "type": "string"
+          },
+          "active_ingridients_title": {
+            "type": "string"
+          },
+          "active_ingridients_header": {
+            "type": "string"
+          },
+          "active_ingridients_text": {
+            "type": "string"
+          },
+          "brand_page_section_3s": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "care_products_desc": {
+            "type": "string"
+          },
+          "application_imgtext": {
+            "type": "string"
+          },
+          "aplication_title": {
+            "type": "string"
+          },
+          "application_header": {
+            "type": "string"
+          },
+          "application_text": {
+            "type": "string"
+          },
+          "brand_page_section_4s": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "press_reviews_title": {
+            "type": "string"
+          },
+          "press_reviews_header": {
+            "type": "string"
+          },
+          "press_reviews_text": {
+            "type": "string"
+          },
+          "press_reviews_imgtext": {
+            "type": "string"
+          },
+          "brand_page_section_5s": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -27665,9 +28416,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -27732,6 +28480,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -28165,9 +28916,6 @@
               "discount": {
                 "type": "integer"
               },
-              "type_test": {
-                "type": "string"
-              },
               "category": {
                 "type": "string"
               },
@@ -28232,6 +28980,9 @@
                 "type": "string"
               },
               "direction_of_fragrance": {
+                "type": "string"
+              },
+              "active_ingredients": {
                 "type": "string"
               },
               "published_at": {
@@ -29016,9 +29767,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -29083,6 +29831,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -29309,9 +30060,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -29376,6 +30124,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -29677,9 +30428,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -29744,6 +30492,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -30599,9 +31350,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -30666,6 +31414,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
@@ -31246,6 +31997,28 @@
               }
             }
           },
+          "active_ingredients": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -31263,9 +32036,6 @@
           },
           "discount": {
             "type": "integer"
-          },
-          "type_test": {
-            "type": "string"
           },
           "category": {
             "type": "string"
@@ -31331,6 +32101,9 @@
             "type": "string"
           },
           "direction_of_fragrance": {
+            "type": "string"
+          },
+          "active_ingredients": {
             "type": "string"
           },
           "published_at": {
@@ -32260,9 +33033,6 @@
               "discount": {
                 "type": "integer"
               },
-              "type_test": {
-                "type": "string"
-              },
               "category": {
                 "type": "string"
               },
@@ -32327,6 +33097,9 @@
                 "type": "string"
               },
               "direction_of_fragrance": {
+                "type": "string"
+              },
+              "active_ingredients": {
                 "type": "string"
               },
               "published_at": {
@@ -32826,231 +33599,6 @@
             "type": "string"
           },
           "text": {
-            "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Type-test": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "brand": {
-            "type": "string"
-          },
-          "price": {
-            "type": "number"
-          },
-          "size": {
-            "type": "integer"
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "limited_edition": {
-                "type": "boolean"
-              },
-              "video_description": {
-                "type": "string"
-              },
-              "video_status": {
-                "type": "string"
-              },
-              "video_name": {
-                "type": "string"
-              },
-              "favorite_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "approved_by_DPAB": {
-                "type": "boolean"
-              },
-              "EAN_barcodes": {
-                "type": "string"
-              },
-              "variants_of_a_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "top_10": {
-                "type": "boolean"
-              },
-              "fragrance_occasion": {
-                "type": "string"
-              },
-              "scent_note": {
-                "type": "string"
-              },
-              "direction_of_fragrance": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewType-test": {
-        "properties": {
-          "brand": {
-            "type": "string"
-          },
-          "price": {
-            "type": "number"
-          },
-          "size": {
-            "type": "integer"
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "product": {
             "type": "string"
           },
           "published_at": {

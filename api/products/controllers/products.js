@@ -36,11 +36,11 @@ module.exports = {
         let { limit } = ctx.params
         let products = await strapi.services.products.find();
         products = products.map(product => sanitizeEntity(product, { model: strapi.models.products }))
-        result =  _.sampleSize(products, limit)
-          result.map(product => sanitizeEntity(product, { model: strapi.models.products }))
-          result.map((el)=>{
-              checkFavoriteProducts(ctx.req.user,el)
-          })
+        result = _.sampleSize(products, limit)
+        result.map(product => sanitizeEntity(product, { model: strapi.models.products }))
+        result.map((el) => {
+            checkFavoriteProducts(ctx.req.user, el)
+        })
         return result
     },
 
@@ -182,22 +182,49 @@ module.exports = {
     },
 
     async findTopTen(ctx) {
-       let entity = await strapi.services.products.find({top_10:true})
-       console.log(entity);
-       let p = entity.map((el) =>{
-           return checkFavoriteProducts(ctx.req.user,el)
-       })
-       return await Promise.all(p)
-     },
+        let entity = await strapi.services.products.find({ top_10: true })
+        console.log(entity);
+        let p = entity.map((el) => {
+            return checkFavoriteProducts(ctx.req.user, el)
+        })
+        return await Promise.all(p)
+    },
 
-    // async findTopTen(ctx) {
-    //     let scentIds = ctx.params.scent_note.split(',')
-    //     let products = await strapi.query('products').find({});
-    //     let p = products
-    //         .filter((el) => scentIds.includes(String(el?.scent_note?.id)))
-    //         .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
-    //     return await Promise.all(p)
-    // },
 
+    async findScentNotes(ctx) {
+        let scentIds = ctx.params.scent_note.split(',')
+        let products = await strapi.query('products').find({});
+        let p = products
+            .filter((el) => scentIds.includes(String(el?.scent_note?.id)))
+            .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
+        return await Promise.all(p)
+    },
+
+    async findFragranceOccasion(ctx) {
+        let fragranceId = ctx.params.fragrance.split(',')
+        let products = await strapi.query('products').find({});
+        let p = products
+            .filter((el) => fragranceId.includes(String(el?.fragrance_occasion?.id)))
+            .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
+        return await Promise.all(p)
+    },
+
+    async findDirectionOfFragrance(ctx) {
+        let fragranceId = ctx.params.fragrance.split(',')
+        let products = await strapi.query('products').find({});
+        let p = products
+            .filter((el) => fragranceId.includes(String(el?.direction_of_fragrance?.id)))
+            .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
+        return await Promise.all(p)
+    },
+
+    async findActiveIngredients(ctx) {
+        let ingredientId = ctx.params.ingridient.split(',')
+        let products = await strapi.query('products').find({});
+        let p = products
+            .filter((el) => ingredientId.includes(String(el?.active_ingredients?.id)))
+            .map(e => (sanitizeEntity(e, { model: strapi.models.products }), checkFavoriteProducts(ctx.req.user, e)))
+        return await Promise.all(p)
+    },
 
 };

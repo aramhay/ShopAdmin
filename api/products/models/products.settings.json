@@ -33,11 +33,6 @@
     "discount": {
       "type": "biginteger"
     },
-    "type_test": {
-      "private": true,
-      "model": "type-test",
-      "via": "product"
-    },
     "category": {
       "private": true,
       "model": "category"
@@ -115,6 +110,9 @@
     },
     "direction_of_fragrance": {
       "model": "direction-of-fragrance"
+    },
+    "active_ingredients": {
+      "model": "active-ingredients"
     }
   }
 }

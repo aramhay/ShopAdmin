@@ -75,7 +75,6 @@
       }
     },
     
-    
     {
       "method": "GET",
       "path": "/products/count",
@@ -86,7 +85,39 @@
     },
     {
       "method": "GET",
-      "path": "/getTopTen/:scent_note",
+      "path": "/getDirectionOfFragrance/:fragrance",
+      "handler": "products.findDirectionOfFragrance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getActiveIngredients/:ingridient",
+      "handler": "products.findActiveIngredients",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getFragranceOccasion/:fragrance",
+      "handler": "products.findFragranceOccasion",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getScentNotes/:scent_note",
+      "handler": "products.findScentNotes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getTopTen",
       "handler": "products.findTopTen",
       "config": {
         "policies": []

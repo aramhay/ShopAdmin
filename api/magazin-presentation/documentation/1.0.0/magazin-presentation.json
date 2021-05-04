@@ -710,9 +710,6 @@
                 "discount": {
                   "type": "integer"
                 },
-                "type_test": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -777,6 +774,9 @@
                   "type": "string"
                 },
                 "direction_of_fragrance": {
+                  "type": "string"
+                },
+                "active_ingredients": {
                   "type": "string"
                 },
                 "published_at": {
