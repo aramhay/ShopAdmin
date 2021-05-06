@@ -1439,9 +1439,6 @@
           "brand": {
             "type": "string"
           },
-          "discount": {
-            "type": "integer"
-          },
           "name": {
             "type": "string"
           },
@@ -1773,9 +1770,6 @@
           },
           "brand": {
             "type": "string"
-          },
-          "discount": {
-            "type": "integer"
           },
           "category": {
             "type": "string"

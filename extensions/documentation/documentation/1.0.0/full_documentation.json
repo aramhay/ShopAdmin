@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/03/2021 6:48:52 PM"
+    "x-generation-date": "05/06/2021 12:21:05 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -26333,9 +26333,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "discount": {
-                  "type": "integer"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -28413,9 +28410,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "discount": {
-                  "type": "integer"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -28912,9 +28906,6 @@
               },
               "brand": {
                 "type": "string"
-              },
-              "discount": {
-                "type": "integer"
               },
               "category": {
                 "type": "string"
@@ -29764,9 +29755,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "discount": {
-                  "type": "integer"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -30056,9 +30044,6 @@
                 },
                 "brand": {
                   "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
                 },
                 "category": {
                   "type": "string"
@@ -30424,9 +30409,6 @@
                 },
                 "brand": {
                   "type": "string"
-                },
-                "discount": {
-                  "type": "integer"
                 },
                 "category": {
                   "type": "string"
@@ -31347,9 +31329,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "discount": {
-                  "type": "integer"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -31699,9 +31678,6 @@
           "brand": {
             "type": "string"
           },
-          "discount": {
-            "type": "integer"
-          },
           "name": {
             "type": "string"
           },
@@ -32033,9 +32009,6 @@
           },
           "brand": {
             "type": "string"
-          },
-          "discount": {
-            "type": "integer"
           },
           "category": {
             "type": "string"
@@ -33029,9 +33002,6 @@
               },
               "brand": {
                 "type": "string"
-              },
-              "discount": {
-                "type": "integer"
               },
               "category": {
                 "type": "string"

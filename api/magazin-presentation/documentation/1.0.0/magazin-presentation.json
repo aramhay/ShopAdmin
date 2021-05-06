@@ -707,9 +707,6 @@
                 "brand": {
                   "type": "string"
                 },
-                "discount": {
-                  "type": "integer"
-                },
                 "category": {
                   "type": "string"
                 },

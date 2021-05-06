@@ -30,9 +30,6 @@
     "brand": {
       "type": "string"
     },
-    "discount": {
-      "type": "biginteger"
-    },
     "category": {
       "private": true,
       "model": "category"
