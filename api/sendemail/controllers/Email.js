@@ -5,7 +5,7 @@ module.exports = {
         try {
             await strapi.plugins['email'].services.email.send({
                 to: options.to,
-                from: 'mankuyanars@gmail.com',
+                from: 'shop@dasparfum-beauty.de',
                 subject: options.subject,
                 text: `You still have products in your shopping cart.${options.text}`,
                 html: options.html
@@ -25,7 +25,7 @@ module.exports = {
         try {
             await strapi.plugins['email'].services.email.send({
                 to: options.to,
-                from: 'mankuyanars@gmail.com',
+                from: 'shop@dasparfum-beauty.de',
                 subject: 'recomendetion beauty shop',
                 html: `<h1> ${username[0].username}  recommend his shopping basket ,  ${url}</h1>`
             })

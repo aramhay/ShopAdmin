@@ -27,9 +27,6 @@
       "type": "boolean",
       "default": false
     },
-    "brand": {
-      "type": "string"
-    },
     "category": {
       "private": true,
       "model": "category"
@@ -110,6 +107,9 @@
     },
     "active_ingredients": {
       "model": "active-ingredients"
+    },
+    "brand": {
+      "model": "brand"
     }
   }
 }

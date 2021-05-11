@@ -76,6 +76,14 @@
     },
     "date": {
       "type": "date"
+    },
+    "billing_addresses": {
+      "via": "users_permissions_user",
+      "collection": "billing-addresses"
+    },
+    "delivery_addresses": {
+      "via": "users_permissions_user",
+      "collection": "delivery-address"
     }
   }
 }

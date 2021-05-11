@@ -1296,6 +1296,108 @@
           "date": {
             "type": "string",
             "format": "date"
+          },
+          "billing_addresses": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "first_name",
+                "surname",
+                "road",
+                "place"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "surname": {
+                  "type": "string"
+                },
+                "address_line": {
+                  "type": "string"
+                },
+                "road": {
+                  "type": "string"
+                },
+                "house_number": {
+                  "type": "number"
+                },
+                "place": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "postcode": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "delivery_addresses": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "surname": {
+                  "type": "string"
+                },
+                "address_line": {
+                  "type": "string"
+                },
+                "road": {
+                  "type": "string"
+                },
+                "house_number": {
+                  "type": "number"
+                },
+                "place": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "postcode": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1358,6 +1460,18 @@
           "date": {
             "type": "string",
             "format": "date"
+          },
+          "billing_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delivery_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

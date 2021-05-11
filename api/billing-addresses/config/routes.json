@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/getUserBillingAdresses",
+      "handler": "billing-addresses.findUserBillingAdresses",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/createAddresses/:appointment",
+      "handler": "billing-addresses.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getUserDeliveryAdresses",
+      "handler": "billing-addresses.findUserDeliveryAdresses",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

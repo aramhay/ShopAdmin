@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/theUsersAllFavoriteProducts": {
+    "/getUserBillingAdresses": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,12 +52,12 @@
         },
         "summary": "",
         "tags": [
-          "Favorite-product"
+          "Billing-addresses"
         ],
         "parameters": []
       }
     },
-    "/AddFavoriteProductsTheUser": {
+    "/createAddresses/{appointment}": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -109,7 +109,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite-product"
+          "Billing-addresses"
         ],
         "requestBody": {
           "description": "",
@@ -117,22 +117,107 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewFavorite-product"
+                "$ref": "#/components/schemas/NewBilling-addresses"
               }
             }
           }
         }
       }
+    },
+    "/getUserDeliveryAdresses": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Billing-addresses"
+        ],
+        "parameters": []
+      }
     }
   },
   "components": {
     "schemas": {
-      "Favorite-product": {
+      "Billing-addresses": {
         "required": [
-          "id"
+          "id",
+          "first_name",
+          "surname",
+          "road",
+          "place"
         ],
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "address_line": {
+            "type": "string"
+          },
+          "road": {
+            "type": "string"
+          },
+          "house_number": {
+            "type": "number"
+          },
+          "place": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "postcode": {
             "type": "string"
           },
           "users_permissions_user": {
@@ -211,170 +296,45 @@
               }
             }
           },
-          "product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "New_Date_Limit": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "limited_edition": {
-                "type": "boolean"
-              },
-              "video_description": {
-                "type": "string"
-              },
-              "video_status": {
-                "type": "string"
-              },
-              "video_name": {
-                "type": "string"
-              },
-              "favorite_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "approved_by_DPAB": {
-                "type": "boolean"
-              },
-              "EAN_barcodes": {
-                "type": "string"
-              },
-              "variants_of_a_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "top_10": {
-                "type": "boolean"
-              },
-              "fragrance_occasion": {
-                "type": "string"
-              },
-              "scent_note": {
-                "type": "string"
-              },
-              "direction_of_fragrance": {
-                "type": "string"
-              },
-              "active_ingredients": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "variants_of_a_product": {
-            "required": [
-              "id",
-              "bottle_sizes",
-              "main",
-              "sample"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "bottle_sizes": {
-                "type": "number"
-              },
-              "price": {
-                "type": "number"
-              },
-              "main": {
-                "type": "boolean"
-              },
-              "favorite_products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "sample": {
-                "type": "boolean"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewFavorite-product": {
+      "NewBilling-addresses": {
+        "required": [
+          "first_name",
+          "surname",
+          "road",
+          "place"
+        ],
         "properties": {
+          "first_name": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "address_line": {
+            "type": "string"
+          },
+          "road": {
+            "type": "string"
+          },
+          "house_number": {
+            "type": "number"
+          },
+          "place": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
           "users_permissions_user": {
-            "type": "string"
-          },
-          "product": {
-            "type": "string"
-          },
-          "variants_of_a_product": {
             "type": "string"
           },
           "published_at": {

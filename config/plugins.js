@@ -6,11 +6,11 @@
     email: {
       provider: 'sendgrid',
       providerOptions: {
-        apiKey: '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',
+        apiKey: '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',
       },
       settings: {
-        defaultFrom: 'mankuyanars@gmail.com',
-        defaultReplyTo: 'mankuyanars@gmail.com',
+        defaultFrom: 'shop@dasparfum-beauty.de',
+        defaultReplyTo: 'shop@dasparfum-beauty.de',
       },
     },
     

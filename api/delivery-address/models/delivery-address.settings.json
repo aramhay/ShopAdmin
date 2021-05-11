@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "delivery_addresses",
+  "info": {
+    "name": "delivery_address",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "address_line": {
+      "type": "string"
+    },
+    "road": {
+      "type": "string"
+    },
+    "house_number": {
+      "type": "float"
+    },
+    "place": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "delivery_addresses"
+    }
+  }
+}

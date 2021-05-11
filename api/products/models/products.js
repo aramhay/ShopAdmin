@@ -15,17 +15,13 @@ module.exports = {
         async beforeCreate(data) {
             let count = 0
             let variants = await strapi.services["variants-of-a-product"].find({})
-            console.log(data);
-            console.log(variants);
             variants.map((el) => {
                 if (data?.variants_of_a_products?.includes(el?.id) && el?.main) count++
             })
-
             if (count > 1) {
                 throw Boom.badRequest(
                     'The product can not have several main variants',
                 )
-
             }
             if (count < 1) {
                 throw Boom.badRequest(
@@ -40,9 +36,6 @@ module.exports = {
             data.New_Date_Limit == null ? data.New_Date_Limit = now : null
         },
 
-        // beforeCreate: async (data) => {
-
-        // },
         afterCreate: async (data) => {
             let field = {
                 productId: data.id,
@@ -68,31 +61,22 @@ module.exports = {
             // }
         },
 
-        // async beforeSave(data) {
-        //   console.log('lllll')
-        //     console.log(data)
+    //     async beforeUpdate(params,data) {
+    //         let count = 0
+    //         // console.log(data,'ddddddddddddddddd',params);
+    //   let favorite = await strapi.services['favorite-product'].find({product:params.id})
+    //  let p =  favorite.map((el)=>{
+    //       if(!data.variants_of_a_products.includes(el.variants_of_a_product.id )) {
+    //          strapi.services['favorite-product'].delete({variants_of_a_product:el.variants_of_a_product.id,product:null})
 
-            // console.log(data,"dskjdkkkkkkkjsh",params,'kkkkkkkkkkkkkkkkkkkk')
-            // let count = 0
-            // let variants = await strapi.services["variants-of-a-product"].find({})
-            // if (!data.variants_of_a_products.length ) console.log('chkaaaaaaaaaaaaaaaa')
-            // variants.map((el) => {
-            //     if (data?.variants_of_a_products?.includes(el?.id) && el?.main) {count++}
-            // })
+    //       }
 
+    //   })
 
-            // if (count > 1) {
-            //     throw Boom.badRequest(
-            //         'The product can not have several main variants',
-            //     )
+    //  await Promise.all(p)
 
-            // } else 
-            // if (count < 1) {
-            //     throw Boom.badRequest(
-            //         'The product should have at least one main variant',
-            //     )
-            // }
-        // },
+    // //   console.log(favorite);
+    //     },
 
         afterUpdate: async (data) => {
             // if (data.video?.url) {

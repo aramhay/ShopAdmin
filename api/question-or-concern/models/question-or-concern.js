@@ -13,7 +13,7 @@ module.exports = {
                   if (data.copy_to_me)
                 strapi.plugins['email'].services.email.send({
                     to: data.email,
-                    from: 'mankuyanars@gmail.com',
+                    from: 'shop@dasparfum-beauty.de',
                     subject: data.subject,
                     html: message + data.message
                 })

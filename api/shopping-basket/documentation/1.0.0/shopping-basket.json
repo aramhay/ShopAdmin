@@ -392,6 +392,18 @@
               "date": {
                 "type": "string"
               },
+              "billing_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "delivery_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -416,9 +428,6 @@
               },
               "clean_product": {
                 "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
               },
               "category": {
                 "type": "string"
@@ -487,6 +496,9 @@
                 "type": "string"
               },
               "active_ingredients": {
+                "type": "string"
+              },
+              "brand": {
                 "type": "string"
               },
               "published_at": {

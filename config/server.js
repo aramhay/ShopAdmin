@@ -12,11 +12,11 @@ module.exports = ({ env }) => ({
     },
     provider: 'sendgrid',
     providerOptions: {
-      apiKey: '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',
+      apiKey: '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',
     },
     forgotPassword: {
-      from: 'mankuyanars@gmail.com',
-      replyTo: 'mankuyanars@gmail.com',
+      from: 'shop@dasparfum-beauty.de',
+      replyTo: 'shop@dasparfum-beauty.de',
       emailTemplate: forgotPasswordTemplate,
     },
   },

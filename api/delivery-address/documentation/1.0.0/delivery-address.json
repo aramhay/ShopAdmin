@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/menu-items": {
+    "/delivery-addresses": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewDelivery-address"
               }
             }
           }
         }
       }
     },
-    "/navbaritems": {
+    "/delivery-addresses/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "parameters": []
       }
     },
-    "/getfooter": {
+    "/delivery-addresses/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,121 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "parameters": [
           {
@@ -548,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "requestBody": {
           "description": "",
@@ -556,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewDelivery-address"
               }
             }
           }
@@ -622,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Delivery-address"
         ],
         "parameters": [
           {
@@ -641,111 +527,105 @@
   },
   "components": {
     "schemas": {
-      "Menu-item": {
+      "Delivery-address": {
         "required": [
-          "id",
-          "position"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "item_name": {
+          "first_name": {
             "type": "string"
           },
-          "categories": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "CategoryName"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "CategoryName": {
-                  "type": "string"
-                },
-                "sub_categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "title": {
+          "surname": {
             "type": "string"
           },
-          "images": {
+          "address_line": {
+            "type": "string"
+          },
+          "road": {
+            "type": "string"
+          },
+          "house_number": {
+            "type": "number"
+          },
+          "place": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "users_permissions_user": {
             "required": [
               "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "username",
+              "email",
+              "surname"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "username": {
                 "type": "string"
               },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
+              "email": {
                 "type": "string"
               },
               "provider": {
                 "type": "string"
               },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
+              "password": {
                 "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "regular_customer": {
+                "type": "boolean"
+              },
+              "favorite_products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "surname": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "billing_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "delivery_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -755,189 +635,40 @@
               }
             }
           },
-          "url": {
-            "type": "string"
-          },
-          "position": {
-            "type": "string",
-            "default": "A",
-            "enum": [
-              "A",
-              "B",
-              "C",
-              "D",
-              "E",
-              "F",
-              "G",
-              "H",
-              "I",
-              "J",
-              "K",
-              "L",
-              "M",
-              "N",
-              "O",
-              "P",
-              "Q"
-            ]
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clean_product": {
-                  "type": "boolean"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "sub_category": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "magazin_presentation": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "New_Date_Limit": {
-                  "type": "string"
-                },
-                "video": {
-                  "type": "string"
-                },
-                "limited_edition": {
-                  "type": "boolean"
-                },
-                "video_description": {
-                  "type": "string"
-                },
-                "video_status": {
-                  "type": "string"
-                },
-                "video_name": {
-                  "type": "string"
-                },
-                "favorite_products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "approved_by_DPAB": {
-                  "type": "boolean"
-                },
-                "EAN_barcodes": {
-                  "type": "string"
-                },
-                "variants_of_a_products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "top_10": {
-                  "type": "boolean"
-                },
-                "fragrance_occasion": {
-                  "type": "string"
-                },
-                "scent_note": {
-                  "type": "string"
-                },
-                "direction_of_fragrance": {
-                  "type": "string"
-                },
-                "active_ingredients": {
-                  "type": "string"
-                },
-                "brand": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewMenu-item": {
-        "required": [
-          "position"
-        ],
+      "NewDelivery-address": {
         "properties": {
-          "item_name": {
+          "first_name": {
             "type": "string"
           },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": {
+          "surname": {
             "type": "string"
           },
-          "url": {
+          "address_line": {
             "type": "string"
           },
-          "position": {
-            "type": "string",
-            "default": "A",
-            "enum": [
-              "A",
-              "B",
-              "C",
-              "D",
-              "E",
-              "F",
-              "G",
-              "H",
-              "I",
-              "J",
-              "K",
-              "L",
-              "M",
-              "N",
-              "O",
-              "P",
-              "Q"
-            ]
+          "road": {
+            "type": "string"
           },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "house_number": {
+            "type": "number"
+          },
+          "place": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

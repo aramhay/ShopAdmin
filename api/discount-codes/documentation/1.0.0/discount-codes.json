@@ -607,9 +607,6 @@
                 "clean_product": {
                   "type": "boolean"
                 },
-                "brand": {
-                  "type": "string"
-                },
                 "category": {
                   "type": "string"
                 },
@@ -677,6 +674,9 @@
                   "type": "string"
                 },
                 "active_ingredients": {
+                  "type": "string"
+                },
+                "brand": {
                   "type": "string"
                 },
                 "published_at": {

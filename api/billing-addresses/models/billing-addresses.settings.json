@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "billing_addresses",
+  "info": {
+    "name": "billing_addresses",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "address_line": {
+      "type": "string"
+    },
+    "road": {
+      "type": "string",
+      "required": true
+    },
+    "house_number": {
+      "type": "float"
+    },
+    "place": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "billing_addresses"
+    }
+  }
+}

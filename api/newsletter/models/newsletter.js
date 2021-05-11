@@ -9,7 +9,7 @@ module.exports = {
                 try {
                      strapi.plugins['email'].services.email.send({
                         to: el.Email,
-                        from: 'mankuyanars@gmail.com',
+                        from: 'shop@dasparfum-beauty.de',
                         subject: data.Subject,
                         html: data.HTML_describe 
                     })
