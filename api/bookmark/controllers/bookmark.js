@@ -1,39 +1,56 @@
 'use strict';
-const { sanitizeEntity } = require('strapi-utils');
-
 
 /**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/concepts/controllers.html#core-controllers)
+ * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
  */
 
+const {checkFavoriteVideos} = require('../services/bookmark')
+
+
 module.exports = {
+    
     async create(ctx) {
-        let favoritData = {
+        let bookmarkData = {
             users_permissions_user: ctx.req.user.id,
-            video: ctx.request.body.video
+            video: ctx.request.body.video,
         }
-        let entity = await strapi.services.bookmark.find(favoritData)
-        let exist = await strapi.services.videos.find({ id: ctx.request.body.video })
+        let newVideo 
+        let exist = await strapi.services.videos.find({ id: bookmarkData.video })
+        if (exist.length < 1) return ({ isFavorite: false, message: 'video doesnt exist' })       
+        let entity = await strapi.services.bookmark.find(bookmarkData)
         if ((entity.length === 0) && (exist.length !== 0)) {
-            await strapi.services.bookmark.create(favoritData)
-            return ({ isFavorite: true })
+          newVideo =  await strapi.services.bookmark.create(bookmarkData)
+                return (newVideo?.video)
         }
-        else if ((exist.length !== 0)) {
-            await strapi.services.bookmark.delete(favoritData)
-            return ({ isFavorite: false })
+        else if ((entity.length !== 0)) {
+            await strapi.services.bookmark.delete(bookmarkData)
+            return ({isFavorite: false})  
+
         } else
-            return ({ message: 'video doesnt exist' })
+            return ({ message: 'something went wrong' })
     },
+
+
+
+
+
     async findOne(ctx) {
-        let entities;
-        let favoritData = {
-            users_permissions_user: ctx.req.user.id
-        }
-        entities = await strapi.services.bookmark.find(favoritData)
-        let favoritVideos = []
-        entities.map((e) => { if (e.video) favoritVideos.push(e.video) })
-        return favoritVideos
+        let prod = await strapi.services.bookmark.find({ users_permissions_user: ctx.req.user.id })
+        console.log(prod);
+        let p = prod.map(product => {
+            delete product?.users_permissions_user
+               
+              Object.assign(product.video,{favorite:true})
+                return product?.video
+        })
+
+        return await Promise.all(p)
 
     },
+
+
+
+
+
 };

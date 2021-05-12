@@ -84,6 +84,10 @@
     "delivery_addresses": {
       "via": "users_permissions_user",
       "collection": "delivery-address"
+    },
+    "bookmarks": {
+      "via": "users_permissions_user",
+      "collection": "bookmark"
     }
   }
 }

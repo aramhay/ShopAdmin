@@ -23,6 +23,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/updateAddresses/:appointment/:id",
+      "handler": "billing-addresses.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deleteAddresses/:appointment/:id",
+      "handler": "billing-addresses.delete",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

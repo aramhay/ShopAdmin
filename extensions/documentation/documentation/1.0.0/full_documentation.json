@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/11/2021 2:08:00 PM"
+    "x-generation-date": "05/12/2021 6:14:36 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1649,264 +1649,10 @@
         "parameters": []
       }
     },
-    "/bookmarks": {
-      "get": {
+    "/updateAddresses/{appointment}/{id}": {
+      "put": {
         "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Bookmark"
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Bookmark"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Bookmark"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Bookmark"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewBookmark"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/bookmarks/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
+        "description": "Update a record",
         "responses": {
           "200": {
             "description": "response",
@@ -1914,8 +1660,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -1955,113 +1701,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmark"
-        ],
-        "parameters": []
-      }
-    },
-    "/bookmarkss": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Bookmark"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Bookmark"
-        ],
-        "parameters": []
-      }
-    },
-    "/bookmarks/{id}": {
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Bookmark"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Bookmark"
+          "Billing-addresses"
         ],
         "requestBody": {
           "description": "",
@@ -2069,12 +1709,22 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBookmark"
+                "$ref": "#/components/schemas/NewBilling-addresses"
               }
             }
           }
         },
         "parameters": [
+          {
+            "name": "appointment",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "id",
             "in": "path",
@@ -2086,7 +1736,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/deleteAddresses/{appointment}/{id}": {
       "delete": {
         "deprecated": false,
         "description": "Delete a record",
@@ -2135,9 +1787,19 @@
         },
         "summary": "",
         "tags": [
-          "Bookmark"
+          "Billing-addresses"
         ],
         "parameters": [
+          {
+            "name": "appointment",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "id",
             "in": "path",
@@ -2149,6 +1811,132 @@
             }
           }
         ]
+      }
+    },
+    "/theUsersAllFavoriteVideos": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bookmark",
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Unclassified"
+        ],
+        "parameters": []
+      }
+    },
+    "/AddFavoriteVideosTheUser": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bookmark",
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Unclassified"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUnclassified"
+              }
+            }
+          }
+        }
       }
     },
     "/brand-page-all-data": {
@@ -27864,6 +27652,12 @@
                   "type": "string"
                 }
               },
+              "bookmarks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -28001,6 +27795,12 @@
                   "type": "string"
                 }
               },
+              "bookmarks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -28017,7 +27817,7 @@
               "id": {
                 "type": "string"
               },
-              "video_status": {
+              "type": {
                 "type": "string"
               },
               "video_name": {
@@ -28029,11 +27829,17 @@
               "url": {
                 "type": "string"
               },
-              "video_id": {
-                "type": "integer"
-              },
-              "bookmark": {
+              "video": {
                 "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "bookmarks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -30472,6 +30278,12 @@
                 }
               },
               "delivery_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bookmarks": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -34605,6 +34417,12 @@
                   "type": "string"
                 }
               },
+              "bookmarks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -35450,7 +35268,7 @@
           "id": {
             "type": "string"
           },
-          "video_status": {
+          "type": {
             "type": "string"
           },
           "video_name": {
@@ -35462,24 +35280,63 @@
           "url": {
             "type": "string"
           },
-          "video_id": {
-            "type": "integer"
-          },
-          "bookmark": {
+          "video": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "users_permissions_user": {
+              "name": {
                 "type": "string"
               },
-              "video": {
+              "alternativeText": {
                 "type": "string"
               },
-              "published_at": {
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
                 "type": "string"
               },
               "created_by": {
@@ -35487,6 +35344,37 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35498,7 +35386,7 @@
       },
       "NewVideos": {
         "properties": {
-          "video_status": {
+          "type": {
             "type": "string"
           },
           "video_name": {
@@ -35510,11 +35398,14 @@
           "url": {
             "type": "string"
           },
-          "video_id": {
-            "type": "integer"
-          },
-          "bookmark": {
+          "link": {
             "type": "string"
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -35687,6 +35578,12 @@
                   }
                 },
                 "delivery_addresses": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "bookmarks": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -35952,6 +35849,34 @@
                 }
               }
             }
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -36027,6 +35952,12 @@
               "type": "string"
             }
           },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "created_by": {
             "type": "string"
           },
@@ -36067,6 +35998,9 @@
       "name": "Bookmark"
     },
     {
+      "name": "Unclassified"
+    },
+    {
       "name": "Brand"
     },
     {
@@ -36092,9 +36026,6 @@
     },
     {
       "name": "Products"
-    },
-    {
-      "name": "Unclassified"
     },
     {
       "name": "Style"

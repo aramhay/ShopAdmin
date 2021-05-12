@@ -1398,6 +1398,34 @@
                 }
               }
             }
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1468,6 +1496,12 @@
             }
           },
           "delivery_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bookmarks": {
             "type": "array",
             "items": {
               "type": "string"

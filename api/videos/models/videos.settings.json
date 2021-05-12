@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "video_status": {
+    "type": {
       "type": "string"
     },
     "video_name": {
@@ -23,12 +23,24 @@
     "url": {
       "type": "string"
     },
-    "video_id": {
-      "type": "biginteger"
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     },
-    "bookmark": {
+    "link": {
+      "type": "string"
+    },
+    "bookmarks": {
       "via": "video",
-      "model": "bookmark"
+      "collection": "bookmark"
     }
   }
 }

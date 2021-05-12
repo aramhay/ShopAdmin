@@ -50,5 +50,35 @@ module.exports = {
         let entities = await strapi.services["delivery-address"].find({ users_permissions_user: ctx.req.user.id })
         entities.map(entity => { sanitizeEntity(entity, { model: strapi.models["billing-addresses"] }); delete entity?.users_permissions_user });
         return entities
+    },
+
+    async update(ctx) {
+        let { id, appointment } = ctx.params
+        let Data = ctx.request.body
+        if (appointment == "delivery") {
+            let newData = await strapi.services["delivery-address"].update({ id: id, users_permissions_user: ctx.req.user.id }, Data)
+            delete newData?.users_permissions_user
+            delete newData?.updated_by
+
+            return (newData)
+        } else
+            if (appointment == "billing") {
+                let newData = await strapi.services["billing-addresses"].update({ id: id, users_permissions_user: ctx.req.user.id }, Data)
+                delete newData?.users_permissions_user
+                delete newData?.updated_by
+                return (newData)
+            }
+    },
+
+    async delete(ctx) {
+        let { id, appointment } = ctx.params
+        if (appointment == "delivery") {
+            await strapi.services["delivery-address"].delete({ id: id, users_permissions_user: ctx.req.user.id })
+            return ({ success: true, message: "deleted" })
+        } else
+            if (appointment == "billing") {
+                await strapi.services["billing-addresses"].delete({ id: id, users_permissions_user: ctx.req.user.id })
+                return ({ success: true, message: "deleted"})
+            }
     }
 };

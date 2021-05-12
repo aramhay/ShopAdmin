@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "video_status": {
+          "type": {
             "type": "string"
           },
           "video_name": {
@@ -534,24 +534,63 @@
           "url": {
             "type": "string"
           },
-          "video_id": {
-            "type": "integer"
-          },
-          "bookmark": {
+          "video": {
             "required": [
-              "id"
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "users_permissions_user": {
+              "name": {
                 "type": "string"
               },
-              "video": {
+              "alternativeText": {
                 "type": "string"
               },
-              "published_at": {
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
                 "type": "string"
               },
               "created_by": {
@@ -559,6 +598,37 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -570,7 +640,7 @@
       },
       "NewVideos": {
         "properties": {
-          "video_status": {
+          "type": {
             "type": "string"
           },
           "video_name": {
@@ -582,11 +652,14 @@
           "url": {
             "type": "string"
           },
-          "video_id": {
-            "type": "integer"
-          },
-          "bookmark": {
+          "link": {
             "type": "string"
+          },
+          "bookmarks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

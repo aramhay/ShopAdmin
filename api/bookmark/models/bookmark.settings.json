@@ -2,22 +2,23 @@
   "kind": "collectionType",
   "collectionName": "bookmarks",
   "info": {
-    "name": "bookmark",
-    "description": ""
+    "name": "bookmark"
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "users_permissions_user": {
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "bookmarks"
     },
     "video": {
       "model": "videos",
-      "via": "bookmark"
+      "via": "bookmarks"
     }
   }
 }

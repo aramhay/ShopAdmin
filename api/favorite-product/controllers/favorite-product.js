@@ -7,8 +7,6 @@ const { sanitizeEntity } = require('strapi-utils');
 module.exports = {
 
     async findOne(ctx) {
-        let res = []
-        let result
         let prod = await strapi.services['favorite-product'].find({ users_permissions_user: ctx.req.user.id })
         let p = prod.map(product => {
             delete product?.users_permissions_user,
