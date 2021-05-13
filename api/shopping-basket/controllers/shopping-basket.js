@@ -21,19 +21,19 @@ module.exports = {
             ctx.send({
                 success: false,
                 message: 'quantity can not be negative'
-            }, 400);
+            }, 400);return
         }
         let product = await strapi.services.products.find({ id: idProduct })
-        if (product.length === 0) ctx.send({
+        if (product.length === 0) {ctx.send({
             success: false,
             message: 'product is not exist'
-        }, 404);
+        }, 404);return}
         else {
             let exist_variant = product[0].variants_of_a_products.some((el) => el.id === idVariant)
-            if (!exist_variant) ctx.send({
+            if (!exist_variant) {ctx.send({
                 success: false,
                 message: "product's variant is not exist"
-            }, 404);
+            }, 404); return}
             else {
                 let found
                 product[0].variants_of_a_products.find((el) => {
@@ -81,6 +81,7 @@ module.exports = {
                     success: false,
                     message: `The selected quantity could not be added to the shopping cart because it exceeds the available stock. ${maxQuantity} are currently in stock.`
                 }, 400);
+                return 
             }
             await strapi.services['shopping-basket'].update({ id: entity[0].id }, { quantity: ctx.request.body.quantity + parseInt(newQuantity) });
             return { success: true };
