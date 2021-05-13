@@ -76,9 +76,8 @@ module.exports = {
                 }
             }
             let newQuantity = entity[0].quantity
-            console.log(ctx.request.body.quantity, newQuantity, maxQuantity)
             if ((ctx.request.body.quantity + parseInt(newQuantity)) > maxQuantity) {
-                console.log(ctx.request.body.quantity, newQuantity), ctx.send({
+                ctx.send({
                     success: false,
                     message: `The selected quantity could not be added to the shopping cart because it exceeds the available stock. ${maxQuantity} are currently in stock.`
                 }, 400);
@@ -120,12 +119,10 @@ module.exports = {
         let gift_wrap_price = 0
         let cost = 0
         const discount = await strapi.services.discount.find();
-        console.log(discount);
         let entity = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.req.user.id, })
         let gift_wrap = await strapi.services['gift-wrap'].find({})
         delete gift_wrap[0].updated_by
         delete gift_wrap[0].created_by
-        // console.log(gift_wrap);
         let t = entity.map((el) => {
             if (el.product_id !== null) {
                 return getProductsInBasket(el.product_id, el.variant_id, el.quantity)
@@ -147,7 +144,6 @@ module.exports = {
 
         basket.map((el) => {
             if (el.variants_of_a_products !== undefined) {
-                console.log(el?.variants_of_a_products[0]?.price, el.quantity);
                 cost = cost + (el?.variants_of_a_products[0]?.price * el.quantity)
             }
         })
@@ -157,8 +153,12 @@ module.exports = {
         if (cost < discount.minprice) {
             cost += discount.discount
         }
-        basket.push({ cost })
-        return basket
+        // basket.push({ cost })
+        let res = {}
+        Object.assign(res,{products:basket})
+        Object.assign(res,{cost})
+      
+        return res
     },
 
     async create_gift_wrap(ctx) {
