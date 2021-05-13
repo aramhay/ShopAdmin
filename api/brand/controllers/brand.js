@@ -14,7 +14,7 @@ module.exports = {
         let firstData = [
             {
                 title: "A",
-                content: [""]
+                content: []
             },
             {
                 title: "B",

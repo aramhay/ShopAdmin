@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/brand-page-all-data",
-      "handler": "brand-page-all-data.find",
+      "path": "/marken-page-data",
+      "handler": "marken-page-data.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/brand-page-all-data",
-      "handler": "brand-page-all-data.update",
+      "path": "/marken-page-data",
+      "handler": "marken-page-data.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/brand-page-all-data",
-      "handler": "brand-page-all-data.delete",
+      "path": "/marken-page-data",
+      "handler": "marken-page-data.delete",
       "config": {
         "policies": []
       }

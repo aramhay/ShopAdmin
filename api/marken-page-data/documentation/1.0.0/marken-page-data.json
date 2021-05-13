@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/brand-page-all-data": {
+    "/marken-page-data": {
       "get": {
         "deprecated": false,
-        "description": "Find all the brand-page-all-data's records",
+        "description": "Find all the marken-page-data's records",
         "responses": {
           "200": {
-            "description": "Retrieve brand-page-all-data document(s)",
+            "description": "Retrieve marken-page-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Brand-page-all-data"
+          "Marken-page-data"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single brand-page-all-data record",
+        "description": "Update a single marken-page-data record",
         "responses": {
           "200": {
-            "description": "Retrieve brand-page-all-data document(s)",
+            "description": "Retrieve marken-page-data document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Brand-page-all-data"
+          "Marken-page-data"
         ],
         "requestBody": {
           "description": "",
@@ -252,7 +252,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBrand-page-all-data"
+                "$ref": "#/components/schemas/NewMarken-page-data"
               }
             }
           }
@@ -261,10 +261,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single brand-page-all-data record",
+        "description": "Delete a single marken-page-data record",
         "responses": {
           "200": {
-            "description": "deletes a single brand-page-all-data based on the ID supplied",
+            "description": "deletes a single marken-page-data based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -307,7 +307,7 @@
         },
         "summary": "",
         "tags": [
-          "Brand-page-all-data"
+          "Marken-page-data"
         ],
         "parameters": []
       }
@@ -315,7 +315,7 @@
   },
   "components": {
     "schemas": {
-      "Brand-page-all-data": {
+      "Marken-page-data": {
         "required": [
           "id"
         ],
@@ -323,89 +323,69 @@
           "id": {
             "type": "string"
           },
-          "brand_page_section_3": {
+          "title": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          },
+          "image": {
             "required": [
               "id",
-              "image_position"
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "link": {
+              "name": {
                 "type": "string"
               },
-              "link_text": {
+              "alternativeText": {
                 "type": "string"
               },
-              "text": {
+              "caption": {
                 "type": "string"
               },
-              "images": {
-                "type": "string"
-              },
-              "image_position": {
-                "type": "string",
-                "enum": [
-                  "left",
-                  "right",
-                  "summary"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "brand_page_section_4": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
+              "width": {
                 "type": "integer"
               },
-              "text": {
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
                 "type": "string"
               },
-              "published_at": {
+              "ext": {
                 "type": "string"
               },
-              "created_by": {
+              "mime": {
                 "type": "string"
               },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "brand_page_section_5": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              "size": {
+                "type": "number"
+              },
+              "url": {
                 "type": "string"
               },
-              "link": {
+              "previewUrl": {
                 "type": "string"
               },
-              "link_text": {
+              "provider": {
                 "type": "string"
               },
-              "images": {
-                "type": "string"
+              "provider_metadata": {
+                "type": "object"
               },
-              "published_at": {
+              "related": {
                 "type": "string"
               },
               "created_by": {
@@ -422,15 +402,12 @@
           }
         }
       },
-      "NewBrand-page-all-data": {
+      "NewMarken-page-data": {
         "properties": {
-          "brand_page_section_3": {
+          "title": {
             "type": "string"
           },
-          "brand_page_section_4": {
-            "type": "string"
-          },
-          "brand_page_section_5": {
+          "header": {
             "type": "string"
           },
           "published_at": {

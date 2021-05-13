@@ -15,6 +15,8 @@ module.exports = {
         }
         let idProduct = ctx.request.body.product
         let idVariant = ctx.request.body.variant
+        let maxQuantity
+
         if (ctx.request.body.quantity <= 0) {
             ctx.send({
                 success: false,
@@ -22,14 +24,20 @@ module.exports = {
             }, 400);
         }
         let product = await strapi.services.products.find({ id: idProduct })
-        if (product.length === 0) return ({ success: false, message: "product is not exist" })
+        if (product.length === 0) ctx.send({
+            success: false,
+            message: 'product is not exist'
+        }, 404);
         else {
             let exist_variant = product[0].variants_of_a_products.some((el) => el.id === idVariant)
-            if (!exist_variant) return ({ success: false, message: "product's variant is not exist" })
+            if (!exist_variant) ctx.send({
+                success: false,
+                message: "product's variant is not exist"
+            }, 404);
             else {
                 let found
                 product[0].variants_of_a_products.find((el) => {
-                    if (el.id === idVariant) found = el.quantity
+                    if (el.id === idVariant) { found = el.quantity, maxQuantity = el.quantity }
                 })
                 if (found < ctx.request.body.quantity) {
                     return ({ success: false, message: `product quantity is less than ${ctx.request.body.quantity}` })
@@ -67,7 +75,15 @@ module.exports = {
                     message: "Max 1 sample per fragrance per order"
                 }
             }
-            await strapi.services['shopping-basket'].update({ id: entity[0].id }, { quantity: ctx.request.body.quantity });
+            let newQuantity = entity[0].quantity
+            console.log(ctx.request.body.quantity, newQuantity, maxQuantity)
+            if ((ctx.request.body.quantity + parseInt(newQuantity)) > maxQuantity) {
+                console.log(ctx.request.body.quantity, newQuantity), ctx.send({
+                    success: false,
+                    message: `The selected quantity could not be added to the shopping cart because it exceeds the available stock. ${maxQuantity} are currently in stock.`
+                }, 400);
+            }
+            await strapi.services['shopping-basket'].update({ id: entity[0].id }, { quantity: ctx.request.body.quantity + parseInt(newQuantity) });
             return { success: true };
         } else {
             let product = await strapi.services.products.find({ id: idProduct })
@@ -76,10 +92,11 @@ module.exports = {
                 if (el.id === idVariant && el.sample == true) found = el
             })
             if (found && (ctx.request.body.quantity > 1)) {
-                return {
+                ctx.send({
                     success: false,
-                    message: "Max 1 sample per fragrance per order"
-                }
+                    message: `Max 1 sample per fragrance per order`
+                }, 400)
+
             } else {
                 if (found) {
                     await strapi.services['shopping-basket'].create({
