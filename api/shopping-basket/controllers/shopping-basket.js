@@ -3,7 +3,6 @@
 
 const { getProductsInBasket } = require('../services/shopping-basket')
 const { checkFavoriteProducts } = require('../../products/services/products')
-const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
 
@@ -16,24 +15,21 @@ module.exports = {
         let idProduct = ctx.request.body.product
         let idVariant = ctx.request.body.variant
         let maxQuantity
-
-        if (ctx.request.body.quantity <= 0) {
+        let product = await strapi.services.products.find({ id: idProduct })
+        if (product.length === 0) {
             ctx.send({
                 success: false,
-                message: 'quantity can not be negative'
-            }, 400);return
+                message: 'product is not exist'
+            }, 404); return
         }
-        let product = await strapi.services.products.find({ id: idProduct })
-        if (product.length === 0) {ctx.send({
-            success: false,
-            message: 'product is not exist'
-        }, 404);return}
         else {
             let exist_variant = product[0].variants_of_a_products.some((el) => el.id === idVariant)
-            if (!exist_variant) {ctx.send({
-                success: false,
-                message: "product's variant is not exist"
-            }, 404); return}
+            if (!exist_variant) {
+                ctx.send({
+                    success: false,
+                    message: "product's variant is not exist"
+                }, 404); return
+            }
             else {
                 let found
                 product[0].variants_of_a_products.find((el) => {
@@ -81,7 +77,15 @@ module.exports = {
                     success: false,
                     message: `The selected quantity could not be added to the shopping cart because it exceeds the available stock. ${maxQuantity} are currently in stock.`
                 }, 400);
-                return 
+                return
+            } else {
+                if ((ctx.request.body.quantity + parseInt(newQuantity)) < 1) {
+                    ctx.send({
+                        success: false,
+                        message: `The selected quantity could not be less than one`
+                    }, 400);
+                    return
+                }
             }
             await strapi.services['shopping-basket'].update({ id: entity[0].id }, { quantity: ctx.request.body.quantity + parseInt(newQuantity) });
             return { success: true };
@@ -156,9 +160,9 @@ module.exports = {
         }
         // basket.push({ cost })
         let res = {}
-        Object.assign(res,{products:basket})
-        Object.assign(res,{cost})
-      
+        Object.assign(res, { products: basket })
+        Object.assign(res, { cost })
+
         return res
     },
 
