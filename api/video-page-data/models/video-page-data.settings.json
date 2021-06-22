@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "video_page_data",
   "info": {
-    "name": "video_page_data"
+    "name": "video_page_data",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,18 +17,6 @@
     },
     "title": {
       "type": "string"
-    },
-    "video": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
     },
     "video_text": {
       "type": "string"

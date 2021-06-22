@@ -35,19 +35,22 @@ module.exports = {
 
 
 
+   
     async findOne(ctx) {
-        let prod = await strapi.services.bookmark.find({ users_permissions_user: ctx.req.user.id })
-        console.log(prod);
-        let p = prod.map(product => {
-            delete product?.users_permissions_user
-               
-              Object.assign(product.video,{favorite:true})
-                return product?.video
-        })
+     let t = await strapi.services['favorite-product'].find({})
+     console.log(t)
+      let prod = await strapi.services.bookmark.find({ users_permissions_user: ctx.req.user.id })
+      console.log(prod);
+      let p = prod.map(product => {
+          delete product?.users_permissions_user
+             
+            Object.assign(product.video,{favorite:true})
+              return product?.video
+      })
 
-        return await Promise.all(p)
+      return await Promise.all(p)
 
-    },
+  },
 
 
 

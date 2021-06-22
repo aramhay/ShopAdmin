@@ -5,4 +5,10 @@
  * to customize this controller
  */
 
-module.exports = {};
+ module.exports = {
+    lifecycles: {
+        beforeDelete: async (data) => {
+            await strapi.services['favorite-product'].delete({ variants_of_a_product: data.id })
+        }
+    }
+};
