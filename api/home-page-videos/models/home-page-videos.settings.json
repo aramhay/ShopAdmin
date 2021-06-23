@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page_videos",
+  "info": {
+    "name": "home_page_videos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "videos": {
+      "collection": "videos"
+    }
+  }
+}
