@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/home-page-videos",
+      "handler": "home-page-videos.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
