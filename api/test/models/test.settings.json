@@ -1,8 +1,8 @@
 {
-  "kind": "singleType",
-  "collectionName": "home_page_videos",
+  "kind": "collectionType",
+  "collectionName": "tests",
   "info": {
-    "name": "home_page_videos"
+    "name": "test"
   },
   "options": {
     "increments": true,
@@ -11,8 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "videos": {
-      "collection": "videos"
+    "name": {
+      "type": "string"
+    },
+    "lavtxa": {
+      "type": "boolean"
     }
   }
 }

@@ -4,6 +4,7 @@
   "info": {
     "name": "active_ingredients"
   },
+  
   "options": {
     "increments": true,
     "timestamps": true,
